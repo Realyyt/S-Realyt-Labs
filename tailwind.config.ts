@@ -11,6 +11,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'olive': {
+          400: '#8B9B6B',
+        },
+        'purple': {
+          400: '#9B6B9B',
+        },
+      },
+      fontFamily: {
+        'playfair': ['var(--font-playfair)'],
       },
     },
   },
