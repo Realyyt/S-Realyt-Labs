@@ -35,6 +35,7 @@ export default function WhatToExpect() {
 
       {/* Top right image */}
       <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8 w-24 sm:w-32 lg:w-48 h-24 sm:h-32 lg:h-48">
+        
         <Image
           src="/ng.jpg"
           alt="Demo day presentation"
@@ -44,7 +45,7 @@ export default function WhatToExpect() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-serif mb-8 sm:mb-12 lg:mb-16">what to expect</h2>
+        <h2 className="text-3xl sm:text-4xl mt-24 lg:text-6xl font-serif mb-8 sm:mb-12 lg:mb-16">what to expect</h2>
         
         <div className="space-y-8 sm:space-y-10 lg:space-y-12 flex flex-col items-center">
           {expectations.map((item) => (
