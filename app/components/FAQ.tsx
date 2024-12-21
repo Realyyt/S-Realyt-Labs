@@ -57,9 +57,12 @@ export default function FAQ() {
           who have applied so far if you are serious about committing to your
           ambitions & you want to make lifelong friends.
         </p>
-        <button className="bg-black text-white px-8 py-3 rounded-full text-lg hover:bg-black/80 transition-colors">
-          apply now
-        </button>
+        <a 
+          href="mailto:labs@next12.org" 
+          className="bg-black text-white px-8 py-3 rounded-full text-lg hover:bg-black/80 transition-colors"
+        >
+          Apply Now
+        </a>
       </div>
     </section>
   );
