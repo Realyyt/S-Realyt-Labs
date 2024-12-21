@@ -21,10 +21,10 @@ export default function Home() {
         </div>
         <div className="relative z-10 text-center text-white max-w-4xl px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-            S∞Realyt Labs
+            Next12
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            Unleashing  Founders to Rule the Global Innovation Landscape
+            Unleashing Founders to Rule the Global Innovation Landscape
           </p>
           <div className="flex gap-6 justify-center">
             <button className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-full transition-colors border border-accent">
@@ -33,11 +33,11 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/* About S∞Realyt Labs */}
+      {/* About Next12 */}
       <section className="py-32 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl md:text-8xl font-playfair mb-16 leading-tight">
-            S∞Realyt Labs exists to <span className="italic">empower and unite</span> innovators
+            Next12 exists to <span className="italic">empower and unite</span> innovators
           </h2>
           
           <div className="max-w-4xl space-y-12 text-xl md:text-2xl">
@@ -46,7 +46,7 @@ export default function Home() {
             </p>
             
             <p>
-              Through our comprehensive  programs, we provide world-class advisory services and strategic mentorship to  most ambitious builders. Our offering includes <span className="italic">luxury housing</span> and <span className="italic">collaborative workspaces</span>, creating an environment where innovation thrives.
+              Through our comprehensive programs, we provide world-class advisory services and strategic mentorship to most ambitious builders. Our offering includes <span className="italic">luxury housing</span> and <span className="italic">collaborative workspaces</span>, creating an environment where innovation thrives.
             </p>
             
             <p>
@@ -59,8 +59,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      
       
       <Locations />
       <WhatToExpect />
