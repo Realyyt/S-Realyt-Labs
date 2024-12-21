@@ -27,9 +27,9 @@ export default function Home() {
             Unleashing Founders to Rule the Global Innovation Landscape
           </p>
           <div className="flex gap-6 justify-center">
-            <button className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-full transition-colors border border-accent">
+            <a href="mailto:labs@next12.org" className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-full transition-colors border border-accent">
               Apply Now
-            </button>
+            </a>
           </div>
         </div>
       </header>
