@@ -4,7 +4,7 @@ import { useState } from 'react';
 const faqs = [
   {
     question: "can i do this online?",
-    answer: "The S∞Realyt Labs experience is designed to be in-person. The magic happens through face-to-face interactions, spontaneous conversations, and shared experiences in our physical spaces. However, we do offer virtual growth advisory options for those unable to join in-person."
+    answer: "The Next12 experience is designed to be in-person. The magic happens through face-to-face interactions, spontaneous conversations, and shared experiences in our physical spaces. However, we do offer virtual growth advisory options for those unable to join in-person."
   },
   {
     question: "can i be in school or have a job?",
@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "where do we work?",
-    answer: "Each S∞Realyt Labs location features dedicated co-working spaces designed for collaboration and focused work. You'll have 24/7 access to meeting rooms, quiet areas, and community spaces."
+    answer: "Each Next12 location features dedicated co-working spaces designed for collaboration and focused work. You'll have 24/7 access to meeting rooms, quiet areas, and community spaces."
   },
   {
     question: "do i have my own room?",

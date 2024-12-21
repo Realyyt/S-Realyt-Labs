@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "S∞Realyt Labs | Luxury Founders Community",
+  title: "Next12 | Luxury Founders Community",
   description: "Elevating African Innovation, One Founder at a Time",
 };
 

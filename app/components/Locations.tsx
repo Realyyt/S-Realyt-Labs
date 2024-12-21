@@ -8,7 +8,7 @@ const locations = [
     name: "victoria island", 
     image: "/lg.jpg",
     date: "est may 2024",
-    by: "by S∞Realyt Labs",
+    by: "by Next12",
     color: "bg-purple-400"
   },
   {
@@ -16,7 +16,7 @@ const locations = [
     name: "maitama hub",
     image: "/abj.jpeg", 
     date: "est sept 2024",
-    by: "by S∞Realyt Labs",
+    by: "by Next12",
     color: "bg-olive-400"
   },
   {
@@ -24,7 +24,7 @@ const locations = [
     name: "bangkok",
     image: "/th.jpg",
     date: "est aug 2024",
-    by: "by S∞Realyt Labs",
+    by: "by Next12",
     color: "bg-amber-400"
   },
   {
@@ -32,7 +32,7 @@ const locations = [
     name: "koramangala",
     image: "/bg.jpg",
     date: "est oct 2024",
-    by: "by S∞Realyt Labs",
+    by: "by Next12",
     color: "bg-emerald-400"
   }
 ];

@@ -12,11 +12,11 @@ export default function Footer() {
             <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
               {/* Logo and tagline  <Image 
                 src="/logo.png" 
-                alt="S∞Realyt Labs Logo" 
+                alt="Next12 Logo" 
                 width={32} 
                 height={32}
               />*/}
-              <span className="text-lg sm:text-xl lg:text-2xl font-playfair">S∞Realyt Labs</span>
+              <span className="text-lg sm:text-xl lg:text-2xl font-playfair">Next12</span>
             </div>
             <p className="text-xs sm:text-sm lg:text-base text-foreground/80">homes for the ambitious</p>
           </div>
