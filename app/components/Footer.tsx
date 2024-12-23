@@ -10,15 +10,12 @@ export default function Footer() {
           {/* Logo and tagline */}
           <div className="flex flex-col">
             <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
-              {/* Logo and tagline  <Image 
-                src="/logo.png" 
+              <img 
+                src="/next12-high-resolution-logo.png" 
                 alt="Next12 Logo" 
-                width={32} 
-                height={32}
-              />*/}
-              <span className="text-lg sm:text-xl lg:text-2xl font-playfair">Next12</span>
+                className="w-24 h-24 sm:w-30 sm:h-30 lg:w-36 lg:h-36"
+              />
             </div>
-            <p className="text-xs sm:text-sm lg:text-base text-foreground/80">homes for the ambitious</p>
           </div>
 
           {/* Social links */}
@@ -45,7 +42,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-xs sm:text-sm text-foreground/60">
-          © 2024 - made with love and care for viewers like you
+          2024 - made with love and care for viewers like you
         </div>
       </div>
     </footer>
