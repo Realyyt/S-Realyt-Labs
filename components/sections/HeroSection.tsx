@@ -8,7 +8,7 @@ export default function HeroSection() {
             <span className="gradient-text">Your Fast-Track to been Global.</span>
           </h1>
           <p className="text-xl mt-6 max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-            Join an exclusive community of most promising technical founders.
+            Join an exclusive community of most promising technical founders, builders and creators.
             Get funded, mentored, and connected to Silicon Valley.
           </p>
           <a 
