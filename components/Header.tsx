@@ -21,9 +21,7 @@ export default function Header() {
       <header className="fixed w-full top-0 z-50 bg-[var(--background)] border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="font-bold text-2xl">
-              Next12
-            </Link>
+            <Link href="/"><img src="/Next12 logo - orange.png" alt="Next12 Logo" className="w-32 h-32"/></Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">

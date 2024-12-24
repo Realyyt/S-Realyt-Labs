@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-3">
-            <h3 className="font-bold text-xl mb-4">Next12</h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Elevating African Innovation, One Founder at a Time
-            </p>
+            <div className="flex items-center justify-center md:justify-start">
+              <Link href="/"><img src="/Next12 logo - orange.png" alt="Next12 Logo" className="w-32 h-32"/></Link>
+              <p className="text-gray-600 dark:text-gray-400 ml-4">
+                Elevating African Innovation, One Founder at a Time
+              </p>
+            </div>
           </div>
           <div className="md:col-span-1 text-right">
             <h4 className="font-bold mb-4">Connect</h4>
