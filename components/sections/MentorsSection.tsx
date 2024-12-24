@@ -21,6 +21,10 @@ interface Role {
     {
       title: "I'm a Builder",
       description: "I'm passionate about creating innovative solutions and bringing ideas to life through code and technology."
+    },
+    {
+      title: "I'm a Creator",
+      description: "I'm an artist, designer, or writer looking to bring my creative vision to life and collaborate with others."
     }
   ];
   
