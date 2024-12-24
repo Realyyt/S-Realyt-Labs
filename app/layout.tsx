@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from 'next/font/google';
 import localFont from "next/font/local";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -27,7 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
-        {children}
+        <Header />
+        <div className="pt-16"> {/* Add padding for fixed header */}
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
