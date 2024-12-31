@@ -29,7 +29,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Do you take equity in my company?",
-    answer: "Yes, we take a small equity stake in exchange for the investment and program participation. Specific terms will be discussed during the application process."
+    answer: "No, we do not take equity in your company."
   },
   {
     question: "Do I need to have a company?",
@@ -37,7 +37,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Where do I have to be based?",
-    answer: "You must be building a company in Africa, but can participate in the program remotely. Physical participation is now in Dubai and Thailand."
+    answer: "You must be building a company . Physical participation is now in Dubai ,Thailand and Austria"
   }
 ];
 
