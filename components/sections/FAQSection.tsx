@@ -37,7 +37,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Where do I have to be based?",
-    answer: "You must be building a company . Physical participation is now in Dubai ,Thailand and Austria"
+    answer: "You must be building a company . Physical participation is now in Dubai ,Thailand , Austria and Nigeria"
   }
 ];
 

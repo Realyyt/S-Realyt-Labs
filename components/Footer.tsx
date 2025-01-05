@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex items-center justify-center md:justify-start">
               <Link href="/"><img src="/Next12 logo - orange.png" alt="Next12 Logo" className="w-32 h-32"/></Link>
               <p className="text-gray-600 dark:text-gray-400 ml-4">
-                Elevating African Innovation, One Founder at a Time
+                Elevating Innovation, One Founder at a Time
               </p>
             </div>
           </div>
