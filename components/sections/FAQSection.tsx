@@ -45,7 +45,8 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="min-h-[80vh] py-32 relative overflow-hidden bg-gradient-to-r from-[rgba(var(--accent-rgb),0.05)] via-white to-[rgba(var(--accent-rgb),0.05)]">
+    <section className="min-h-[80vh] py-32 relative overflow-hidden bg-gradient-to-r from-[rgba(var(--accent-rgb),0.05)] 
+      via-white [data-theme='dark']:via-gray-800 to-[rgba(var(--accent-rgb),0.05)] [data-theme='dark']:from-gray-900 [data-theme='dark']:to-gray-900">
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-5xl font-bold text-center mb-16">FAQs</h2>
         
@@ -53,10 +54,10 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="mb-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="mb-4 bg-white [data-theme='dark']:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center"
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-gray-900 [data-theme='dark']:text-gray-100"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="text-xl font-medium">{faq.question}</span>
@@ -76,7 +77,7 @@ export default function FAQSection() {
               </button>
               
               {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-600">
+                <div className="px-6 pb-4 text-gray-600 dark:text-gray-300">
                   {faq.answer}
                 </div>
               )}

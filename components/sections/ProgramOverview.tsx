@@ -1,6 +1,6 @@
 export default function ProgramOverview() {
   return (
-    <section className="py-20 relative overflow-hidden bg-gray-100">
+    <section className="py-20 relative overflow-hidden bg-gray-100 [data-theme='dark']:bg-gray-900">
       {/* Background gradient */}
       <div 
         className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(var(--accent-rgb),0.05)]"
@@ -11,29 +11,29 @@ export default function ProgramOverview() {
         <h2 className="text-4xl font-bold mb-16">
           Program <span className="gradient-text">Overview</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">What You Get</h3>
+            <h3 className="text-2xl font-bold mb-4 dark:text-gray-100">What You Get</h3>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start justify-center">
-                  <svg className="w-6 h-6 text-[var(--accent)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[var(--accent)] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>{benefit}</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-left">{benefit}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">Who Should Apply</h3>
+            <h3 className="text-2xl font-bold mb-4 dark:text-gray-100">Who Should Apply</h3>
             <ul className="space-y-4">
               {criteria.map((criterion, index) => (
                 <li key={index} className="flex items-start justify-center">
-                  <svg className="w-6 h-6 text-[var(--accent)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[var(--accent)] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>{criterion}</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-left">{criterion}</span>
                 </li>
               ))}
             </ul>

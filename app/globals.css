@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
+  /* Default light mode colors */
   --background: #ffffff;
   --foreground: #1a1a1a;
   --accent: #b8860b;
   --accent-light: #daa520;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #f0f0f0;
-    --accent: #daa520;
-    --accent-light: #ffd700;
-  }
+/* Only apply dark mode when explicitly set */
+[data-theme="dark"] {
+  --background: #1a1a1a;
+  --foreground: #f0f0f0;
+  --accent: #daa520;
+  --accent-light: #ffd700;
 }
 
 body {

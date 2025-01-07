@@ -40,15 +40,16 @@ interface Role {
             {roles.map((role, index) => (
               <div
                 key={index}
-                className={`p-12 rounded-lg border border-gray-200 hover:border-[var(--accent)] transition-all 
-                  cursor-pointer group ${role.bgColor || 'bg-gray-50'}`}
+                className={`p-8 sm:p-12 rounded-lg border border-gray-200 [data-theme='dark']:border-gray-700 
+                  hover:border-[var(--accent)] transition-all cursor-pointer group 
+                  ${role.bgColor || 'bg-gray-50 [data-theme="dark"]:bg-gray-800'}`}
               >
-                <h3 className={`text-3xl font-medium mb-4 
-                  ${role.bgColor ? 'text-white' : 'group-hover:text-[var(--accent)]'}`}>
+                <h3 className={`text-2xl sm:text-3xl font-medium mb-4 
+                  ${role.bgColor ? 'text-white' : 'group-hover:text-[var(--accent)] dark:text-gray-100'}`}>
                   {role.title}
                 </h3>
-                <p className={`text-lg leading-relaxed 
-                  ${role.bgColor ? 'text-white/90' : 'text-gray-600'}`}>
+                <p className={`text-base sm:text-lg leading-relaxed 
+                  ${role.bgColor ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'}`}>
                   {role.description}
                 </p>
               </div>

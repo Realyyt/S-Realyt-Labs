@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,13 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
-        <Header />
-        <div className="pt-16"> {/* Add padding for fixed header */}
-          {children}
-        </div>
-        <Footer />
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="light"
+          enableSystem={true}
+        >
+          <Header />
+          <div className="pt-16">
+            {children}
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
