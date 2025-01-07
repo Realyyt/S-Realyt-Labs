@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="min-h-[80vh] py-16 sm:py-32 relative overflow-hidden bg-white">
+      <section className="min-h-[70vh] py-12 sm:min-h-[80vh] sm:py-32 relative overflow-hidden bg-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900">
