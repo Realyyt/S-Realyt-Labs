@@ -6,6 +6,8 @@ import Button from '../Button';
 export default function HeroSection() {
   const [showForm, setShowForm] = useState(false);
 
+  const handleFormOpen = () => setShowForm(true);
+
   return (
     <>
       <section className="min-h-[80vh] py-16 sm:py-32 relative overflow-hidden bg-white">
@@ -20,7 +22,7 @@ export default function HeroSection() {
               Get funded, mentored, and connected to Global Builders.
             </p>
             <div className="mt-8">
-              <Button variant="primary" size="lg">Apply Now</Button>
+              <Button variant="primary" size="lg" onClick={handleFormOpen}>Apply Now</Button>
             </div>
           </div>
         </div>
