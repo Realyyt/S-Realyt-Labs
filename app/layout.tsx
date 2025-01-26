@@ -18,8 +18,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Next12 | Luxury Founders Community",
-  description: "Elevating African Innovation, One Founder at a Time",
+  title: "Next12 | Exclusive Founders Community",
+  description: "Elevating Innovation, One Founder at a Time",
 };
 
 export default function RootLayout({
