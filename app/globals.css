@@ -66,3 +66,44 @@ body {
     color: var(--accent) !important;
   }
 }
+
+
+@keyframes pulseBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotateBorder {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-title {
+  background: linear-gradient(45deg, #fff, var(--accent-light), #fff);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 -0.1em; /* Adjust negative margin to compensate for pixel font spacing */
+}

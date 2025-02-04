@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from 'next/font/google';
-import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "./globals.css";
+
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Press_Start_2P } from 'next/font/google'
 
-const pixelFont = Press_Start_2P({ 
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-pixel'
-})
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -36,9 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
-       
+      <body className={` ${playfair.variable} antialiased`}>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="light"
+          enableSystem={true}
+        >
+          <Header />
+          <div className="pt-16">
             {children}
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
