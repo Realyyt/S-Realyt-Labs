@@ -32,40 +32,9 @@ body {
 }
 
 /* Add these styles for better mobile text contrast */
-@media (max-width: 640px) {
-  [data-theme="dark"] {
-    --background: #ffffff;  /* Force light mode on mobile */
-    --foreground: #1a1a1a;
-  }
-  
-  .text-gray-600 {
-    color: #4b5563 !important; /* Ensure readable gray text */
-  }
-}
 
 /* Add these styles to force light mode and readable text on mobile */
-@media (max-width: 640px) {
-  section {
-    background: white !important;
-  }
 
-  [data-theme="dark"] {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important;
-  }
-
-  p, span, li {
-    color: #1a1a1a !important;
-  }
-
-  .gradient-text {
-    color: var(--accent) !important;
-  }
-}
 
 
 @keyframes pulseBackground {
