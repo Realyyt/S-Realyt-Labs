@@ -25,7 +25,7 @@ export default function TechnoPage() {
     
       {/* Content */}
       <div className="relative z-10">
-        <h1 className="text-5xl md:text-8xl font-playfair font-bold text-center mb-16 gradient-text" style={{ letterSpacing: '0.1em' }}>
+        <h1 className="text-4xl md:text-7xl font-playfair font-bold text-center mb-16 gradient-text" style={{ letterSpacing: '0.1em' }}>
           <span className="font-pixel" style={{ width: '1em', height: '1em', display: 'inline-block', margin: '0 0.05em' }}>N</span>
           <span className="font-pixel" style={{ width: '1em', height: '1em', display: 'inline-block', margin: '0 0.05em' }}>E</span>
           <span className="font-pixel" style={{ width: '1em', height: '1em', display: 'inline-block', margin: '0 0.05em' }}>X</span>
