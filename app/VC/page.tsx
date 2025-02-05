@@ -38,9 +38,19 @@ export default function Vc() {
       { label: "Legal framework", valueMultiplier: 0.6 },
       { label: "Equity adjustment", valueMultiplier: 0.4 }
     ] },
-    { text: "What is your typical check size for first-time investments?", weight: 1.9 },
+    { text: "What is your typical check size for first-time investments?", weight: 1.9, type: 'dropdown', options: [
+      { label: "$10k-$50k", valueMultiplier: 0.8 },
+      { label: "$50k-$100k", valueMultiplier: 1.0 },
+      { label: "$100k-$250k", valueMultiplier: 1.2 },
+      { label: "$250k+", valueMultiplier: 1.5 }
+    ] },
     { text: "Do you participate in follow-on funding rounds?", weight: 1.6 },
-    { text: "How aligned are your return expectations with long-term growth?", weight: 2.1 },
+    { text: "How aligned are your return expectations with long-term growth?", weight: 2.1, type: 'dropdown', options: [
+      { label: "Highly aligned (5+ year horizon)", valueMultiplier: 1.2 },
+      { label: "Moderately aligned (3-5 years)", valueMultiplier: 1.0 },
+      { label: "Flexible depending on opportunity", valueMultiplier: 0.8 },
+      { label: "Short-term focused", valueMultiplier: 0.5 }
+    ] },
     { text: "Do you have experience in our industry sector?", weight: 1 },
     { text: "Are you able to make investment decisions independently?", weight: 1.5 },
   ];
@@ -61,20 +71,28 @@ export default function Vc() {
         <h2 className="text-3xl font-medium text-slate-900 dark:text-white">Contact Our Investment Team</h2>
         <p className="text-slate-600 dark:text-slate-400">Complete your application</p>
       </div>
-      <form className="space-y-6">
+      <form className="space-y-6" action="mailto:labs@next12.org" method="post" encType="text/plain">
+        <input
+          type="hidden"
+          name="subject"
+          value="Application to Next12 as an Investor"
+        />
         <input
           type="text"
+          name="fullName"
           placeholder="Full Name"
           className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-300"
           required
         />
         <input
           type="email"
+          name="email"
           placeholder="Professional Email"
           className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-300"
           required
         />
         <textarea
+          name="experience"
           placeholder="Briefly describe your investment experience"
           className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-300 min-h-[150px]"
         />
