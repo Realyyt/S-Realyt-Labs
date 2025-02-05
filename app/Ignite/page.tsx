@@ -218,7 +218,7 @@ export default function Ignite() {
                     mentorship: 'Mentorship Experience',
                     mentorship_details: 'Mentorship Details'
                   };
-                  return `${labels[key] || key}:\n${value}\n\n`;
+                  return `${labels[key as keyof typeof labels] || key}:\n${value}\n\n`;
                 })
                 .join('');
               
