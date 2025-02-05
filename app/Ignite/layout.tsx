@@ -20,16 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider
-    attribute="data-theme"
-    defaultTheme="light"
-    enableSystem={true}
-  >
-  <div>
-      <Navbar/>
-      {children}
-  </div>
-  </ThemeProvider>
-   
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${playfair.variable} antialiased`}>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="light"
+          enableSystem={true}
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
