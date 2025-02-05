@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 interface Question {
   text: string;
   weight: number;
+  type?: 'dropdown';
+  options?: { label: string; valueMultiplier: number }[];
 }
 
 export default function Vc() {
@@ -15,7 +17,30 @@ export default function Vc() {
   const questions: Question[] = [
     { text: "Do you have accreditation as an investor?", weight: 2 },
     { text: "Have you participated in early-stage investments before?", weight: 1.5 },
-    { text: "Can you commit to minimum investments of $50k?", weight: 2.5 },
+    { text: "Can you commit to minimum investments of $10k?", weight: 2.5 },
+    { text: "What level of involvement do you typically expect with investments?", weight: 1.8, type: 'dropdown', options: [
+      { label: "Hands-off (passive)", valueMultiplier: 1.0 },
+      { label: "Advisory role", valueMultiplier: 0.8 },
+      { label: "Board seat required", valueMultiplier: 0.6 },
+      { label: "Operational involvement", valueMultiplier: 0.4 }
+    ] },
+    { text: "Can you provide mentorship or industry connections beyond capital?", weight: 2.2 },
+    { text: "What is your typical investment timeline and exit strategy?", weight: 2.0, type: 'dropdown', options: [
+      { label: "3-5 years (IPO focus)", valueMultiplier: 1.0 },
+      { label: "5-7 years (strategic acquisition)", valueMultiplier: 0.8 },
+      { label: "7+ years (long-term hold)", valueMultiplier: 0.6 },
+      { label: "No specific timeline", valueMultiplier: 0.4 }
+    ] },
+    { text: "Are you able to provide references from previous investments?", weight: 1.7 },
+    { text: "How do you approach conflict resolution with founders?", weight: 2.3, type: 'dropdown', options: [
+      { label: "Mediation through board", valueMultiplier: 1.0 },
+      { label: "Direct negotiation", valueMultiplier: 0.8 },
+      { label: "Legal framework", valueMultiplier: 0.6 },
+      { label: "Equity adjustment", valueMultiplier: 0.4 }
+    ] },
+    { text: "What is your typical check size for first-time investments?", weight: 1.9 },
+    { text: "Do you participate in follow-on funding rounds?", weight: 1.6 },
+    { text: "How aligned are your return expectations with long-term growth?", weight: 2.1 },
     { text: "Do you have experience in our industry sector?", weight: 1 },
     { text: "Are you able to make investment decisions independently?", weight: 1.5 },
   ];
@@ -84,18 +109,34 @@ export default function Vc() {
               </h3>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => handleAnswer(questions[currentQuestion].weight)}
-                className="flex-1 px-6 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-all font-medium text-lg"
-              >
-                Yes
-              </button>
-              <button 
-                onClick={() => handleAnswer(0)}
-                className="flex-1 px-6 py-4 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-slate-500 text-slate-900 dark:text-white rounded-lg transition-all font-medium text-lg"
-              >
-                No
-              </button>
+              {questions[currentQuestion].type === 'dropdown' ? (
+                <select 
+                  onChange={(e) => handleAnswer(questions[currentQuestion].weight * parseFloat(e.target.value))}
+                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 rounded-lg font-medium text-lg"
+                >
+                  <option value="">Select an option</option>
+                  {questions[currentQuestion].options?.map((option, index) => (
+                    <option key={index} value={option.valueMultiplier}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <>
+                  <button 
+                    onClick={() => handleAnswer(questions[currentQuestion].weight)}
+                    className="flex-1 px-6 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition-all font-medium text-lg"
+                  >
+                    Yes
+                  </button>
+                  <button 
+                    onClick={() => handleAnswer(0)}
+                    className="flex-1 px-6 py-4 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-slate-500 text-slate-900 dark:text-white rounded-lg transition-all font-medium text-lg"
+                  >
+                    No
+                  </button>
+                </>
+              )}
             </div>
           </div>
         ) : questionnaireComplete && totalScore >= 7 ? (
