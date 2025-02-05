@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,7 +9,13 @@ export default function Footer() {
           {/* Logo and Tagline */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link href="/">
-              <img src="/Next12 logo - orange.png" alt="Next12 Logo" className="w-24 h-24 sm:w-32 sm:h-32"/>
+              <Image 
+                src="/Next12 logo - orange.png" 
+                alt="Next12 Logo" 
+                width={96}
+                height={96}
+                className="w-24 h-24 sm:w-32 sm:h-32"
+              />
             </Link>
             <p className="text-gray-900 [data-theme='dark']:text-gray-100 text-center sm:text-left">
               Elevating Innovation, One Founder at a Time

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - adjusted size for mobile */}
           <Link href="/">
-            <img src="/Next12 logo - orange.png" alt="Next12 Logo" className="w-24 h-24 sm:w-32 sm:h-32"/>
+            <Image 
+              src="/Next12 logo - orange.png" 
+              alt="Next12 Logo" 
+              width={128} 
+              height={128}
+              className="w-24 h-24 sm:w-32 sm:h-32"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
