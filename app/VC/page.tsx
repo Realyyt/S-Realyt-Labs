@@ -108,10 +108,10 @@ export default function Vc() {
 
   return (
     <main className="min-h-screen">
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-slate-900 to-slate-700">
-        <div className="text-center text-white space-y-6 px-4">
+      <section className="relative h-[40vh] flex items-center justify-center bg-[#b8860b]">
+        <div className="text-center text-black space-y-6 px-4">
           <h1 className="text-5xl font-bold">Investor Qualification</h1>
-          <p className="text-xl text-slate-200">Complete our brief assessment to join our network</p>
+          <p className="text-xl text-black0">Complete our brief assessment to join our network</p>
         </div>
       </section>
 
