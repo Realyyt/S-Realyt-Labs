@@ -26,8 +26,8 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={true}
         >
-          <Navbar/>
-          {children}
+          <Navbar />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
