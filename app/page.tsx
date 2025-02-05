@@ -17,7 +17,7 @@ export default function TechnoPage() {
             transition: 'opacity 0.3s ease' // Smooth fade between loops
           }}
         >
-          <source src="/walk.mp4" type="video/mp4" />
+          <source src="/h.mp4" type="video/mp4" />
         </video>
       </div>
 
