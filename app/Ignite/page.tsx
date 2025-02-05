@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Ignite() {
@@ -190,55 +192,139 @@ export default function Ignite() {
           <p className="text-lg mb-6 text-center" style={{ color: 'var(--accent)' }}>
             Bring the Ignite program to your city or organization
           </p>
-          <form className="space-y-6" action="mailto:labs@next12.org" method="post" encType="text/plain">
+          <form 
+            className="space-y-6" 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const body = Array.from(formData.entries())
+                .map(([key, value]) => {
+                  const labels = {
+                    name: 'Full Name',
+                    email: 'Email Address',
+                    phone: 'Phone Number',
+                    linkedin: 'LinkedIn Profile',
+                    company: 'Company Name',
+                    job_title: 'Job Title & Role',
+                    location: 'Location',
+                    dates: 'Proposed Dates',
+                    event_experience: 'Event Experience',
+                    event_details: 'Event Details',
+                    budget: 'Budget Allocation',
+                    investor_access: 'Investor Access',
+                    investor_details: 'Investor Details',
+                    attendees: 'Expected Attendees',
+                    motivation: 'Motivation',
+                    mentorship: 'Mentorship Experience',
+                    mentorship_details: 'Mentorship Details'
+                  };
+                  return `${labels[key] || key}:\n${value}\n\n`;
+                })
+                .join('');
+              
+              const emailBody = `Dear Next12 Team,\n\nPlease consider our application to host Next12 Ignite:\n\n${body}\n\nBest regards,\n${formData.get('name')}\n${formData.get('company') || ''}`;
+
+              window.location.href = `mailto:labs@next12.org?subject=Ignite Host Application - ${formData.get('location')}&body=${encodeURIComponent(emailBody)}`;
+            }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Basic Details */}
               <div>
-                <label className="block text-sm mb-2">Your Name</label>
-                <input 
-                  type="text"
-                  name="name"
-                  className="w-full p-3 rounded-lg border"
-                  style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}
-                />
+                <label className="block text-sm mb-2">Full Name *</label>
+                <input type="text" name="name" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
               </div>
               <div>
-                <label className="block text-sm mb-2">Email Address</label>
-                <input 
-                  type="email"
-                  name="email" 
-                  className="w-full p-3 rounded-lg border"
-                  style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}
-                />
+                <label className="block text-sm mb-2">Email *</label>
+                <input type="email" name="email" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
               </div>
               <div>
-                <label className="block text-sm mb-2">Organization</label>
-                <input 
-                  type="text"
-                  name="organization" 
-                  className="w-full p-3 rounded-lg border" 
-                  style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}
-                />
+                <label className="block text-sm mb-2">Phone Number</label>
+                <input type="tel" name="phone" className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
               </div>
               <div>
-                <label className="block text-sm mb-2">Proposed Location</label>
-                <input 
-                  type="text"
-                  name="location" 
-                  className="w-full p-3 rounded-lg border"
-                  style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}
-                />
+                <label className="block text-sm mb-2">LinkedIn Profile *</label>
+                <input type="url" name="linkedin" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Company Name</label>
+                <input type="text" name="company" className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Job Title & Role</label>
+                <input type="text" name="job_title" className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
               </div>
             </div>
-            
-            <div>
-              <label className="block text-sm mb-2">Proposed Dates</label>
-              <input 
-                type="text"
-                name="proposed_dates" 
-                className="w-full p-3 rounded-lg border"
-                style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}
-                placeholder="Preferred program dates or timeframe"
-              />
+
+            {/* Event & Financial Readiness */}
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm mb-2">Location (City, Country) *</label>
+                <input type="text" name="location" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Proposed Dates *</label>
+                <input type="text" name="dates" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Event Experience *</label>
+                <select name="event_experience" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}>
+                  <option value="">Have you organized high-level events before?</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                <textarea name="event_details" placeholder="Details (optional)" className="mt-2 w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Budget Allocation *</label>
+                <div className="space-y-2">
+                  {['50k-100k', '100k-250k', '250k+', 'other'].map((option) => (
+                    <label key={option} className="flex items-center gap-2">
+                      <input type="radio" name="budget" value={option} required className="accent-[var(--accent)]" />
+                      {option === 'other' ? 'Other (Specify)' : `$${option}`}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Network & Investor Reach */}
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm mb-2">Investor Access *</label>
+                <select name="investor_access" required className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}>
+                  <option value="">Do you have access to investors?</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                <textarea name="investor_details" placeholder="Details (optional)" className="mt-2 w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Expected Attendees</label>
+                <input type="number" name="attendees" className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+            </div>
+
+            {/* Motivation & Alignment */}
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm mb-2">Motivation *</label>
+                <textarea name="motivation" required maxLength={1000} className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+              <div>
+                <label className="block text-sm mb-2">Mentorship Experience</label>
+                <select name="mentorship" className="w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}>
+                  <option value="">Have you mentored startups?</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                <textarea name="mentorship_details" placeholder="Details (optional)" className="mt-2 w-full p-3 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }} />
+              </div>
+            </div>
+
+            {/* Authorization */}
+            <div className="flex items-center gap-2">
+              <input type="checkbox" required className="accent-[var(--accent)]" />
+              <span className="text-sm">I confirm financial capability and understanding of commitments *</span>
             </div>
 
             <button 
