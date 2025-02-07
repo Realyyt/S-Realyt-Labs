@@ -23,7 +23,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Next12 | Exclusive Founders Community",
+  title: "Next12 | The new way to change the world",
   description: "Elevating Innovation, One Founder at a Time",
 };
 
