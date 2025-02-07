@@ -38,7 +38,7 @@ export default function Ignite() {
 
       {/* Program Process */}
       <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-playfair font-bold mb-12 text-center">The Ignition Process</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">The Ignition Process</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { title: 'Validation Sprint', desc: 'Stress-test your core hypothesis with real market data' },
@@ -57,7 +57,7 @@ export default function Ignite() {
               }}
             >
               <div className="text-2xl mb-2 font-bold" style={{ color: 'var(--accent)' }}>{idx + 1}.</div>
-              <h3 className="text-xl font-playfair mb-2">{item.title}</h3>
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
               <p className="text-sm opacity-90">{item.desc}</p>
             </div>
           ))}
@@ -66,7 +66,7 @@ export default function Ignite() {
 
       {/* Program Features */}
       <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-playfair font-bold mb-12 text-center">Why Ignite?</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Why Ignite?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { 
@@ -90,7 +90,7 @@ export default function Ignite() {
                 color: 'var(--foreground)'
               }}
             >
-              <h3 className="text-2xl font-playfair font-bold mb-4">{feature.title}</h3>
+              <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
               <p className="text-sm">{feature.desc}</p>
             </div>
           ))}
@@ -99,7 +99,7 @@ export default function Ignite() {
 
       {/* Upcoming Programs */}
       <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-playfair font-bold mb-12 text-center">Upcoming Ignitions</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Upcoming Ignitions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { 
@@ -125,7 +125,7 @@ export default function Ignite() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-playfair font-bold">{program.location}</h3>
+                  <h3 className="text-2xl font-bold">{program.location}</h3>
                   <p className="text-sm opacity-90">{program.date}</p>
                 </div>
                 <span 
@@ -146,7 +146,7 @@ export default function Ignite() {
 
       {/* Alumni Success 
       <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-playfair font-bold mb-12 text-center">Alumni Success Stories</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Alumni Success Stories</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { 
@@ -175,7 +175,7 @@ export default function Ignite() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-playfair font-bold">{alumni.name}</h3>
+                  <h3 className="text-2xl font-bold">{alumni.name}</h3>
                   <p className="text-sm opacity-90">{alumni.company}</p>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Ignite() {
 
       {/* New Host Application Section */}
       <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-playfair font-bold mb-12 text-center">Host Next12 Ignite</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Host Next12 Ignite</h2>
         <div className="max-w-3xl mx-auto p-8 rounded-lg border" style={{ borderColor: 'var(--accent)', background: 'var(--background)' }}>
           <p className="text-lg mb-6 text-center" style={{ color: 'var(--accent)' }}>
             Bring the Ignite program to your city or organization

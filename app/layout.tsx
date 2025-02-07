@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
 import { Press_Start_2P } from 'next/font/google'
@@ -17,9 +17,10 @@ const geistSans = localFont({
   weight: "100 900",
 });
 
-const playfair = Playfair_Display({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-space-grotesk',
+  weight: ['300', '700']
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
        
             {children}
       </body>

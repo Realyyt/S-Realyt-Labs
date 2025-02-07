@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { Space_Grotesk } from 'next/font/google'
 
 export default {
   content: [
@@ -19,7 +20,7 @@ export default {
         },
       },
       fontFamily: {
-        'playfair': ['var(--font-playfair)'],
+        sans: ['var(--font-space-grotesk)', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
       },
     },
   },

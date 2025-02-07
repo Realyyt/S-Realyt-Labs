@@ -21,7 +21,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 .gradient-text {
