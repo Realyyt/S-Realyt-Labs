@@ -1,10 +1,14 @@
 'use client';
 
+import Navbar from '@/components/navbar';
 import Link from 'next/link';
 
 export default function Ignite() {
   return (
+    <div>
+    <Navbar/>
     <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden">
+      
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto mb-16 md:mb-24 text-center">
         <h1 
@@ -341,6 +345,6 @@ export default function Ignite() {
         </div>
       </section>
 
-    </main>
+    </main></div>
   );
 }

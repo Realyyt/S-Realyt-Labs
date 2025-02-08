@@ -4,10 +4,12 @@ import MentorsSection from '@/components/sections/MentorsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import ScheduleSection from '@/components/sections/ScheduleSection';
+import Navbar from '@/components/navbar';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <Navbar/>
       <HeroSection />
       <div id="program">
         <ProgramOverview />

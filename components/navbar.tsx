@@ -9,7 +9,7 @@ import Image from "next/image";
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
-              src="/Next12 logo - orange.png" 
+              src="/logo1.png" 
               alt="Next12 Logo" 
               width={96}
               height={96}
