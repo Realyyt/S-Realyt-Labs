@@ -1,13 +1,40 @@
 'use client';
 
-import Navbar from '@/components/navbar';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Ignite() {
   return (
     
     <main className="min-h-screen">
-    <Navbar />
+    <div className="sticky top-0 z-50 bg-white [data-theme='dark']:bg-gray-800 border-b border-gray-200 [data-theme='dark']:border-gray-700">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo1.png" 
+              alt="Next12 Logo" 
+              width={96}
+              height={96}
+              className="w-24 h-24"
+              priority
+            />
+          </Link>
+
+          {/* Navigation Links */}
+          <div className="flex space-x-8">
+            <Link 
+              href="/" 
+              className="hover:text-[var(--accent)] transition-colors font-playfair"
+            >
+              Home
+            </Link>
+            
+          </div>
+        </div>
+      </div>
+    </div>
     <section className="flex flex-col relative h-[40vh] flex items-center justify-center text-center ">
        <h1 
           className="text-4xl md:text-7xl font-bold mb-8 md:mb-16 gradient-text text-center"
