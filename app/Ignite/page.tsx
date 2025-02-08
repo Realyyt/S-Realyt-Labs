@@ -5,8 +5,7 @@ import Link from 'next/link';
 
 export default function Ignite() {
   return (
-    <div>
-    <Navbar/>
+    
     <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden">
       
       {/* Hero Section */}
@@ -345,6 +344,6 @@ export default function Ignite() {
         </div>
       </section>
 
-    </main></div>
+    </main>
   );
 }

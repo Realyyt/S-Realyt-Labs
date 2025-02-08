@@ -1,5 +1,4 @@
 "use client"
-import Navbar from '@/components/navbar';
 import React, { useState } from 'react';
 
 interface Question {
@@ -108,8 +107,6 @@ export default function Vc() {
   );
 
   return (
-    <div>
-      <Navbar/>
     <main className="min-h-screen">
       <section className="relative h-[40vh] flex items-center justify-center bg-[#b8860b]">
         <div className="text-center text-black space-y-6 px-4">
@@ -173,6 +170,6 @@ export default function Vc() {
           </div>
         )}
       </div>
-    </main></div>
+    </main>
   );
 }
