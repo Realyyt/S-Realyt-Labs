@@ -6,11 +6,10 @@ import Link from 'next/link';
 export default function Ignite() {
   return (
     
-    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden">
-      
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto mb-16 md:mb-24 text-center">
-        <h1 
+    <main className="min-h-screen">
+    <Navbar />
+    <section className="flex flex-col relative h-[40vh] flex items-center justify-center text-center ">
+       <h1 
           className="text-4xl md:text-7xl font-bold mb-8 md:mb-16 gradient-text text-center"
           style={{ letterSpacing: '0.1em' }}
         >
