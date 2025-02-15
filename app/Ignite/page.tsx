@@ -17,7 +17,7 @@ export default function Ignite() {
           {"NEXT12 IGNITE".split('').map((char, index) => (
             <span 
               key={index}
-              className="font-pixel"
+              className="font-pixel"x
               style={{
                 width: '1em',
                 height: '1em',
@@ -107,13 +107,26 @@ export default function Ignite() {
           {[
             { 
               location: 'Lagos ', 
-              date: 'March 15-27, 2025', 
+              date: 'Q4, 2025', 
               focus: 'AI & DeFi',
               status: 'Coming Soon'
             },
             { 
+              location: 'Phuket ', 
+              date: 'Q3, 2025', 
+              focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
+              status: 'Coming Soon'
+            },
+            { 
               location: 'Dubai', 
-              date: 'June 1-13, 2025', 
+              date: 'Q2, 2025', 
+              focus: 'Web3 & Fintech',
+              status: 'Coming Soon'
+            },
+
+            { 
+              location: 'India', 
+              date: 'Q2, 2025', 
               focus: 'Web3 & Fintech',
               status: 'Coming Soon'
             },
