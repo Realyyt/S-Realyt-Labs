@@ -17,7 +17,7 @@ export default function Ignite() {
           {"NEXT12 IGNITE".split('').map((char, index) => (
             <span 
               key={index}
-              className="font-pixel"x
+              className="font-pixel"
               style={{
                 width: '1em',
                 height: '1em',
