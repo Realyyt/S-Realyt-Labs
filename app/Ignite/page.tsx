@@ -106,27 +106,26 @@ export default function Ignite() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { 
-              location: 'Lagos ', 
-              date: 'Q4, 2025', 
+              location: 'Lagos, Nigeria', 
+              date: 'Q2, 2025', 
               focus: 'AI & DeFi',
               status: 'Coming Soon'
             },
             { 
-              location: 'Phuket ', 
+              location: 'Phuket, Thailand', 
               date: 'Q3, 2025', 
               focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
               status: 'Coming Soon'
             },
             { 
-              location: 'Dubai', 
-              date: 'Q2, 2025', 
+              location: 'Dubai, UAE', 
+              date: 'Q4, 2025', 
               focus: 'Web3 & Fintech',
               status: 'Coming Soon'
             },
-
             { 
-              location: 'India', 
-              date: 'Q2, 2025', 
+              location: 'Gujurat, India', 
+              date: 'Q3, 2025', 
               focus: 'Web3 & Fintech',
               status: 'Coming Soon'
             },
