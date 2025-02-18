@@ -22,8 +22,12 @@ export default function ThailandPage() {
       </section>
 
       {/* Program Schedule */}
-      <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">Program Journey</h2>
+      <section className="max-w-7xl mx-auto mb-20 relative">
+        <div className="absolute -top-20 left-0 w-32 h-32 bg-[url('/thai-motif.png')] bg-contain opacity-20"></div>
+        <h2 className="text-3xl font-bold mb-12 text-center relative">
+          Program Journey
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
             { day: 'Day 1', title: 'Founder Onboarding', desc: 'Mindset Workshop & Cohort Matching' },
@@ -33,8 +37,9 @@ export default function ThailandPage() {
             { day: 'Day 11', title: 'Pitch Perfect', desc: 'Investor Storytelling & Financial Modeling' },
             { day: 'Day 12', title: 'Ignition Day', desc: 'Demo Day & Investor Summit' },
           ].map((item, idx) => (
-            <div key={idx} className="p-6 rounded-lg border" style={{ borderColor: 'var(--accent)' }}>
-              <div className="text-xl mb-2 font-bold" style={{ color: 'var(--accent)' }}>{item.day}</div>
+            <div key={idx} className="p-6 rounded-lg border relative group transition-all hover:-translate-y-1 hover:shadow-xl" 
+                 style={{ borderColor: 'var(--accent)', background: 'linear-gradient(145deg, rgba(113,71,23,0.2) 0%, rgba(15,23,42,0.8) 100%)' }}>
+              <div className="absolute inset-0 [mask-image:url('/thai-pattern-light.svg')] bg-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <h3 className="text-lg font-bold mb-2">{item.title}</h3>
               <p className="text-sm opacity-90">{item.desc}</p>
             </div>
@@ -43,19 +48,25 @@ export default function ThailandPage() {
       </section>
 
       {/* Focus Tracks */}
-      <section className="max-w-7xl mx-auto mb-20">
+      <section className="p-8 rounded-lg relative overflow-hidden group transition-transform hover:scale-[1.02] mb-20"
+       style={{ 
+         background: 'linear-gradient(160deg, var(--background) 0%, #1a0f00 100%)',
+         border: '1px solid var(--accent)',
+         boxShadow: '0 4px 30px rgba(245,158,11,0.1)'
+       }}>
+        <div className="absolute top-2 right-2 w-12 h-12 bg-[url('/gold-flower.png')] bg-contain opacity-20 group-hover:opacity-40 transition-opacity"></div>
         <h2 className="text-3xl font-bold mb-12 text-center">Core Tracks</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { 
               title: 'Peak Productivity', 
               content: 'Time-blocking strategies · Deep work protocols · Energy management systems',
-              partners: ['Chivtr', 'Next12',]
+              partners: ['Chivtr', 'Next12']
             },
             { 
               title: 'Founder Wellness', 
               content: 'Stress resilience training · Sleep optimization · Nutritional programming',
-              partners: ['Chivtr',]
+              partners: ['Chivtr']
             },
             { 
               title: 'Global Scaling', 
@@ -64,7 +75,7 @@ export default function ThailandPage() {
             },
             { 
               title: 'Tech Stack Mastery', 
-              content: 'AI integration · Infrastructure automation · Security hardening . app chains',
+              content: 'AI integration · Infrastructure automation · Security hardening · app chains',
               partners: ['karnot', 'Starknet', 'Sentry']
             }
           ].map((track, idx) => (
@@ -72,7 +83,8 @@ export default function ThailandPage() {
                  style={{ background: 'var(--background)', border: '1px solid var(--accent)' }}>
               <h3 className="text-2xl font-bold mb-4">{track.title}</h3>
               <p className="text-lg mb-4" style={{ color: 'var(--accent)' }}>{track.content}</p>
-              <div className="pt-4 border-t" style={{ borderColor: 'var(--accent)' }}>
+              <div className="pt-4 border-t relative">
+                <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
                 <p className="text-sm font-bold mb-2">Featured Partners:</p>
                 <div className="flex flex-wrap gap-2">
                   {track.partners.map((partner, pIdx) => (
@@ -89,9 +101,12 @@ export default function ThailandPage() {
       </section>
 
       {/* Featured Speakers */}
-      <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">Mentors & Speakers</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="max-w-7xl mx-auto mb-20 relative">
+        <h2 className="text-3xl font-bold mb-12 text-center relative">
+          Featured Mentors
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
             { name: 'Tiago Forte', role: 'Productivity Architect', org: 'Forte Labs', img: '/speakers/tiago.jpg' },
             { name: 'Dr. Andrew Huberman', role: 'Neuroscience Expert', org: 'Stanford University', img: '/speakers/huberman.jpg' },
@@ -99,8 +114,13 @@ export default function ThailandPage() {
             { name: 'Nat Friedman', role: 'AI Strategist', org: 'GitHub CEO Emeritus', img: '/speakers/nat.jpg' },
           ].map((speaker, idx) => (
             <div key={idx} className="text-center">
-              <div className="w-full h-48 bg-gray-800 rounded-lg mb-4 bg-cover bg-center" 
-                   style={{ backgroundImage: `url(${speaker.img})` }}></div>
+              <div className="w-full h-48 bg-gray-800 rounded-lg mb-4 bg-cover bg-center border-2 border-amber-500/30 hover:border-amber-500/60 transition-all"
+                   style={{ 
+                     backgroundImage: `url(${speaker.img})`,
+                     clipPath: 'polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%)'
+                   }}>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
+              </div>
               <h3 className="text-xl font-bold">{speaker.name}</h3>
               <p className="text-sm opacity-90">{speaker.role}</p>
               <p className="text-xs opacity-75">{speaker.org}</p>
@@ -110,24 +130,37 @@ export default function ThailandPage() {
       </section>
 
       {/* Registration CTA */}
-      <section className="max-w-7xl mx-auto mb-20 text-center">
-        <h2 className="text-3xl font-bold mb-8">Secure Your Spot</h2>
-        <div className="max-w-2xl mx-auto p-8 rounded-lg" style={{ background: 'var(--accent)', color: 'var(--foreground)' }}>
-          <p className="text-xl mb-4">Early Founder Cohort: $999</p>
-          <p className="text-sm mb-6">Includes full program access, mentor sessions, and lifetime community membership</p>
-          <button className="px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform"
-                  style={{ background: 'var(--foreground)', color: 'var(--accent)' }}>
-            Apply Now
-          </button>
+      <section className="max-w-2xl mx-auto mb-20 relative">
+        <div className="p-8 rounded-lg relative overflow-hidden" 
+          style={{ 
+            background: 'linear-gradient(135deg, #b45309 0%, #f59e0b 100%)',
+            boxShadow: '0 8px 32px rgba(245,158,11,0.3)'
+          }}>
+          <div className="absolute inset-0 bg-[url('/silk-texture.png')] opacity-20 mix-blend-soft-light"></div>
+          <h2 className="text-3xl font-bold mb-8 text-center">Secure Your Spot</h2>
+          <div className="p-6 rounded-lg" style={{ background: 'var(--accent)', color: 'var(--foreground)' }}>
+            <p className="text-xl mb-4 text-center">Early Founder Cohort: $999</p>
+            <p className="text-sm mb-6 text-center">Includes full program access, mentor sessions, and lifetime community membership</p>
+            <div className="text-center">
+              <button className="px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform"
+                      style={{ background: 'var(--foreground)', color: 'var(--accent)' }}>
+                Apply Now
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Host Section */}
-      <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">Host Partners</h2>
+      {/* Host Partners */}
+      <section className="max-w-7xl mx-auto mb-20 relative">
+        <h2 className="text-3xl font-bold mb-12 text-center relative">
+          Host Partners
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
+        </h2>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center">
           {['AWS', 'HubSpot', 'Notion', 'BangkokBank', 'TrueDigital'].map((logo, idx) => (
-            <div key={idx} className="h-16 bg-gray-800 bg-contain bg-center bg-no-repeat opacity-80 hover:opacity-100 transition-opacity"
+            <div key={idx} 
+                 className="h-16 bg-contain bg-center bg-no-repeat opacity-80 hover:opacity-100 transition-opacity"
                  style={{ backgroundImage: `url(/logos/${logo.toLowerCase()}.svg)` }}></div>
           ))}
         </div>
