@@ -35,7 +35,25 @@ body {
 
 /* Add these styles to force light mode and readable text on mobile */
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 1.5s infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #F59E0B 20%, #FCD34D 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 @keyframes pulseBackground {
   0% { background-position: 0% 50%; }
