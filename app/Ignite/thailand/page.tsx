@@ -14,7 +14,7 @@ export default function ThailandPage() {
             NEXT12 IGNITE THAILAND
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--accent)' }}>
-            12-Day Founder Acceleration Program · December 1-12, 2025
+            12-Day Founder Acceleration Program · August 1-12, 2025
           </p>
         </div>
       </section>
@@ -48,22 +48,22 @@ export default function ThailandPage() {
             { 
               title: 'Peak Productivity', 
               content: 'Time-blocking strategies · Deep work protocols · Energy management systems',
-              partners: ['Todoist', 'Sunsama', 'Centered']
+              partners: ['Chivtr', 'Next12',]
             },
             { 
               title: 'Founder Wellness', 
               content: 'Stress resilience training · Sleep optimization · Nutritional programming',
-              partners: ['Whoop', 'Oura', 'Eight Sleep']
+              partners: ['Chivtr',]
             },
             { 
               title: 'Global Scaling', 
               content: 'Cross-cultural expansion · Compliance architecture · Localization playbooks',
-              partners: ['Deel', 'Remote', 'Pilot']
+              partners: ['Next12', 'Realyt', 's8']
             },
             { 
               title: 'Tech Stack Mastery', 
               content: 'AI integration · Infrastructure automation · Security hardening',
-              partners: ['Vercel', 'Supabase', 'Sentry']
+              partners: ['karnot', 'Starknet', 'Sentry']
             }
           ].map((track, idx) => (
             <div key={idx} className="p-8 rounded-lg relative overflow-hidden group" 
@@ -111,7 +111,7 @@ export default function ThailandPage() {
       <section className="max-w-7xl mx-auto mb-20 text-center">
         <h2 className="text-3xl font-bold mb-8">Secure Your Spot</h2>
         <div className="max-w-2xl mx-auto p-8 rounded-lg" style={{ background: 'var(--accent)', color: 'var(--foreground)' }}>
-          <p className="text-xl mb-4">Early Founder Cohort: $9,999</p>
+          <p className="text-xl mb-4">Early Founder Cohort: $999</p>
           <p className="text-sm mb-6">Includes full program access, mentor sessions, and lifetime community membership</p>
           <button className="px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform"
                   style={{ background: 'var(--foreground)', color: 'var(--accent)' }}>
