@@ -115,7 +115,8 @@ export default function Ignite() {
               location: 'Phuket, Thailand', 
               date: 'Q3, 2025', 
               focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
-              status: 'Coming Soon'
+              status: 'Coming Soon',
+              link: '/ignite/thailand'
             },
             { 
               location: 'Dubai, UAE', 
@@ -130,9 +131,10 @@ export default function Ignite() {
               status: 'Coming Soon'
             },
           ].map((program, idx) => (
-            <div 
+            <Link 
               key={idx}
-              className="p-8 rounded-lg border relative overflow-hidden group"
+              href={program.link || '#'}
+              className={`p-8 rounded-lg border relative overflow-hidden group transition-transform ${program.link ? 'hover:scale-[1.02] cursor-pointer' : 'cursor-default'}`}
               style={{
                 background: 'var(--background)',
                 borderColor: 'var(--accent)'
@@ -154,7 +156,7 @@ export default function Ignite() {
                 </span>
               </div>
               <p className="text-lg mb-4" style={{ color: 'var(--accent)' }}>Focus: {program.focus}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
