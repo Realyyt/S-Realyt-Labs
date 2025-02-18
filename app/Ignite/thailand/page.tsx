@@ -80,22 +80,22 @@ export default function ThailandPage() {
               { 
                 title: 'Peak Productivity', 
                 content: 'Time-blocking strategies · Deep work protocols · Energy management systems',
-                partners: ['Chivtr', 'Next12']
+                partners: ['Chivitr', 'Next12']
               },
               { 
                 title: 'Founder Wellness', 
                 content: 'Stress resilience training · Sleep optimization · Nutritional programming',
-                partners: ['Chivtr']
+                partners: ['Chivitr']
               },
               { 
                 title: 'Global Scaling', 
                 content: 'Cross-cultural expansion · Compliance architecture · Localization playbooks',
-                partners: ['Next12', 'Realyt', 's8']
+                partners: ['Next12', 'Realyt', 's8', "karnot"]
               },
               { 
                 title: 'Tech Stack Mastery', 
                 content: 'AI integration · Infrastructure automation · Security hardening · app chains',
-                partners: ['karnot', 'Starknet', 'Sentry']
+                partners: ['karnot', 'Starknet', ]
               }
             ].map((track, idx) => (
               <div 
