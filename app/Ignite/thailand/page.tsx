@@ -64,7 +64,7 @@ export default function ThailandPage() {
             },
             { 
               title: 'Tech Stack Mastery', 
-              content: 'AI integration · Infrastructure automation · Security hardening',
+              content: 'AI integration · Infrastructure automation · Security hardening . app chains',
               partners: ['karnot', 'Starknet', 'Sentry']
             }
           ].map((track, idx) => (
