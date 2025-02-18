@@ -65,16 +65,16 @@ export default function ThailandPage() {
           </div>
         </section>
 
-        {/* Focus Tracks */}
-        <section className="p-8 rounded-lg relative overflow-hidden group transition-transform hover:scale-[1.02] mb-20 mx-4"
+            {/* Focus Tracks */}
+            <section className="p-8 rounded-lg relative overflow-hidden group transition-transform hover:scale-[1.02] mb-20 mx-4"
           style={{ 
-            background: 'linear-gradient(160deg, var(--background) 0%, #1a0f00 100%)',
-            border: '1px solid var(--accent)',
-            boxShadow: '0 4px 30px rgba(245,158,11,0.1)'
+            background: 'linear-gradient(160deg, rgb(15 23 42) 0%, rgb(30 27 24) 100%)',
+            border: '1px solid rgba(245,158,11,0.3)',
+            boxShadow: '0 4px 30px rgba(245,158,11,0.05)'
           }}
         >
-          <div className="absolute top-2 right-2 w-12 h-12 bg-[url('/gold-flower.png')] bg-contain opacity-20 group-hover:opacity-40 transition-opacity"></div>
-          <h2 className="text-3xl font-bold mb-12 text-center">Core Tracks</h2>
+          <div className="absolute top-2 right-2 w-12 h-12 bg-[url('/gold-flower.png')] bg-contain opacity-10 group-hover:opacity-20 transition-opacity"></div>
+          <h2 className="text-3xl font-bold mb-12 text-center text-amber-100">Core Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { 
@@ -100,25 +100,25 @@ export default function ThailandPage() {
             ].map((track, idx) => (
               <div 
                 key={idx}
-                className="p-8 rounded-lg relative overflow-hidden group" 
+                className="p-8 rounded-lg relative overflow-hidden group transition-all hover:scale-[1.02] hover:shadow-lg" 
                 style={{ 
-                  background: 'var(--background)', 
-                  border: '1px solid var(--accent)' 
+                  background: 'rgb(30 41 59)',
+                  border: '1px solid rgba(245,158,11,0.2)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
                 }}
               >
-                <h3 className="text-2xl font-bold mb-4">{track.title}</h3>
-                <p className="text-lg mb-4" style={{ color: 'var(--accent)' }}>{track.content}</p>
-                <div className="pt-4 border-t relative">
-                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
-                  <p className="text-sm font-bold mb-2">Featured Partners:</p>
+                <h3 className="text-2xl font-bold mb-4 text-amber-50">{track.title}</h3>
+                <p className="text-lg mb-4 text-amber-200">{track.content}</p>
+                <div className="pt-4 border-t relative border-amber-800/50">
+                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
+                  <p className="text-sm font-bold mb-2 text-amber-100">Featured Partners:</p>
                   <div className="flex flex-wrap gap-2">
                     {track.partners.map((partner, pIdx) => (
                       <span 
                         key={pIdx}
-                        className="px-3 py-1 text-sm rounded-full" 
+                        className="px-3 py-1 text-sm rounded-full bg-amber-900/30 backdrop-blur-sm hover:bg-amber-900/50 transition-colors" 
                         style={{ 
-                          background: 'var(--accent)', 
-                          color: 'var(--foreground)' 
+                          color: 'var(--accent)'
                         }}
                       >
                         {partner}
