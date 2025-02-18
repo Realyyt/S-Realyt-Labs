@@ -7,8 +7,10 @@ export default function ThailandPage() {
   return (
     <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative mb-16 md:mb-24 text-center">
-        <div className="absolute inset-0 bg-[url('/phuket-bg.jpg')] bg-cover bg-center opacity-50"></div>
+      <section className="min-h-screen flex items-center justify-center relative mb-16 md:mb-24 text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/thailand.jpg')] bg-cover bg-center opacity-90">
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
         <div className="relative max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-7xl font-bold mb-8 gradient-text">
             NEXT12 IGNITE THAILAND
