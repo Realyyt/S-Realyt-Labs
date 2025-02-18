@@ -132,7 +132,7 @@ export default function ThailandPage() {
         </section>
 
         {/* Featured Speakers */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4">
+        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
           <h2 className="text-3xl font-bold mb-12 text-center relative">
             Featured Mentors
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
@@ -218,7 +218,7 @@ export default function ThailandPage() {
         </section>
 
         {/* Host Partners Section */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4">
+        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
           <div className="relative group">
             <div className="absolute inset-0 bg-[url('/thai-motif-pattern.svg')] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             <h2 className="text-3xl font-bold mb-12 text-center relative">
@@ -246,8 +246,8 @@ export default function ThailandPage() {
       </div>
 
       {/* Floating Thai Ornaments */}
-      <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/thai-ornament.png')] bg-contain opacity-20 animate-float"></div>
-      <div className="fixed bottom-1/4 left-4 w-16 h-16 bg-[url('/thai-ornament.png')] bg-contain opacity-20 animate-float-delayed"></div>
+      <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/m1.png')] bg-contain  animate-float"></div>
+      <div className="fixed bottom-1/4 left-4 w-16 h-16 bg-[url('/m1.png')] bg-contain  animate-float-delayed"></div>
 
       {/* Traditional Border Pattern */}
       <div className="fixed inset-0 pointer-events-none border-[16px] border-transparent [border-image:url('/thai-border-pattern.png')_30_repeat] opacity-15"></div>
