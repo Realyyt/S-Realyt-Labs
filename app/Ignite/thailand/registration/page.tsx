@@ -90,6 +90,28 @@ export default function RegistrationPage() {
                     className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
                   />
                 </div>
+
+              {/* New Company Description Field */}
+              <div>
+                <label className="block text-sm font-bold mb-2">Tell us about your company *</label>
+                <textarea
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
+                  required
+                />
+              </div>
+
+              {/* New Document Upload Field */}
+              <div>
+                <label className="block text-sm font-bold mb-2">Company Deck (PDF/DOC) *</label>
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="w-full px-4 py-2 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer"
+                  required
+                />
+              </div>
+
               </div>
 
               <div className="pt-6">
