@@ -203,15 +203,18 @@ export default function ThailandPage() {
               <p className="text-xl mb-4 text-center">Early Founder Cohort: $999</p>
               <p className="text-sm mb-6 text-center">Includes full program access, mentor sessions, and dedicated wellness programs</p>
               <div className="text-center">
-                <button 
-                  className="px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform"
+              <Link
+                  href="/ignite/thailand/registration"
+                  className="inline-block px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform transform-gpu"
                   style={{ 
                     background: 'var(--foreground)', 
-                    color: 'var(--accent)' 
+                    color: 'var(--accent)',
+                    position: 'relative',
+                    zIndex: 10
                   }}
                 >
                   Apply Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
