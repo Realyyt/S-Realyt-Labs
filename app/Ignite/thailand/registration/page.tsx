@@ -45,7 +45,7 @@ export default function RegistrationPage() {
                   'Networking events',
                   'Wellness activities',
                   'Investor pitch workshops',
-                  'Lifetime community access'
+                  'community access'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
