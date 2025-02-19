@@ -83,7 +83,7 @@ export default function ApplicationForm() {
             />
             </div>
         </div>
-        <p className="text-xs mt-2 opacity-75">We'll contact you via WhatsApp</p>
+        <p className="text-xs mt-2 opacity-75">We&apos;ll contact you via WhatsApp</p>
         </div>
         <div className="md:col-span-2">
           <label className="block text-sm font-bold mb-2">Founding / Executive Team Applying</label>
