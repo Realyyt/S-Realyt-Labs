@@ -1,10 +1,10 @@
-import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import ApplicationForm from '@/app/ignite/thailand/components/ApplicationForm';
 
 export const metadata: Metadata = {
-  title: 'Ignite Thailand 2024 Registration',
-  description: 'Secure your spot in the Thailand founder retreat',
+  title: 'Ignite Thailand 2024 Application',
+  description: 'Apply for the Thailand Founder Retreat Program',
 };
 
 export default function RegistrationPage() {
@@ -19,7 +19,7 @@ export default function RegistrationPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
-            Back to Program Details
+            Back to Program Overview
           </Link>
         </div>
 
@@ -33,19 +33,18 @@ export default function RegistrationPage() {
           <div className="absolute inset-0 bg-[url('/silk-texture.png')] opacity-20 mix-blend-soft-light"></div>
           
           <div className="relative space-y-8">
-            <h1 className="text-4xl font-bold text-center">Program Registration</h1>
+            <h1 className="text-4xl font-bold text-center">Founder Application</h1>
             
-            {/* Program Details */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold">Included in Your Experience:</h2>
+              <h2 className="text-2xl font-bold">Program Inclusions:</h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  '7-day luxury accommodation',
-                  'Daily mentorship sessions',
-                  'Networking events',
-                  'Wellness activities',
-                  'Investor pitch workshops',
-                  'community access'
+                  'Strategic mentorship sessions',
+                  'Investor networking opportunities',
+                  'Growth hacking workshops',
+                  'Leadership development programs',
+                  'Cross-industry collaboration',
+                  'Lifetime ecosystem access'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
@@ -57,79 +56,7 @@ export default function RegistrationPage() {
               </ul>
             </div>
 
-            {/* Registration Form */}
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold mb-2">Full Name *</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Email *</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Company Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
-                  />
-                </div>
-
-              {/* New Company Description Field */}
-              <div>
-                <label className="block text-sm font-bold mb-2">Tell us about your company *</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-lg bg-amber-900/20 border border-amber-800/50 focus:ring-2 focus:ring-amber-300"
-                  required
-                />
-              </div>
-
-              {/* New Document Upload Field */}
-              <div>
-                <label className="block text-sm font-bold mb-2">Company Deck (PDF/DOC) *</label>
-                <input
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  className="w-full px-4 py-2 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer"
-                  required
-                />
-              </div>
-
-              </div>
-
-              <div className="pt-6">
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-full font-bold hover:scale-105 transition-transform"
-                  style={{
-                    background: 'var(--foreground)',
-                    color: 'var(--accent)'
-                  }}
-                >
-                  Complete Registration
-                </button>
-                <p className="text-xs text-center mt-4 opacity-75">
-                  Secure checkout · 256-bit SSL encryption
-                </p>
-              </div>
-            </form>
+            <ApplicationForm />
           </div>
         </div>
       </section>
