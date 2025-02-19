@@ -140,7 +140,7 @@ export default function ThailandPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { 
-                name: 'Tiago Forte', 
+                name: 'Tiago Fote', 
                 role: 'Productivity Architect', 
                 org: 'Forte Labs', 
                 img: '/speakers/tiago.jpg' 
