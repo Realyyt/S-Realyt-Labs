@@ -4,9 +4,8 @@ import { useState } from 'react';
 import { countries } from '../utils/countries';
 
 export default function CountrySelect({ name }: { name: string }) {
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [selectedCountry, setSelectedCountry] = useState<typeof countries[number]>(countries[0]);
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className="relative">
       <button
