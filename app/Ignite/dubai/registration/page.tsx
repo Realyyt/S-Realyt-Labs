@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import ApplicationForm from '@/app/ignite/thailand/components/ApplicationForm';
+import ApplicationForm from '@/app/ignite/dubai/components/ApplicationForm';
 
 export const metadata: Metadata = {
   title: 'Ignite Dubai 2025 Application',
