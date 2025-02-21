@@ -7,6 +7,11 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./app/*"] // Should match directory casing
+    }
+  },
   theme: {
     extend: {
       colors: {
