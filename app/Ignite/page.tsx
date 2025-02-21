@@ -106,12 +106,6 @@ export default function Ignite() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { 
-              location: 'Lagos, Nigeria', 
-              date: 'Q2, 2025', 
-              focus: 'AI & DeFi',
-              status: 'Coming Soon'
-            },
-            { 
               location: 'Phuket, Thailand', 
               date: 'Q3, 2025', 
               focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
@@ -122,14 +116,24 @@ export default function Ignite() {
               location: 'Dubai, UAE', 
               date: 'Q4, 2025', 
               focus: 'Web3 & Fintech',
-              status: 'Coming Soon'
+              status: 'Coming Soon',
+              link: '/ignite/dubai'
             },
             { 
               location: 'Gujurat, India', 
               date: 'Q3, 2025', 
               focus: 'Web3 & Fintech',
-              status: 'Coming Soon'
+              status: 'Coming Soon',
+              link: '/ignite/india'
             },
+            { 
+              location: 'Lagos, Nigeria', 
+              date: 'Q4, 2025', 
+              focus: 'AI & DeFi',
+              status: 'Coming Soon',
+              link: '/ignite/lagos'
+            },
+
           ].map((program, idx) => (
             <Link 
               key={idx}
