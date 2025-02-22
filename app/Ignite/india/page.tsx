@@ -13,6 +13,17 @@ export default function IndiaPage() {
 
   return (
     <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden" style={indiaTheme}>
+                  <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+            >
+              <source src="/hey.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
       {/* Mandala Pattern */}
       <div className="fixed inset-0 z-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/mandala-pattern.svg')] bg-repeat opacity-20 mix-blend-soft-light"></div>
@@ -26,7 +37,7 @@ export default function IndiaPage() {
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center relative mb-16 md:mb-24 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/india-tech.jpg')] bg-cover bg-center opacity-90">
+          <div className="absolute inset-0 bg-[url('/taj2.jpg')] bg-contain bg-no-repeat bg-top opacity-90">
             <div className="absolute inset-0 bg-black/50"></div>
           </div>
           <div className="relative max-w-7xl mx-auto px-4">
