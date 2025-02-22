@@ -10,10 +10,9 @@ export default function DubaiPage() {
     '--secondary': '#EDC9AF',
     '--background': 'linear-gradient(to bottom right, #0D0D0D 0%, #1A1A1A 100%)'
   } as React.CSSProperties;
-  
 
   return (
-    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden"  style={{ 
+    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden text-stone-200"  style={{ 
       background: 'linear-gradient(160deg, #0D0D0D 0%, #2D2419 100%)',
       border: '1px solid var(--accent)'
     }}>
@@ -24,7 +23,6 @@ export default function DubaiPage() {
       </div>
       <div className="absolute top-0 left-0 w-32 h-32 bg-[url('/p.jpg')] bg-contain animate-float-thai-1"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 bg-[url('/p.jpg')] bg-contain rotate-90 animate-float-thai-2"></div>
-
 
       <div className="relative z-10">
         {/* Hero Section */}
@@ -43,7 +41,7 @@ export default function DubaiPage() {
         </section>
 
         {/* Program Schedule */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4" style={{ color: 'var(--secondary)' }}>
+        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
           <h2 className="text-3xl font-bold mb-12 text-center relative">
             Program Journey
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1" style={{ backgroundColor: 'var(--accent)' }}></div>
@@ -59,7 +57,7 @@ export default function DubaiPage() {
             ].map((item, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-lg border relative group transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="p-6 rounded-lg border relative group transition-all hover:-translate-y-1 hover:shadow-xl text-stone-200"
                 style={{ 
                   borderColor: 'var(--accent)', 
                   background: 'linear-gradient(145deg, rgba(197,179,88,0.2) 0%, rgba(26,26,26,0.8) 100%)' 
@@ -73,13 +71,13 @@ export default function DubaiPage() {
         </section>
 
         {/* Focus Tracks */}
-        <section className="p-8 rounded-lg relative overflow-hidden group mb-20 mx-4"
+        <section className="p-8 rounded-lg relative overflow-hidden group mb-20 mx-4 text-stone-200"
           style={{ 
             background: 'linear-gradient(160deg, #1A1A1A 0%, #2D2419 100%)',
             border: '1px solid var(--accent)'
           }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: 'var(--accent)' }}>Core Tracks</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Core Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { 
@@ -105,24 +103,23 @@ export default function DubaiPage() {
             ].map((track, idx) => (
               <div 
                 key={idx}
-                className="p-8 rounded-lg relative overflow-hidden group" 
+                className="p-8 rounded-lg relative overflow-hidden group text-stone-200" 
                 style={{ 
                   background: 'rgba(26,26,26,0.9)',
                   border: '1px solid rgba(197,179,88,0.2)'
                 }}
               >
-                <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--accent)' }}>{track.title}</h3>
-                <p className="text-lg mb-4" style={{ color: 'var(--secondary)' }}>{track.content}</p>
+                <h3 className="text-2xl font-bold mb-4">{track.title}</h3>
+                <p className="text-lg mb-4">{track.content}</p>
                 <div className="pt-4 border-t relative" style={{ borderColor: 'var(--accent)' }}>
                   <p className="text-sm font-bold mb-2">Featured Partners:</p>
                   <div className="flex flex-wrap gap-2">
                     {track.partners.map((partner, pIdx) => (
                       <span 
                         key={pIdx}
-                        className="px-3 py-1 text-sm rounded-full"
+                        className="px-3 py-1 text-sm rounded-full text-stone-200"
                         style={{ 
-                          backgroundColor: 'rgba(197,179,88,0.2)',
-                          color: 'var(--accent)'
+                          backgroundColor: 'rgba(197,179,88,0.2)'
                         }}
                       >
                         {partner}
@@ -135,44 +132,43 @@ export default function DubaiPage() {
           </div>
         </section>
 
-{/* Registration CTA - Dubai */}
-<section className="max-w-2xl mx-auto mb-20 relative px-4">
-  <div 
-    className="p-8 rounded-lg relative overflow-hidden"
-    style={{ 
-      background: 'linear-gradient(135deg, #C5B358 0%, #9E7C3D 100%)',
-      boxShadow: '0 8px 32px rgba(197,179,88,0.3)'
-    }}
-  >
-    <div className="absolute inset-0 bg-[url('/gold-texture.png')] opacity-20 mix-blend-soft-light"></div>
-    <h2 className="text-3xl font-bold mb-8 text-center">Secure Your Emirates Spot</h2>
-    <div 
-      className="p-6 rounded-lg"
-      style={{ 
-        background: 'rgba(26,26,26,0.9)', 
-        color: 'var(--secondary)' 
-      }}
-    >
-      <p className="text-xl mb-4 text-center">Founder Cohort: AED 3,999</p>
-      <p className="text-sm mb-6 text-center">Includes free zone consultation and sovereign fund access</p>
-      <div className="text-center">
-        <Link
-          href="/ignite/dubai/registration"
-          className="inline-block px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform"
-          style={{ 
-            background: 'var(--accent)', 
-            color: '#1A1A1A',
-          }}
-        >
-          Apply for Dubai Program
-        </Link>
+        {/* Registration CTA - Dubai */}
+        <section className="max-w-2xl mx-auto mb-20 relative px-4">
+          <div 
+            className="p-8 rounded-lg relative overflow-hidden"
+            style={{ 
+              background: 'linear-gradient(135deg, #C5B358 0%, #9E7C3D 100%)',
+              boxShadow: '0 8px 32px rgba(197,179,88,0.3)'
+            }}
+          >
+            <div className="absolute inset-0 bg-[url('/gold-texture.png')] opacity-20 mix-blend-soft-light"></div>
+            <h2 className="text-3xl font-bold mb-8 text-center text-stone-200">Secure Your Emirates Spot</h2>
+            <div 
+              className="p-6 rounded-lg text-stone-200"
+              style={{ 
+                background: 'rgba(26,26,26,0.9)'
+              }}
+            >
+              <p className="text-xl mb-4 text-center">Founder Cohort: AED 3,999</p>
+              <p className="text-sm mb-6 text-center opacity-90">Includes free zone consultation and sovereign fund access</p>
+              <div className="text-center">
+                <Link
+                  href="/ignite/dubai/registration"
+                  className="inline-block px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform text-stone-200"
+                  style={{ 
+                    background: 'var(--accent)'
+                  }}
+                >
+                  Apply for Dubai Program
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </div>
-</section>
-      </div>
-        {/* Floating Thai Ornaments */}
-        <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/p2.png')] bg-contain  animate-float"></div>
+
+      {/* Floating Thai Ornaments */}
+      <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/p2.png')] bg-contain  animate-float"></div>
       <div className="fixed bottom-1/4 left-4 w-16 h-16 bg-[url('/p2.png')] bg-contain  animate-float-delayed"></div>
 
       {/* Traditional Border Pattern */}
