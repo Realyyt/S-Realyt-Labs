@@ -8,25 +8,28 @@ export default function DubaiPage() {
   const dubaiTheme = {
     '--accent': '#C5B358',
     '--secondary': '#EDC9AF',
-    '--background': '#1A1A1A'
+    '--background': 'linear-gradient(to bottom right, #0D0D0D 0%, #1A1A1A 100%)'
   } as React.CSSProperties;
+  
 
   return (
-    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden" style={dubaiTheme}>
+    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden"  style={{ 
+      background: 'linear-gradient(160deg, #0D0D0D 0%, #2D2419 100%)',
+      border: '1px solid var(--accent)'
+    }}>
       {/* Arabian Pattern Background */}
       <div className="fixed inset-0 z-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/arabic-pattern.svg')] bg-repeat opacity-20 mix-blend-soft-light"></div>
+        <div className="absolute inset-0 bg-[url('/p1.jpg')] bg-repeat opacity-20 mix-blend-soft-light"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#C5B358]/20 via-transparent to-[#1A1A1A]/80"></div>
       </div>
+      <div className="absolute top-0 left-0 w-32 h-32 bg-[url('/p.jpg')] bg-contain animate-float-thai-1"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-[url('/p.jpg')] bg-contain rotate-90 animate-float-thai-2"></div>
 
-      {/* Geometric Islamic Patterns */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-[url('/islamic-geometric.png')] bg-contain opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-[url('/islamic-geometric.png')] bg-contain opacity-20 rotate-90"></div>
 
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center relative mb-16 md:mb-24 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/dubai-skyline.jpg')] bg-cover bg-center opacity-90">
+          <div className="absolute inset-0 bg-[url('/dubai.jpg')] bg-cover bg-center opacity-90">
             <div className="absolute inset-0 bg-black/50"></div>
           </div>
           <div className="relative max-w-7xl mx-auto px-4">
@@ -168,6 +171,12 @@ export default function DubaiPage() {
   </div>
 </section>
       </div>
+        {/* Floating Thai Ornaments */}
+        <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/p2.png')] bg-contain  animate-float"></div>
+      <div className="fixed bottom-1/4 left-4 w-16 h-16 bg-[url('/p2.png')] bg-contain  animate-float-delayed"></div>
+
+      {/* Traditional Border Pattern */}
+      <div className="fixed inset-0 pointer-events-none border-[16px] border-transparent [border-image:url('/thai-border-pattern.png')_30_repeat] opacity-15"></div>
     </main>
   );
 }
