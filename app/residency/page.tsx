@@ -26,13 +26,13 @@ export default function Residency() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link 
               href="#apply"
-              className="px-6 md:px-8 py-3 md:py-4 bg-[#EF400A] text-white rounded-full text-base md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
+              className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
             </Link>
             <Link
               href="#program"
-              className="px-6 md:px-8 py-3 md:py-4 border-2 border-[#EF400A] text-[#EF400A] rounded-full text-base md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
+              className="px-4 py-2 md:px-8 md:py-4 border border-[#EF400A] text-[#EF400A] rounded-full text-sm md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
             >
               Learn More
             </Link>
@@ -164,7 +164,7 @@ export default function Residency() {
             <div className="mt-12 text-center">
               <Link
                 href="/apply"
-                className="inline-block px-12 py-6 bg-[#EF400A] text-white rounded-full text-xl font-semibold hover:bg-[#ff5a2b] transition-colors"
+                className="inline-block px-6 py-3 md:px-12 md:py-6 bg-[#EF400A] text-white rounded-full text-base md:text-xl font-semibold hover:bg-[#ff5a2b] transition-colors"
               >
                 Start Your Application
               </Link>
@@ -176,20 +176,20 @@ export default function Residency() {
       {/* Footer CTA */}
       <section className="py-20 bg-[#0a0a2f]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Future?</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join the next generation of technology leaders and build something extraordinary
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Future?</h2>
+          <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-12 max-w-2xl mx-auto">
+            Join the next generation of technology leaders
           </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link
               href="/apply"
-              className="px-8 py-4 bg-[#EF400A] text-white rounded-full text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
+              className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 border-2 border-[#EF400A] text-[#EF400A] rounded-full text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
+              className="px-4 py-2 md:px-8 md:py-4 border border-[#EF400A] text-[#EF400A] rounded-full text-sm md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
             >
               Contact Us
             </Link>
