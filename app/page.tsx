@@ -1,23 +1,21 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function TechnoPage() {
   return (
     <main className="min-h-screen bg-[#040423] overflow-hidden relative">
-      {/* Image background */}
+      {/* Video background */}
       <div className="fixed inset-0 z-0 h-[100dvh]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#040423] via-transparent to-[#040423] z-10" />
-        <Image 
-          src="/next12.png"
-          alt="background"
-          fill
-          className="object-cover opacity-20"
-          style={{ 
-            mixBlendMode: 'normal',
-            transition: 'opacity 0.3s ease',
-          }}
-          priority
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        >
+          <source src="/h.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Content */}
