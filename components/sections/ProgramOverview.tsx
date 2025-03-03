@@ -1,4 +1,9 @@
-export default function ProgramOverview() {
+interface ProgramOverviewProps {
+  accentColor?: string;
+  secondaryColor?: string;
+}
+
+export default function ProgramOverview({ accentColor, secondaryColor }: ProgramOverviewProps) {
   return (
     <section id="program" className="py-8 sm:py-20 relative overflow-hidden bg-white">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">

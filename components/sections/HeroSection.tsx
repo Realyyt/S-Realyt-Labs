@@ -3,7 +3,12 @@ import { useState } from 'react';
 import ZohoFormModal from '../ZohoFormModal';
 import Button from '../Button';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  brandColor?: string;
+  backgroundColor?: string;
+}
+
+export default function HeroSection({ brandColor, backgroundColor }: HeroSectionProps) {
   const [showForm, setShowForm] = useState(false);
 
   const handleFormOpen = () => setShowForm(true);

@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ApplicationForm from '../components/ApplicationForm';
+import Navbar from '../../../../components/navbar';
+import HeroSection from '../../../../components/sections/HeroSection';
+import ProgramOverview from '../../../../components/sections/ProgramOverview';
 
 export const metadata: Metadata = {
   title: 'Ignite Gujarat 2025 Application',
@@ -9,7 +12,18 @@ export const metadata: Metadata = {
 
 export default function RegistrationPage() {
   return (
-    <main className="min-h-screen bg-[#FF9933] text-[#000080]">
+    <main className="min-h-screen bg-[#040423] text-white">
+      <Navbar />
+      <HeroSection 
+        brandColor="#EF400A"
+        backgroundColor="#040423"
+      />
+      <div id="program">
+        <ProgramOverview 
+          accentColor="#EF400A"
+          secondaryColor="#898989"
+        />
+      </div>
       <section className="max-w-4xl mx-auto py-20 px-4">
         <div className="mb-8">
           <Link 
