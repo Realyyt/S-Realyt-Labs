@@ -67,14 +67,14 @@ export default function Vc() {
   };
 
   const QualificationForm = () => (
-    <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-6 space-y-4">
+    <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-4 md:p-6 space-y-4">
       <div className="space-y-1">
-        <h2 className="text-2xl font-medium text-white">Contact Our Investment Team</h2>
+        <h2 className="text-xl md:text-2xl font-medium text-white">Contact Our Investment Team</h2>
         <p className="text-sm text-gray-300">Complete your application</p>
       </div>
       <form className="space-y-4" action="mailto:labs@next12.org" method="post" encType="text/plain">
         <input type="hidden" name="subject" value="Application to Next12 as an Investor" />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
             name="fullName"
@@ -106,12 +106,12 @@ export default function Vc() {
   );
 
   return (
-    <main className="h-screen bg-[#040423] text-white flex flex-col">
+    <main className="min-h-screen bg-[#040423] text-white flex flex-col">
       <Navbar />
       
-      <div className="flex-1 flex">
+      <div className="flex-1 flex flex-col md:flex-row">
         {/* Left Panel - Hero */}
-        <div className="w-1/2 p-8 flex flex-col justify-center relative">
+        <div className="w-full md:w-1/2 p-4 md:p-8 flex flex-col justify-center relative">
           <div className="absolute inset-0">
             <Image
               src="/vc-bg.jpg"
@@ -122,11 +122,11 @@ export default function Vc() {
             />
           </div>
           <div className="relative z-10">
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-[#EF400A]">Next12</span> Investor Network
             </h1>
-            <p className="text-xl text-gray-300 mb-6">Join our exclusive network of high-impact investors</p>
-            <div className="grid grid-cols-2 gap-4">
+            <p className="text-lg md:text-xl text-gray-300 mb-6">Join our exclusive network of high-impact investors</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { label: 'Investment Range', value: '$10K - $500K' },
                 { label: 'Portfolio Companies', value: '20+' },
@@ -143,15 +143,15 @@ export default function Vc() {
         </div>
 
         {/* Right Panel - Questionnaire/Form */}
-        <div className="w-1/2 p-8 bg-[#0a0a2f]/50 flex items-center">
+        <div className="w-full md:w-1/2 p-4 md:p-8 bg-[#0a0a2f]/50 flex items-center">
           <div className="w-full max-w-lg mx-auto">
             {!questionnaireComplete ? (
-              <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-6 space-y-6">
+              <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-4 md:p-6 space-y-6">
                 <div className="space-y-2">
                   <span className="text-sm font-semibold text-[#EF400A]">
                     Question {currentQuestion + 1} of {questions.length}
                   </span>
-                  <h3 className="text-2xl font-medium text-white">
+                  <h3 className="text-xl md:text-2xl font-medium text-white">
                     {questions[currentQuestion].text}
                   </h3>
                 </div>
@@ -189,8 +189,8 @@ export default function Vc() {
             ) : questionnaireComplete && totalScore >= 7 ? (
               <QualificationForm />
             ) : (
-              <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-6 space-y-4 text-center">
-                <h2 className="text-2xl font-medium text-white">
+              <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-4 md:p-6 space-y-4 text-center">
+                <h2 className="text-xl md:text-2xl font-medium text-white">
                   Thank You for Your Interest
                 </h2>
                 <p className="text-gray-300">

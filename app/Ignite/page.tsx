@@ -8,27 +8,27 @@ export default function Ignite() {
     <main className="min-h-screen bg-[#040423] text-white">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - improved mobile spacing */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#040423] via-transparent to-[#040423] z-10" />
         <div className="absolute inset-0 bg-[url('/ignite-bg.jpg')] bg-cover bg-center opacity-20" />
-        <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
+        <div className="container mx-auto relative z-20 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6">
             <span className="text-[#EF400A]">NEXT12</span> IGNITE
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
             12-Day Founder Acceleration Program · Leave Ignited
           </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link 
               href="#apply"
-              className="px-8 py-4 bg-[#EF400A] text-white rounded-full text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
+              className="px-6 md:px-8 py-3 md:py-4 bg-[#EF400A] text-white rounded-full text-base md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
             </Link>
             <Link
               href="#program"
-              className="px-8 py-4 border-2 border-[#EF400A] text-[#EF400A] rounded-full text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
+              className="px-6 md:px-8 py-3 md:py-4 border-2 border-[#EF400A] text-[#EF400A] rounded-full text-base md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
             >
               Learn More
             </Link>
@@ -36,11 +36,11 @@ export default function Ignite() {
         </div>
       </section>
 
-      {/* Program Process */}
-      <section id="program" className="py-20">
+      {/* Program Process - improved grid layout */}
+      <section id="program" className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">The Ignition Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">The Ignition Process</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {[
               { title: 'Validation Sprint', desc: 'Stress-test your core hypothesis with real market data' },
               { title: 'Unit Economics Mastery', desc: 'Lock down sustainable business fundamentals' },

@@ -23,18 +23,17 @@ export default function TechnoPage() {
       {/* Content */}
       <div className="relative z-10 h-full">
         {/* Auto-sliding panel */}
-        <div 
-          className="fixed left-0 top-1/2 -translate-y-1/2 bg-[#0a0a2f] p-3 md:p-4 rounded-r-lg shadow-lg z-20 
-                   transition-all duration-500 translate-x-0 w-3/4 md:w-auto hidden md:block
-                   border border-[#EF400A]/20">
-          <div className="text-lg font-bold text-white">
+        <div className="fixed left-0 top-8 md:top-1/2 md:-translate-y-1/2 bg-[#0a0a2f] p-3 md:p-4 
+                     rounded-r-lg shadow-lg z-20 transition-all duration-500 translate-x-0 
+                     w-[90%] md:w-auto border border-[#EF400A]/20">
+          <div className="text-base md:text-lg font-bold text-white">
             The New Way to Change the World
           </div>
         </div>
 
         {/* Bottom-aligned card container */}
-        <div className="fixed bottom-0 left-0 right-0 pb-6 md:pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 md:px-8 pt-4">
+        <div className="fixed bottom-0 left-0 right-0 pb-4 md:pb-16 px-3 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
             {/* Residency Card */}
             <Link 
               href="/residency"
@@ -45,7 +44,7 @@ export default function TechnoPage() {
                 transformStyle: 'preserve-3d',
               }}
             >
-              <div className="space-y-1 md:space-y-4 h-full flex flex-col relative z-10">
+              <div className="space-y-2 md:space-y-4 h-full flex flex-col relative z-10">
                 <h2 className="text-xl md:text-2xl font-bold">Residency</h2>
                 <p className="text-white/90 text-sm md:text-base flex-1">
                   12 Weeks · Scale Global as a Founder | Hacker | Capitalist | Creator
@@ -63,7 +62,7 @@ export default function TechnoPage() {
                 transformStyle: 'preserve-3d',
               }}
             >
-              <div className="space-y-1 md:space-y-4 h-full flex flex-col pb-3 relative z-10">
+              <div className="space-y-2 md:space-y-4 h-full flex flex-col pb-3 relative z-10">
                 <h2 className="text-lg md:text-2xl font-bold text-[#EF400A]">Ignite</h2>
                 <p className="text-white/90 text-xs md:text-base flex-1">
                   12 days Founder Program · Leave Ignited
@@ -81,7 +80,7 @@ export default function TechnoPage() {
                 transformStyle: 'preserve-3d',
               }}
             >
-              <div className="space-y-1 md:space-y-4 h-full flex flex-col pb-3 relative z-10">
+              <div className="space-y-2 md:space-y-4 h-full flex flex-col pb-3 relative z-10">
                 <h2 className="text-lg md:text-2xl font-bold">VC Network</h2>
                 <p className="text-white/90 text-xs md:text-base flex-1">
                   Exclusively Invest in High Impact Projects
