@@ -131,18 +131,18 @@ export default function Ignite() {
               <Link 
                 key={idx}
                 href={program.link}
-                className="p-8 rounded-xl border border-[#EF400A] bg-[#0a0a2f] hover:scale-[1.02] transition-transform"
+                className="p-6 md:p-8 rounded-xl border border-[#EF400A] bg-[#0a0a2f] hover:scale-[1.02] transition-transform"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold">{program.location}</h3>
-                    <p className="text-gray-300">{program.date}</p>
+                    <h3 className="text-xl md:text-2xl font-bold">{program.location}</h3>
+                    <p className="text-gray-300 text-sm md:text-base">{program.date}</p>
                   </div>
-                  <span className="px-4 py-1 rounded-full text-sm bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white">
+                  <span className="px-2 py-0.5 md:px-4 md:py-1 rounded-full text-xs md:text-sm bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white whitespace-nowrap">
                     {program.status}
                   </span>
                 </div>
-                <p className="text-[#EF400A]">Focus: {program.focus}</p>
+                <p className="text-[#EF400A] text-sm md:text-base">Focus: {program.focus}</p>
               </Link>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function Ignite() {
               />
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+                className="w-full py-2 md:py-4 bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white rounded-full text-sm md:text-lg font-semibold hover:opacity-90 transition-opacity"
               >
                 Submit Application
               </button>
@@ -226,12 +226,7 @@ export default function Ignite() {
             >
               Apply Now
             </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-2 md:px-8 md:py-4 border border-[#EF400A] text-[#EF400A] rounded-full text-sm md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
-            >
-              Contact Us
-            </Link>
+            
           </div>
         </div>
       </section>
