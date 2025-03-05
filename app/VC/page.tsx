@@ -14,6 +14,7 @@ export default function Vc() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [totalScore, setTotalScore] = useState(0);
   const [questionnaireComplete, setQuestionnaireComplete] = useState(false);
+  const [selectedValues, setSelectedValues] = useState<{ [key: number]: string }>({});
 
   const questions: Question[] = [
     { text: "Do you have accreditation as an investor?", weight: 2 },
@@ -42,7 +43,7 @@ export default function Vc() {
     { text: "What is your typical check size for first-time investments?", weight: 1.9, type: 'dropdown', options: [
       { label: "$10k-$50k", valueMultiplier: 0.8 },
       { label: "$50k-$100k", valueMultiplier: 1.0 },
-      { label: "$100k-$250k", valueMultiplier: 1.2 },
+      { label: "$100k-$250k", valueMultiplier: 1.0 },
       { label: "$250k+", valueMultiplier: 1.5 }
     ] },
     { text: "Do you participate in follow-on funding rounds?", weight: 1.6 },
@@ -63,6 +64,12 @@ export default function Vc() {
       setCurrentQuestion(prev => prev + 1);
     } else {
       setQuestionnaireComplete(true);
+    }
+  };
+
+  const handleDropdownChange = (value: string) => {
+    if (value !== "") {
+      handleAnswer(questions[currentQuestion].weight * parseFloat(value));
     }
   };
 
@@ -158,10 +165,11 @@ export default function Vc() {
                 <div className="flex gap-4">
                   {questions[currentQuestion].type === 'dropdown' ? (
                     <select 
-                      onChange={(e) => handleAnswer(questions[currentQuestion].weight * parseFloat(e.target.value))}
+                      onChange={(e) => handleDropdownChange(e.target.value)}
+                      value={selectedValues[currentQuestion] || ""}
                       className="w-full px-4 py-2 bg-[#040423] border border-[#EF400A]/20 rounded-lg text-white focus:border-[#EF400A] outline-none"
                     >
-                      <option value="">Select an option</option>
+                      <option value="" disabled>Select an option</option>
                       {questions[currentQuestion].options?.map((option, index) => (
                         <option key={index} value={option.valueMultiplier}>
                           {option.label}

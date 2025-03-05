@@ -19,11 +19,11 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
-              src="/logo1.png" 
+              src="/colouredlogo.png" 
               alt="Next12 Logo" 
-              width={96}
-              height={96}
-              className="w-16 h-16 md:w-24 md:h-24"
+              width={90}
+              height={30}
+              className="w-24 h-6 md:w-32 md:h-8"
               priority
             />
           </Link>
