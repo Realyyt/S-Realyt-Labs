@@ -13,17 +13,17 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="sticky top-0 z-50 bg-[#040423] border-b border-[#EF400A]/20">
+    <div className="sticky top-0 z-50 bg-[#040423]/95 backdrop-blur-sm border-b border-[#EF400A]/10">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
               src="/colouredlogo.png" 
               alt="Next12 Logo" 
-              width={90}
-              height={30}
-              className="w-24 h-6 md:w-32 md:h-8"
+              width={120}
+              height={40}
+              className="w-28 h-9 md:w-36 md:h-12"
               priority
             />
           </Link>
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-[#EF400A] transition-colors"
+            className="md:hidden p-2 text-white/80 hover:text-[#EF400A] transition-colors"
           >
             <svg
               className="w-6 h-6"
@@ -51,19 +51,19 @@ const Navbar: React.FC = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-[#EF400A] transition-colors text-sm md:text-base"
+                className="text-white/80 hover:text-[#EF400A] transition-colors text-sm tracking-wide"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/apply"
-              className="px-4 py-1.5 bg-[#EF400A] text-white text-sm rounded-full hover:bg-[#ff5a2b] transition-colors"
+              className="px-6 py-2 bg-[#EF400A] text-white text-sm rounded-full hover:bg-[#ff5a2b] transition-all duration-300 tracking-wide"
             >
               Apply Now
             </Link>
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-[#EF400A] transition-colors text-sm"
+                className="text-white/80 hover:text-[#EF400A] transition-colors text-sm tracking-wide"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
             ))}
             <Link
               href="/apply"
-              className="px-4 py-1.5 bg-[#EF400A] text-white text-sm rounded-full hover:bg-[#ff5a2b] transition-colors w-fit"
+              className="px-6 py-2 bg-[#EF400A] text-white text-sm rounded-full hover:bg-[#ff5a2b] transition-all duration-300 tracking-wide w-fit"
               onClick={() => setIsMenuOpen(false)}
             >
               Apply Now
