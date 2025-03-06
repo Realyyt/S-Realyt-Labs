@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from 'next/font/google';
+import { Space_Grotesk, Press_Start_2P } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
-import { Press_Start_2P } from 'next/font/google'
 import Navbar from "@/components/navbar";
+import GoogleAnalytics from "@/app/components/GoogleAnalytics";
 
+// Configure fonts with fallbacks
 const pixelFont = Press_Start_2P({ 
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-pixel'
-})
+  variable: '--font-pixel',
+  display: 'swap',
+  fallback: ['monospace'] // Fallback to monospace if loading fails
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,7 +23,9 @@ const geistSans = localFont({
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk',
-  weight: ['300', '700']
+  weight: ['300', '700'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'], // Fallback fonts if loading fails
 });
 
 export const metadata: Metadata = {
@@ -35,9 +40,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
-       
-            {children}
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/PressStart2P-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/SpaceGrotesk-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/SpaceGrotesk-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${spaceGrotesk.variable} ${pixelFont.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
+        {children}
       </body>
     </html>
   );
