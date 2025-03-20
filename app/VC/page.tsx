@@ -73,19 +73,58 @@ export default function Vc() {
     }
   };
 
-  const QualificationForm = () => (
-    <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-4 md:p-6 space-y-4">
-      <div className="space-y-1">
-        <h2 className="text-xl md:text-2xl font-medium text-white">Contact Our Investment Team</h2>
-        <p className="text-sm text-gray-300">Complete your application</p>
-      </div>
-      <form className="space-y-4" action="mailto:labs@next12.org" method="post" encType="text/plain">
-        <input type="hidden" name="subject" value="Application to Next12 as an Investor" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  const QualificationForm = () => {
+    const [formData, setFormData] = useState({
+      fullName: '',
+      email: '',
+      experience: '',
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+
+      try {
+        const response = await fetch('/api/vc', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to submit application');
+        }
+
+        setSubmitStatus('success');
+        setFormData({ fullName: '', email: '', experience: '' });
+      } catch (error) {
+        console.error('Error submitting VC application:', error);
+        setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
+
+    return (
+      <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-4 md:p-6 space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-xl md:text-2xl font-medium text-white">Contact Our Investment Team</h2>
+          <p className="text-sm text-gray-300">Complete your application</p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="fullName"
             placeholder="Full Name"
+            value={formData.fullName}
+            onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
             className="w-full px-3 py-2 rounded-lg border border-[#EF400A]/20 bg-[#040423] text-white placeholder-gray-400 focus:border-[#EF400A] outline-none text-sm"
             required
           />
@@ -93,24 +132,36 @@ export default function Vc() {
             type="email"
             name="email"
             placeholder="Professional Email"
+            value={formData.email}
+            onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
             className="w-full px-3 py-2 rounded-lg border border-[#EF400A]/20 bg-[#040423] text-white placeholder-gray-400 focus:border-[#EF400A] outline-none text-sm"
             required
           />
-        </div>
-        <textarea
-          name="experience"
-          placeholder="Briefly describe your investment experience"
-          className="w-full px-3 py-2 rounded-lg border border-[#EF400A]/20 bg-[#040423] text-white placeholder-gray-400 focus:border-[#EF400A] outline-none text-sm h-20"
-        />
-        <button
-          type="submit"
-          className="w-full px-4 py-2 bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white rounded-full hover:opacity-90 transition-opacity font-medium"
-        >
-          Submit Application
-        </button>
-      </form>
-    </div>
-  );
+          <textarea
+            name="experience"
+            placeholder="Briefly describe your investment experience"
+            value={formData.experience}
+            onChange={(e) => setFormData(prev => ({ ...prev, experience: e.target.value }))}
+            className="w-full px-3 py-2 rounded-lg border border-[#EF400A]/20 bg-[#040423] text-white placeholder-gray-400 focus:border-[#EF400A] outline-none text-sm h-20"
+            required
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full px-4 py-2 bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white rounded-full hover:opacity-90 transition-opacity font-medium disabled:opacity-50"
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Application'}
+          </button>
+          {submitStatus === 'success' && (
+            <p className="text-green-400 text-sm text-center">Application submitted successfully! We will contact you soon.</p>
+          )}
+          {submitStatus === 'error' && (
+            <p className="text-red-400 text-sm text-center">Failed to submit application. Please try again later.</p>
+          )}
+        </form>
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen bg-[#040423] text-white flex flex-col">

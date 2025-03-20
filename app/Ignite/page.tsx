@@ -21,7 +21,7 @@ export default function Ignite() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link 
-              href="#apply"
+              href="/apply?program=ignite"
               className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
@@ -149,69 +149,6 @@ export default function Ignite() {
         </div>
       </section>
 
-      {/* Host Application */}
-      <section id="apply" className="py-20 bg-[#0a0a2f]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Host Next12 Ignite</h2>
-          <div className="max-w-3xl mx-auto p-8 rounded-xl border border-[#EF400A] bg-[#040423]">
-            <p className="text-xl text-[#EF400A] mb-8 text-center">
-              Bring the Ignite program to your city or organization
-            </p>
-            <form className="space-y-6" onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const emailBody = `Host Application - ${formData.get('location')}`;
-              window.location.href = `mailto:labs@next12.org?subject=${encodeURIComponent(emailBody)}`;
-            }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  className="w-full p-3 rounded-lg bg-[#0a0a2f] border border-[#EF400A]/20 focus:border-[#EF400A] outline-none"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full p-3 rounded-lg bg-[#0a0a2f] border border-[#EF400A]/20 focus:border-[#EF400A] outline-none"
-                  required
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  name="location"
-                  placeholder="City, Country"
-                  className="w-full p-3 rounded-lg bg-[#0a0a2f] border border-[#EF400A]/20 focus:border-[#EF400A] outline-none"
-                  required
-                />
-                <input
-                  type="text"
-                  name="organization"
-                  placeholder="Organization"
-                  className="w-full p-3 rounded-lg bg-[#0a0a2f] border border-[#EF400A]/20 focus:border-[#EF400A] outline-none"
-                />
-              </div>
-              <textarea
-                name="message"
-                placeholder="Tell us about your vision for hosting Next12 Ignite"
-                rows={4}
-                className="w-full p-3 rounded-lg bg-[#0a0a2f] border border-[#EF400A]/20 focus:border-[#EF400A] outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full py-2 md:py-4 bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white rounded-full text-sm md:text-lg font-semibold hover:opacity-90 transition-opacity"
-              >
-                Submit Application
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* Footer CTA */}
       <section className="py-20 bg-[#0a0a2f]">
         <div className="container mx-auto px-4 text-center">
@@ -221,12 +158,11 @@ export default function Ignite() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link
-              href="/apply"
+              href="/apply?program=ignite"
               className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
             </Link>
-            
           </div>
         </div>
       </section>

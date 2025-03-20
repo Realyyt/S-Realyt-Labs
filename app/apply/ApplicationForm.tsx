@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import PaymentForm from '../components/PaymentForm';
 
 type ProgramType = 'residency' | 'ignite' | 'vc';
 
@@ -19,11 +18,11 @@ interface FormData {
   goals: string;
   timeline: string;
   referral: string;
-  paymentStatus: 'pending' | 'completed';
 }
 
 export default function ApplicationForm() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -35,8 +34,7 @@ export default function ApplicationForm() {
     experience: '',
     goals: '',
     timeline: '',
-    referral: '',
-    paymentStatus: 'pending'
+    referral: ''
   });
 
   const programDetails = {
@@ -74,18 +72,28 @@ export default function ApplicationForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (formData.paymentStatus === 'pending') {
-      setFormData(prev => ({ ...prev, paymentStatus: 'completed' }));
-      return;
-    }
 
-    const emailSubject = `Next12 ${formData.programType.toUpperCase()} Application - ${formData.firstName} ${formData.lastName}`;
-    const emailBody = Object.entries(formData)
-      .map(([key, value]) => `${key}: ${value}`)
-      .join('\n\n');
-    
-    window.location.href = `mailto:labs@next12.org?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    try {
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit application');
+      }
+
+      // Redirect to thank you page with the program type
+      router.push(`/thank-you?program=${formData.programType}`);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('Failed to submit application. Please try again later.');
+    }
   };
 
   return (
@@ -231,13 +239,6 @@ export default function ApplicationForm() {
                 className="bg-[#0a0a2f] border border-[#EF400A]/20 rounded-lg px-4 py-3 focus:border-[#EF400A] outline-none"
               />
             </div>
-
-            {formData.paymentStatus === 'completed' && (
-              <div className="bg-[#0a0a2f] rounded-xl border border-[#EF400A]/20 p-6 mb-8">
-                <h2 className="text-xl font-bold mb-4">Payment</h2>
-                <PaymentForm programType={formData.programType} />
-              </div>
-            )}
 
             {/* Submit Button */}
             <button

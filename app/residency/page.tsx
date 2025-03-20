@@ -25,7 +25,7 @@ export default function Residency() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link 
-              href="#apply"
+              href="/apply?program=residency"
               className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
@@ -163,7 +163,7 @@ export default function Residency() {
             </div>
             <div className="mt-12 text-center">
               <Link
-                href="/apply"
+                href="/apply?program=residency"
                 className="inline-block px-6 py-3 md:px-12 md:py-6 bg-[#EF400A] text-white rounded-full text-base md:text-xl font-semibold hover:bg-[#ff5a2b] transition-colors"
               >
                 Start Your Application
@@ -182,7 +182,7 @@ export default function Residency() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link
-              href="/apply"
+              href="/apply?program=residency"
               className="px-4 py-2 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors"
             >
               Apply Now
