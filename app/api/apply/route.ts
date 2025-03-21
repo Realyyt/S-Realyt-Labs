@@ -1,25 +1,37 @@
 import { NextResponse } from 'next/server';
 import { sendEmail, formatApplicationEmail } from '@/app/utils/brevo';
 
-export const config = {
-  runtime: 'edge',
-};
+// Remove the edge runtime config since it might be causing issues
+// export const config = {
+//   runtime: 'edge',
+// };
 
 export async function POST(request: Request) {
-  try {
-    // Add CORS headers
-    const headers = {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    };
+  // Basic CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json',
+  };
 
-    // Handle preflight requests
+  try {
+    // Handle preflight
     if (request.method === 'OPTIONS') {
-      return new NextResponse(null, { headers });
+      return new Response(null, { headers });
     }
 
-    const formData = await request.json();
+    let formData;
+    try {
+      const text = await request.text();
+      formData = JSON.parse(text);
+    } catch (parseError) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid request format' }),
+        { status: 400, headers }
+      );
+    }
+
     const { programType, ...rest } = formData;
 
     const emailContent = formatApplicationEmail(rest, programType);
@@ -31,31 +43,21 @@ export async function POST(request: Request) {
     });
 
     if (!result.success) {
-      return NextResponse.json(
-        { error: 'Failed to send application email' },
-        { 
-          status: 500,
-          headers 
-        }
+      return new Response(
+        JSON.stringify({ error: 'Failed to send application email' }),
+        { status: 500, headers }
       );
     }
 
-    return NextResponse.json(
-      { success: true },
-      { headers }
+    return new Response(
+      JSON.stringify({ success: true }),
+      { status: 200, headers }
     );
   } catch (error) {
     console.error('Error processing application:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { 
-        status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
-      }
+    return new Response(
+      JSON.stringify({ error: 'Internal server error' }),
+      { status: 500, headers }
     );
   }
 } 
