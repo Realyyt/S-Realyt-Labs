@@ -74,25 +74,44 @@ export default function ApplicationForm() {
     e.preventDefault();
 
     try {
+      // Explicitly format the request body
+      const requestBody = JSON.stringify(formData);
+      console.log('Request body:', requestBody); // Debug log
+
       const response = await fetch('/api/apply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: requestBody,
       });
 
-      const data = await response.json();
+      // First get the raw text response
+      const rawResponse = await response.text();
+      console.log('Raw response:', rawResponse); // Debug log
+
+      // Try to parse it manually
+      let data;
+      try {
+        data = rawResponse ? JSON.parse(rawResponse) : {};
+      } catch (parseError) {
+        console.error('Response parsing error:', parseError);
+        throw new Error('Invalid server response');
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to submit application');
       }
 
-      // Redirect to thank you page with the program type
+      // Only redirect if we successfully parsed the response
       router.push(`/thank-you?program=${formData.programType}`);
-    } catch (error) {
-      console.error('Error submitting application:', error);
-      alert('Failed to submit application. Please try again later.');
+    } catch (error: any) {
+      console.error('Detailed error:', {
+        message: error.message,
+        stack: error.stack,
+      });
+      alert(`Failed to submit application. Please try again later. ${error.message}`);
     }
   };
 
