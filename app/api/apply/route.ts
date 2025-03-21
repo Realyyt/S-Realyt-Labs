@@ -1,24 +1,17 @@
 import { NextResponse } from 'next/server';
 import { sendEmail, formatApplicationEmail } from '@/app/utils/brevo';
 
-export const runtime = 'edge';
+// Remove edge runtime since it might be causing issues
+// export const runtime = 'edge';
 
 export async function POST(request: Request) {
-  // Basic CORS headers
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Content-Type': 'application/json',
-  };
-
   try {
-    // Handle preflight
-    if (request.method === 'OPTIONS') {
-      return new Response(null, { headers });
-    }
-
+    // Log the incoming request for debugging
+    console.log('Received request:', request.url);
+    
     const formData = await request.json();
+    console.log('Received form data:', formData);
+
     const { programType, ...rest } = formData;
 
     const emailContent = formatApplicationEmail(rest, programType);
@@ -30,17 +23,20 @@ export async function POST(request: Request) {
     });
 
     if (!result.success) {
+      console.error('Email sending failed:', result);
       return NextResponse.json(
         { error: 'Failed to send application email' },
         { status: 500 }
       );
     }
 
+    console.log('Email sent successfully');
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error processing application:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: errorMessage },
       { status: 500 }
     );
   }
