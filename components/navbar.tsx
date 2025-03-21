@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
               alt="Next12 Logo" 
               width={120}
               height={40}
-              className="w-28 h-9 md:w-36 md:h-12"
+              className="w-18 h-6 md:w-32 md:h-10"
               priority
             />
           </Link>
