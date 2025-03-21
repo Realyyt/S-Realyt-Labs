@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sendEmail, formatApplicationEmail } from '@/app/utils/brevo';
 
-// Remove the edge runtime config since it might be causing issues
-// export const config = {
-//   runtime: 'edge',
-// };
+export const runtime = 'edge';
 
 export async function POST(request: Request) {
   // Basic CORS headers
@@ -21,17 +18,7 @@ export async function POST(request: Request) {
       return new Response(null, { headers });
     }
 
-    let formData;
-    try {
-      const text = await request.text();
-      formData = JSON.parse(text);
-    } catch (parseError) {
-      return new Response(
-        JSON.stringify({ error: 'Invalid request format' }),
-        { status: 400, headers }
-      );
-    }
-
+    const formData = await request.json();
     const { programType, ...rest } = formData;
 
     const emailContent = formatApplicationEmail(rest, programType);
@@ -43,21 +30,18 @@ export async function POST(request: Request) {
     });
 
     if (!result.success) {
-      return new Response(
-        JSON.stringify({ error: 'Failed to send application email' }),
-        { status: 500, headers }
+      return NextResponse.json(
+        { error: 'Failed to send application email' },
+        { status: 500 }
       );
     }
 
-    return new Response(
-      JSON.stringify({ success: true }),
-      { status: 200, headers }
-    );
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error processing application:', error);
-    return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
-      { status: 500, headers }
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
     );
   }
 } 
