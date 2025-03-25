@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     <div className="sticky top-0 z-50 bg-[#040423]/95 backdrop-blur-sm border-b border-[#EF400A]/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo ]*/}
           <Link href="/" className="flex items-center">
             <Image 
               src="/colouredlogo.png" 
