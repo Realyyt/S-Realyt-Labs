@@ -1,29 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
   images: {
     unoptimized: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: '/api/:path*',
-      },
-    ]
-  },
-  async headers() {
-    return [
-      {
-        source: '/api/:path*',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,POST,OPTIONS' },
-          { key: 'Access-Control-Allow-Headers', value: 'Content-Type' },
-        ],
-      },
-    ]
-  },
+// Server Actions are enabled by default in Next.js 14+, so this experimental flag is no longer needed
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
