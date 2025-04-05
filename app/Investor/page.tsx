@@ -57,7 +57,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Portfolio</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              We've invested in over 20 companies across various sectors, helping them scale and achieve their potential.
+              We&apos;ve invested in over 20 companies across various sectors, helping them scale and achieve their potential.
             </p>
           </div>
           
@@ -253,7 +253,7 @@ export default function Home() {
             <div className="md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to elevate your startup?</h2>
               <p className="text-gray-300 mb-6">
-                We're actively investing in ambitious founders with bold ideas. Apply now to join our portfolio.
+                We&apos;re actively investing in ambitious founders with bold ideas. Apply now to join our portfolio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#" className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-6 py-3 rounded-full text-lg font-medium hover:opacity-90 transition-opacity text-center">
