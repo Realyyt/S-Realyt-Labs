@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from '@/components/navbar';
 
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export default function Residency() {
 
@@ -196,6 +197,7 @@ export default function Residency() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }

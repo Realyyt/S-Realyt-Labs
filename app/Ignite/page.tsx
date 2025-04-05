@@ -1,5 +1,6 @@
 'use client';
 
+import Footer from '@/components/Footer';
 import Navbar from '@/components/navbar';
 import Link from 'next/link';
 
@@ -166,6 +167,7 @@ export default function Ignite() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }
