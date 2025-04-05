@@ -201,7 +201,7 @@ export default function Hubs() {
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-white mr-2">Fridays:</span>
-                      <span className="text-gray-300">Recap of the week's progress, peer feedback sessions, and preparation for investor pitch days</span>
+                      <span className="text-gray-300">Recap of the week&apos;s progress, peer feedback sessions, and preparation for investor pitch days</span>
                     </li>
                   </ul>
                 </div>
@@ -464,19 +464,19 @@ export default function Hubs() {
                   },
                   {
                     question: "Is the advisory support really worth it?",
-                    answer: "Absolutely. These are not just any advisors—they're experts who've scaled companies and navigated global markets. Each session is tailored to your business challenges, helping you avoid costly mistakes and accelerate your strategy."
+                    answer: "Absolutely. These are not just any advisors—they&apos;re experts who&apos;ve scaled companies and navigated global markets. Each session is tailored to your business challenges, helping you avoid costly mistakes and accelerate your strategy."
                   },
                   {
                     question: "Can I upgrade from Basic to Premium anytime?",
-                    answer: "Yes, you can upgrade at any time based on your needs. You'll immediately gain access to the additional advisory session and investor pitch opportunities included in the Premium plan."
+                    answer: "Yes, you can upgrade at any time based on your needs. You&apos;ll immediately gain access to the additional advisory session and investor pitch opportunities included in the Premium plan."
                   },
                   {
                     question: "What happens during Investor Pitch Day?",
-                    answer: "Premium members get to pitch their startup to a panel of real investors—VCs (Venture Capitalists), angel investors, and corporate scouts. It's a polished, high-energy event designed to open funding doors and increase visibility."
+                    answer: "Premium members get to pitch their startup to a panel of real investors—VCs (Venture Capitalists), angel investors, and corporate scouts. It&apos;s a polished, high-energy event designed to open funding doors and increase visibility."
                   },
                   {
                     question: "I already have an office—can I still access the advisory sessions?",
-                    answer: "Yes! Our Virtual Advisory option is perfect for founders who don't need a physical workspace but want access to top-tier mentorship. Each session is $200 and can be booked as needed."
+                    answer: "Yes! Our Virtual Advisory option is perfect for founders who don&apos;t need a physical workspace but want access to top-tier mentorship. Each session is $200 and can be booked as needed."
                   },
                   {
                     question: "What if I need help outside the advisory sessions?",
@@ -488,7 +488,7 @@ export default function Hubs() {
                   },
                   {
                     question: "How do I schedule my advisory sessions?",
-                    answer: "You'll receive access to our booking portal upon membership confirmation. From there, you can select available times with your preferred advisor, based on your plan tier."
+                    answer: "You&apos;ll receive access to our booking portal upon membership confirmation. From there, you can select available times with your preferred advisor, based on your plan tier."
                   }
                 ].map((faq, idx) => (
                   <div key={idx} className="bg-[#080830] rounded-xl overflow-hidden">
@@ -540,7 +540,7 @@ export default function Hubs() {
                 name: "Sarah Johnson",
                 company: "FinTech Solutions",
                 image: "/testimonial1.jpg",
-                quote: "The hub's advisory sessions helped us refine our go-to-market strategy, resulting in 3x user growth within just 4 months."
+                quote: "The hub&apos;s advisory sessions helped us refine our go-to-market strategy, resulting in 3x user growth within just 4 months."
               },
               {
                 name: "Michael Chen",
@@ -616,7 +616,7 @@ export default function Hubs() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to <span className="text-[#EF400A]">accelerate</span> your startup's growth?
+              Ready to <span className="text-[#EF400A]">accelerate</span> your startup&apos;s growth?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Join our community of innovative founders and gain access to the resources, mentorship, and connections that matter.
