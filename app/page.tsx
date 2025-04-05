@@ -78,7 +78,7 @@ export default function Residency() {
           </p>
           <div className="flex justify-between items-center">
             <Link 
-              href="/ignite"
+              href="/Ignite"
               className="text-[#EF400A] font-semibold text-sm flex items-center hover:underline"
             >
               Read More
@@ -116,7 +116,7 @@ export default function Residency() {
           </p>
           <div className="flex justify-between items-center">
             <Link 
-              href="/hubs"
+              href="/Hubs"
               className="text-[#EF400A] font-semibold text-sm flex items-center hover:underline"
             >
               Read More
@@ -154,7 +154,7 @@ export default function Residency() {
           </p>
           <div className="flex justify-between items-center">
             <Link 
-              href="/residency"
+              href="/Residency"
               className="text-[#EF400A] font-semibold text-sm flex items-center hover:underline"
             >
               Read More
@@ -192,7 +192,7 @@ export default function Residency() {
           </p>
           <div className="flex justify-between items-center">
             <Link 
-              href="/vc"
+              href="/Vc"
               className="text-[#EF400A] font-semibold text-sm flex items-center hover:underline"
             >
               Read More
