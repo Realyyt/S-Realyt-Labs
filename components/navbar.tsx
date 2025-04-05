@@ -8,8 +8,10 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/ignite", label: "Ignite" },
+    { href: "/Ignite", label: "Ignite" },
     { href: "/residency", label: "Residency" },
+    { href: "/Hubs", label: "Hubs" },
+    { href: "/Investor", label: "Investor" },
   ];
 
   return (
