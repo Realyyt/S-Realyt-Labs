@@ -14,9 +14,9 @@ export default function Residency() {
       <Navbar />
       
       {/* Hero Section - improved mobile spacing */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-0" style={{backgroundImage: "url('/residency.jpeg')"}}>
         <div className="absolute inset-0 bg-gradient-to-b from-[#040423] via-transparent to-[#040423] z-10" />
-        <div className="absolute inset-0 bg-[url('/residency-bg.jpg')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" />
         <div className="container mx-auto relative z-20 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6">
             <span className="text-[#EF400A]">NEXT12</span> RESIDENCY

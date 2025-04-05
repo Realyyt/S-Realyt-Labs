@@ -19,7 +19,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#0a0a2f] opacity-70"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#040423] to-transparent"></div>
           <Image
-            src="/hero-bg.jpg" 
+            src="/investors.jpg" 
             alt="Hero background"
             fill
             className="object-cover"
