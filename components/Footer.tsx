@@ -31,7 +31,7 @@ export default function Footer() {
               {[
                 { name: 'Home', link: '/' },
                 { name: 'Ignite', link: '/Ignite' },
-                { name: 'Residency', link: '/Residency' },
+                { name: 'Residency', link: '/residency' },
                 { name: 'Hubs', link: '/Hubs' },
                 { name: 'Investor', link: '/Investor' },
               ].map((item) => (
