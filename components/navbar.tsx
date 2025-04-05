@@ -21,9 +21,9 @@ const Navbar: React.FC = () => {
             <Image 
               src="/colouredlogo.png" 
               alt="Next12 Logo" 
-              width={120}
-              height={40}
-              className="w-18 h-6 md:w-32 md:h-10"
+              width={60}
+              height={30}
+              className="w-16 h-4 md:w-24 md:h-6"
               priority
             />
           </Link>
