@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/navbar';
 import Image from 'next/image';
+//tr
 
 interface Question {
   text: string;

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import Navbar from '@/components/navbar';
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 export default function Residency() {
-  const [activeTab, setActiveTab] = useState('overview');
+
 
   return (
     <main className="min-h-screen bg-[#040423] text-white">
