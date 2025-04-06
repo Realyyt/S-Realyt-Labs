@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +9,19 @@ import Footer from '@/components/Footer';
 export default function Residency() {
 
   const [selectedTrack, setSelectedTrack] = useState('All Tracks');
+  const [isMobile, setIsMobile] = useState(false);
   
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+    
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#040423] text-white">
@@ -20,9 +32,14 @@ export default function Residency() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#040423] via-transparent to-[#040423] z-10" />
         <div className="absolute inset-0 bg-[url('/residency-bg.jpg')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 z-5">
-    {/* Insert the SVG code here or reference it as a file */}
-    <img src="/a.svg" className="w-full h-full object-cover" alt="" />
-  </div>
+          <Image
+            src={isMobile ? '/b.svg' : '/a.svg'}
+            alt="Background animation"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         <div className="container mx-auto relative z-20 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6">
             <span className="text-[#EF400A]">NEXT12</span>

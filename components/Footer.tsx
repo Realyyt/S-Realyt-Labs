@@ -1,8 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const Footer = () => {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/newsletter-thanks');
+  };
+
   return (
     <>
     {/* Newsletter */}
@@ -22,10 +30,7 @@ const Footer = () => {
             <div className="max-w-md mx-auto">
               <form 
                 className="flex flex-col sm:flex-row gap-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  window.location.href = '/newsletter-thanks';
-                }}
+                onSubmit={handleSubmit}
               >
                 <input 
                   type="email" 

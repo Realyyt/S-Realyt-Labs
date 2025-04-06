@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+  <style>
+    @media (max-width: 600px) {
+      svg {
+        stroke-width: 0.8;
+      }
+    }
+  </style>
+
   <!-- Animated smooth flowing wave lines -->
   <path d="M0,400 C50,420 100,380 150,390 S200,420 250,400 S300,370 350,390 S400,420 450,400 S500,370 550,390 S600,420 650,400 S700,370 750,390 S800,420 850,400 S900,370 950,390 S1000,420 1050,400"
     fill="none"

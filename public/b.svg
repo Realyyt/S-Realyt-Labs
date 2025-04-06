@@ -1,58 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <!-- Background glow effect -->
-  <defs>
-    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-      <stop offset="0%" style="stop-color:#EF400A;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#EF400A;stop-opacity:0"/>
-    </radialGradient>
-    
-    <!-- Pulse animations -->
-    <animate xlink:href="#outerPulse" attributeName="r" values="170;190;170" dur="4s" repeatCount="indefinite" />
-    <animate xlink:href="#middlePulse" attributeName="r" values="140;160;140" dur="4s" begin="1s" repeatCount="indefinite" />
-    <animate xlink:href="#innerPulse" attributeName="r" values="120;130;120" dur="3s" begin="2s" repeatCount="indefinite" />
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="300" fill="#f8f8f8" fill-opacity="0.1" />
   
-  <!-- Pulse rings -->
-  <circle id="outerPulse" cx="250" cy="250" r="180" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.2" />
-  <circle id="middlePulse" cx="250" cy="250" r="150" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.3" />
-  <circle id="innerPulse" cx="250" cy="250" r="125" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.4" />
+  <!-- Grid lines -->
+  <g stroke="#EF400A" stroke-opacity="0.1" stroke-width="0.5">
+    <line x1="0" y1="250" x2="400" y2="250" />
+    <line x1="0" y1="200" x2="400" y2="200" />
+    <line x1="0" y1="150" x2="400" y2="150" />
+    <line x1="0" y1="100" x2="400" y2="100" />
+    <line x1="0" y1="50" x2="400" y2="50" />
+  </g>
   
-  <!-- Glow effect -->
-  <circle cx="250" cy="250" r="160" fill="url(#glowGradient)" />
+  <!-- X-axis -->
+  <line x1="0" y1="250" x2="400" y2="250" stroke="#555" stroke-width="1" />
   
-  <!-- Globe base -->
-  <circle cx="250" cy="250" r="120" fill="none" stroke="#EF400A" stroke-width="1.5" stroke-opacity="0.8" />
+  <!-- Candle 1 -->
+  <g class="candle">
+    <line x1="50" y1="220" x2="50" y2="180" stroke="#EF400A" stroke-width="1" />
+    <rect x="40" y="200" width="20" height="40" fill="#EF400A" fill-opacity="0.3" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="3s" repeatCount="indefinite" />
+  </g>
   
-  <!-- Globe grid lines - meridians -->
-  <path d="M250,130 Q370,250 250,370 Q130,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
-  <path d="M250,130 Q190,250 250,370 Q310,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
-  <path d="M250,130 Q330,250 250,370 Q170,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <!-- Candle 2 -->
+  <g class="candle">
+    <line x1="100" y1="210" x2="100" y2="160" stroke="#EF400A" stroke-width="1" />
+    <rect x="90" y="180" width="20" height="50" fill="#EF400A" fill-opacity="0.4" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="3.5s" repeatCount="indefinite" />
+  </g>
   
-  <!-- Globe grid lines - parallels -->
-  <ellipse cx="250" cy="250" rx="120" ry="30" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
-  <ellipse cx="250" cy="250" rx="90" ry="22.5" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
-  <ellipse cx="250" cy="250" rx="60" ry="15" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <!-- Candle 3 -->
+  <g class="candle">
+    <line x1="150" y1="190" x2="150" y2="140" stroke="#EF400A" stroke-width="1" />
+    <rect x="140" y="160" width="20" height="50" fill="#EF400A" fill-opacity="0.5" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="4s" repeatCount="indefinite" />
+  </g>
   
-  <!-- Connection points and network lines -->
-  <circle cx="210" cy="200" r="4" fill="#EF400A" />
-  <circle cx="300" cy="220" r="3" fill="#EF400A" />
-  <circle cx="270" cy="300" r="4" fill="#EF400A" />
-  <circle cx="180" cy="260" r="3" fill="#EF400A" />
-  <circle cx="330" cy="280" r="3.5" fill="#EF400A" />
+  <!-- Candle 4 -->
+  <g class="candle">
+    <line x1="200" y1="170" x2="200" y2="120" stroke="#EF400A" stroke-width="1" />
+    <rect x="190" y="140" width="20" height="50" fill="#EF400A" fill-opacity="0.6" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="4.5s" repeatCount="indefinite" />
+  </g>
   
-  <line x1="210" y1="200" x2="300" y2="220" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
-  <line x1="300" y1="220" x2="270" y2="300" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
-  <line x1="270" y1="300" x2="180" y2="260" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
-  <line x1="180" y1="260" x2="330" y2="280" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
-  <line x1="330" y1="280" x2="210" y2="200" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  <!-- Candle 5 -->
+  <g class="candle">
+    <line x1="250" y1="150" x2="250" y2="90" stroke="#EF400A" stroke-width="1" />
+    <rect x="240" y="110" width="20" height="60" fill="#EF400A" fill-opacity="0.7" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="5s" repeatCount="indefinite" />
+  </g>
   
-  <!-- Animation for rotation effect -->
-  <animateTransform 
-    attributeName="transform"
-    attributeType="XML"
-    type="rotate"
-    from="0 250 250"
-    to="360 250 250"
-    dur="60s"
-    repeatCount="indefinite" />
+  <!-- Candle 6 -->
+  <g class="candle">
+    <line x1="300" y1="130" x2="300" y2="60" stroke="#EF400A" stroke-width="1" />
+    <rect x="290" y="80" width="20" height="70" fill="#EF400A" fill-opacity="0.8" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="5.5s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- Candle 7 -->
+  <g class="candle">
+    <line x1="350" y1="110" x2="350" y2="40" stroke="#EF400A" stroke-width="1" />
+    <rect x="340" y="60" width="20" height="70" fill="#EF400A" fill-opacity="0.9" stroke="#EF400A" stroke-width="1" />
+    <animate attributeName="transform" values="translate(0,0); translate(0,-5); translate(0,0)" dur="6s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- Trend line -->
+  <path d="M50,190 L100,170 L150,150 L200,130 L250,100 L300,70 L350,50" 
+        fill="none" 
+        stroke="#EF400A" 
+        stroke-width="2" 
+        stroke-opacity="0.5"
+        stroke-dasharray="5,3" />
+  
+  <!-- Subtle wave animation at bottom -->
+  <path d="M0,250 C50,255 100,245 150,250 S200,255 250,250 S300,245 350,250 S400,255 400,250" 
+    fill="none" 
+    stroke="#EF400A" 
+    stroke-width="1" 
+    stroke-opacity="0.3">
+    <animate attributeName="d" 
+      values="M0,250 C50,255 100,245 150,250 S200,255 250,250 S300,245 350,250 S400,255 400,250;
+              M0,250 C50,245 100,255 150,245 S200,245 250,255 S300,255 350,245 S400,245 400,250;
+              M0,250 C50,255 100,245 150,250 S200,255 250,250 S300,245 350,250 S400,255 400,250"
+      dur="10s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Style for mobile optimization -->
+  <style>
+    @media (max-width: 400px) {
+      .candle rect {
+        width: 15px;
+        x: 42.5px;
+      }
+      .candle:nth-child(2) rect { x: 92.5px; }
+      .candle:nth-child(3) rect { x: 142.5px; }
+      .candle:nth-child(4) rect { x: 192.5px; }
+      .candle:nth-child(5) rect { x: 242.5px; }
+      .candle:nth-child(6) rect { x: 292.5px; }
+      .candle:nth-child(7) rect { x: 342.5px; }
+    }
+  </style>
 </svg>
