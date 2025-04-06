@@ -1,161 +1,12 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-// Navbar component
-const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#040423]/90 backdrop-blur-md py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-transparent bg-clip-text">Next12</span>
-          </Link>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            {['Portfolio', 'Thesis', 'Team', 'Resources'].map((item) => (
-              <Link 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="text-white/80 hover:text-[#EF400A] transition-colors text-sm uppercase tracking-wider font-medium"
-              >
-                {item}
-              </Link>
-            ))}
-            <Link 
-              href="/apply" 
-              className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-5 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-[#EF400A]/20 transition-all"
-            >
-              Apply for Funding
-            </Link>
-          </div>
-          
-          <button 
-            className="md:hidden text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-      </div>
-      
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-[#0a0a2f] border-t border-[#EF400A]/10 mt-3"
-        >
-          <div className="px-4 py-5 space-y-4">
-            {['Portfolio', 'Thesis', 'Team', 'Resources'].map((item) => (
-              <Link 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="block text-white/80 hover:text-[#EF400A] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item}
-              </Link>
-            ))}
-            <Link 
-              href="/apply" 
-              className="block bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-4 py-2 rounded-full text-sm font-medium text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Apply for Funding
-            </Link>
-          </div>
-        </motion.div>
-      )}
-    </header>
-  );
-};
-
+import Navbar from '@/components/navbar';
+import Footer from '@/components/Footer';
 // Footer component
-const Footer = () => {
-  return (
-    <footer className="bg-[#0a0a2f] border-t border-[#EF400A]/10 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-transparent bg-clip-text">Next12</span>
-            </div>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Next12 invests in ambitious entrepreneurs solving meaningful problems with technology. We&apos;re not just investors—we&apos;re partners in your journey.
-            </p>
-            <div className="flex space-x-4">
-              {['twitter', 'linkedin', 'instagram'].map((social) => (
-                <a key={social} href={`https://${social}.com/next12`} className="text-gray-400 hover:text-[#EF400A] transition-colors">
-                  <span className="sr-only">{social}</span>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    {social === 'twitter' && <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />}
-                    {social === 'linkedin' && <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>}
-                    {social === 'instagram' && <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>}
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {['Portfolio', 'Thesis', 'Team', 'Resources', 'Apply'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-[#EF400A] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>San Francisco • New York • Lagos</li>
-              <li>hello@next12.vc</li>
-              <li className="pt-4">
-                <Link href="/contact" className="text-[#EF400A] hover:underline">
-                  Get in touch →
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-[#EF400A]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Next12 Ventures. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-500 hover:text-[#EF400A] text-sm">Privacy Policy</Link>
-            <Link href="/terms" className="text-gray-500 hover:text-[#EF400A] text-sm">Terms of Service</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
+
 
 // Home Page
 export default function Home() {
@@ -186,17 +37,17 @@ export default function Home() {
         >
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Fueling the next generation of <span className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-transparent bg-clip-text">founders</span>
+              Empowering the next generation of <span className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-transparent bg-clip-text">founders</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
-              Next12 invests in ambitious entrepreneurs solving meaningful problems with technology. We&apos;re not just investors—we&apos;re partners in your journey.
+              Next12 backs bold entrepreneurs tackling real problems . We partner with you.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
-              <Link href="/vc" className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-[#EF400A]/20 transition-all text-center">
+              <Link href="/apply" className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-[#EF400A]/20 transition-all text-center">
                 Join as an Investor
               </Link>
-              <Link href="#portfolio" className="bg-transparent border border-[#EF400A] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#EF400A]/10 transition-colors text-center group">
-                View Portfolio
+              <Link href="/" className="bg-transparent border border-[#EF400A] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#EF400A]/10 transition-colors text-center group">
+                Explore Portfolio
                 <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>
@@ -214,61 +65,156 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Value Proposition Section */}
-      <section className="py-20 md:py-32 bg-[#040423]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-          >
-            <div className="md:flex md:items-center md:gap-16">
-              <div className="md:w-1/2 mb-12 md:mb-0">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Why Partner With Next12</h2>
-                <p className="text-gray-300 text-lg mb-10 leading-relaxed">
-                  We&apos;re not just investors—we&apos;re partners in your journey. With deep operational expertise, technical knowledge, and a global network, we help founders navigate the challenges of building category-defining companies.
-                </p>
-                <div className="space-y-8">
-                  {[
-                    {
-                      title: "Founder-First Approach",
-                      description: "We understand the founder journey because we've been there. Our team has built and scaled multiple ventures across diverse markets."
-                    },
-                    {
-                      title: "Speed & Decisiveness",
-                      description: "Our streamlined process gets you from first meeting to term sheet in as little as 3 weeks. We move at founder speed."
-                    },
-                    {
-                      title: "Global Network",
-                      description: "Tap into our network of 500+ VCs, industry experts, and potential customers to accelerate your growth."
-                    }
-                  ].map((item, index) => (
-                    <motion.div 
-                      key={index} 
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start"
-                    >
-                      <div className="mr-5 mt-1">
-                        <div className="w-12 h-12 rounded-full bg-[#EF400A]/20 flex items-center justify-center">
-                          <svg className="w-6 h-6 text-[#EF400A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                        <p className="text-gray-300 leading-relaxed">{item.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+<section className="py-20 md:py-32 bg-[#040423]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+    >
+      <div className="flex flex-col md:flex-row md:items-center md:gap-16">
+        <div className="w-full md:w-1/2 mb-12 md:mb-0">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Why Partner With Next12</h2>
+          <p className="text-gray-300 text-lg mb-10 leading-relaxed">
+            We&apos;re not just investors—we&apos;re partners in your journey. With deep operational expertise, technical knowledge, and a global network, we help founders navigate the challenges of building category-defining companies.
+          </p>
+          <div className="space-y-8">
+            {[
+              {
+                title: "Founder-First Approach",
+                description: "We understand the founder journey because we've been there. Our team has built and scaled multiple ventures across diverse markets."
+              },
+              {
+                title: "Speed & Decisiveness",
+                description: "Our streamlined process gets you from first meeting to term sheet in as little as 3 weeks. We move at founder speed."
+              },
+              {
+                title: "Global Network",
+                description: "Tap into our network of 500+ VCs, industry experts, and potential customers to accelerate your growth."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start"
+              >
+                <div className="mr-5 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-[#EF400A]/20 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-[#EF400A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </motion.div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </section>
+        
+        <div className="w-full md:w-1/2">
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8 }}
+    className="flex justify-center items-center h-full"
+  >
+    {/* Increased max width values for larger SVG */}
+    <div className="w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto">
+      {/* Inline SVG */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        {/* SVG content from the artifact */}
+        <defs>
+          <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style={{stopColor:"#EF400A", stopOpacity:0.3}}/>
+            <stop offset="100%" style={{stopColor:"#EF400A", stopOpacity:0}}/>
+          </radialGradient>
+        </defs>
+        
+        {/* Pulse rings */}
+        <circle id="outerPulse" cx="250" cy="250" r="180" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.2">
+          <animate attributeName="r" values="170;190;170" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle id="middlePulse" cx="250" cy="250" r="150" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.3">
+          <animate attributeName="r" values="140;160;140" dur="4s" begin="1s" repeatCount="indefinite" />
+        </circle>
+        <circle id="innerPulse" cx="250" cy="250" r="125" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.4">
+          <animate attributeName="r" values="120;130;120" dur="3s" begin="2s" repeatCount="indefinite" />
+        </circle>
+        
+        {/* Glow effect */}
+        <circle cx="250" cy="250" r="160" fill="url(#glowGradient)" />
+        
+        {/* Globe base */}
+        <circle cx="250" cy="250" r="120" fill="none" stroke="#EF400A" strokeWidth="1.5" strokeOpacity="0.8" />
+        
+        {/* Globe grid lines - meridians */}
+        <path d="M250,130 Q370,250 250,370 Q130,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        <path d="M250,130 Q190,250 250,370 Q310,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        <path d="M250,130 Q330,250 250,370 Q170,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        
+        {/* Globe grid lines - parallels */}
+        <ellipse cx="250" cy="250" rx="120" ry="30" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        <ellipse cx="250" cy="250" rx="90" ry="22.5" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        <ellipse cx="250" cy="250" rx="60" ry="15" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+        
+        {/* Connection points and network lines */}
+        <circle cx="210" cy="200" r="4" fill="#EF400A" />
+        <circle cx="300" cy="220" r="3" fill="#EF400A" />
+        <circle cx="270" cy="300" r="4" fill="#EF400A" />
+        <circle cx="180" cy="260" r="3" fill="#EF400A" />
+        <circle cx="330" cy="280" r="3.5" fill="#EF400A" />
+        
+        <line x1="210" y1="200" x2="300" y2="220" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        <line x1="300" y1="220" x2="270" y2="300" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        <line x1="270" y1="300" x2="180" y2="260" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        <line x1="180" y1="260" x2="330" y2="280" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        <line x1="330" y1="280" x2="210" y2="200" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        
+        {/* Animation for rotation effect */}
+        <g>
+          <animateTransform 
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 250 250"
+            to="360 250 250"
+            dur="60s"
+            repeatCount="indefinite" />
+          {/* Group all elements that should rotate */}
+          <path d="M250,130 Q370,250 250,370 Q130,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <path d="M250,130 Q190,250 250,370 Q310,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <path d="M250,130 Q330,250 250,370 Q170,250 250,130" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <ellipse cx="250" cy="250" rx="120" ry="30" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <ellipse cx="250" cy="250" rx="90" ry="22.5" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <ellipse cx="250" cy="250" rx="60" ry="15" fill="none" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.5" />
+          <circle cx="210" cy="200" r="4" fill="#EF400A" />
+          <circle cx="300" cy="220" r="3" fill="#EF400A" />
+          <circle cx="270" cy="300" r="4" fill="#EF400A" />
+          <circle cx="180" cy="260" r="3" fill="#EF400A" />
+          <circle cx="330" cy="280" r="3.5" fill="#EF400A" />
+          <line x1="210" y1="200" x2="300" y2="220" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+          <line x1="300" y1="220" x2="270" y2="300" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+          <line x1="270" y1="300" x2="180" y2="260" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+          <line x1="180" y1="260" x2="330" y2="280" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+          <line x1="330" y1="280" x2="210" y2="200" stroke="#EF400A" strokeWidth="1" strokeOpacity="0.7" />
+        </g>
+      </svg>
+    </div>
+  </motion.div>
+</div>
+       
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 md:py-32 bg-[#0a0a2f]">
@@ -1100,43 +1046,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-20 md:py-32 bg-[#0a0a2f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#040423] to-[#0a0a3f] rounded-xl border border-[#EF400A]/20 p-10 md:p-16 shadow-xl shadow-[#EF400A]/5 text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Stay Updated</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
-              Subscribe to our newsletter for exclusive insights on venture capital, founder resources, and emerging technology trends.
-            </p>
-            <div className="max-w-md mx-auto">
-              <form className="flex flex-col sm:flex-row gap-4">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-grow px-4 py-3 rounded-full bg-[#040423] border border-[#EF400A]/20 text-white focus:outline-none focus:border-[#EF400A] transition-colors"
-                  required
-                />
-                <button 
-                  type="submit" 
-                  className="bg-gradient-to-r from-[#EF400A] to-[#ff5a2b] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-[#EF400A]/20 transition-all whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
-              <p className="text-gray-400 text-xs mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+      
       <Footer />
     </main>
   );

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Animated smooth flowing wave lines -->
+  <path d="M0,400 C50,420 100,380 150,390 S200,420 250,400 S300,370 350,390 S400,420 450,400 S500,370 550,390 S600,420 650,400 S700,370 750,390 S800,420 850,400 S900,370 950,390 S1000,420 1050,400"
+    fill="none"
+    stroke="#EF400A"
+    stroke-width="1.5"
+    stroke-opacity="0.3">
+    <animate attributeName="d" 
+      values="M0,400 C50,420 100,380 150,390 S200,420 250,400 S300,370 350,390 S400,420 450,400 S500,370 550,390 S600,420 650,400 S700,370 750,390 S800,420 850,400 S900,370 950,390 S1000,420 1050,400;
+              M0,390 C50,410 100,390 150,400 S200,410 250,390 S300,380 350,400 S400,410 450,390 S500,380 550,400 S600,410 650,390 S700,380 750,400 S800,410 850,390 S900,380 950,400 S1000,410 1050,390;
+              M0,400 C50,420 100,380 150,390 S200,420 250,400 S300,370 350,390 S400,420 450,400 S500,370 550,390 S600,420 650,400 S700,370 750,390 S800,420 850,400 S900,370 950,390 S1000,420 1050,400"
+      dur="15s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Animated undulating wave pattern -->
+  <path d="M-100,150 C0,180 50,120 150,140 S250,180 350,150 S450,100 550,130 S650,170 750,140 S850,100 950,150 S1050,180 1150,150"
+    fill="none"
+    stroke="#EF400A"
+    stroke-width="1"
+    stroke-opacity="0.25">
+    <animate attributeName="d" 
+      values="M-100,150 C0,180 50,120 150,140 S250,180 350,150 S450,100 550,130 S650,170 750,140 S850,100 950,150 S1050,180 1150,150;
+              M-100,140 C0,170 50,130 150,150 S250,170 350,140 S450,110 550,140 S650,160 750,130 S850,110 950,160 S1050,170 1150,140;
+              M-100,150 C0,180 50,120 150,140 S250,180 350,150 S450,100 550,130 S650,170 750,140 S850,100 950,150 S1050,180 1150,150"
+      dur="18s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Animated dynamic flowing vertical wave -->
+  <path d="M200,0 C180,50 220,100 190,150 S210,200 180,250 S220,300 190,350 S210,400 180,450 S220,500 190,550 S210,600 180,650"
+    fill="none"
+    stroke="#EF400A"
+    stroke-width="1"
+    stroke-opacity="0.2">
+    <animate attributeName="d" 
+      values="M200,0 C180,50 220,100 190,150 S210,200 180,250 S220,300 190,350 S210,400 180,450 S220,500 190,550 S210,600 180,650;
+              M200,0 C190,50 210,100 200,150 S190,200 210,250 S190,300 210,350 S190,400 210,450 S190,500 210,550 S190,600 210,650;
+              M200,0 C180,50 220,100 190,150 S210,200 180,250 S220,300 190,350 S210,400 180,450 S220,500 190,550 S210,600 180,650"
+      dur="20s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Animated complementary vertical wave -->
+  <path d="M800,0 C820,50 780,100 810,150 S790,200 820,250 S780,300 810,350 S790,400 820,450 S780,500 810,550 S790,600 820,650"
+    fill="none"
+    stroke="#EF400A"
+    stroke-width="1"
+    stroke-opacity="0.2">
+    <animate attributeName="d" 
+      values="M800,0 C820,50 780,100 810,150 S790,200 820,250 S780,300 810,350 S790,400 820,450 S780,500 810,550 S790,600 820,650;
+              M800,0 C810,50 790,100 800,150 S810,200 790,250 S810,300 790,350 S810,400 790,450 S810,500 790,550 S810,600 790,650;
+              M800,0 C820,50 780,100 810,150 S790,200 820,250 S780,300 810,350 S790,400 820,450 S780,500 810,550 S790,600 820,650"
+      dur="22s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Ripple effect circles -->
+  <circle cx="150" cy="500" r="80" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.15">
+    <animate attributeName="r" values="70;85;70" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="850" cy="150" r="100" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.15">
+    <animate attributeName="r" values="90;110;90" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Animated fluid accent lines -->
+  <path d="M380,40 C400,60 420,50 450,100" stroke="#EF400A" stroke-width="1.5" stroke-opacity="0.3" fill="none">
+    <animate attributeName="d" 
+      values="M380,40 C400,60 420,50 450,100;
+              M380,45 C405,65 415,55 450,105;
+              M380,40 C400,60 420,50 450,100"
+      dur="12s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M600,550 C620,530 630,520 650,500" stroke="#EF400A" stroke-width="1.5" stroke-opacity="0.3" fill="none">
+    <animate attributeName="d" 
+      values="M600,550 C620,530 630,520 650,500;
+              M600,545 C625,525 635,515 650,495;
+              M600,550 C620,530 630,520 650,500"
+      dur="14s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Animated flowing background elements -->
+  <path d="M50,200 C100,220 150,190 200,210 S250,230 300,200" 
+    fill="none" 
+    stroke="#EF400A" 
+    stroke-width="0.8" 
+    stroke-opacity="0.15">
+    <animate attributeName="d" 
+      values="M50,200 C100,220 150,190 200,210 S250,230 300,200;
+              M50,205 C100,225 150,195 200,215 S250,235 300,205;
+              M50,200 C100,220 150,190 200,210 S250,230 300,200"
+      dur="16s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M700,300 C750,330 800,310 850,340 S900,320 950,350" 
+    fill="none" 
+    stroke="#EF400A" 
+    stroke-width="0.8" 
+    stroke-opacity="0.15">
+    <animate attributeName="d" 
+      values="M700,300 C750,330 800,310 850,340 S900,320 950,350;
+              M700,305 C750,335 800,315 850,345 S900,325 950,355;
+              M700,300 C750,330 800,310 850,340 S900,320 950,350"
+      dur="19s"
+      repeatCount="indefinite"/>
+  </path>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Background glow effect -->
+  <defs>
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#EF400A;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#EF400A;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Pulse animations -->
+    <animate xlink:href="#outerPulse" attributeName="r" values="170;190;170" dur="4s" repeatCount="indefinite" />
+    <animate xlink:href="#middlePulse" attributeName="r" values="140;160;140" dur="4s" begin="1s" repeatCount="indefinite" />
+    <animate xlink:href="#innerPulse" attributeName="r" values="120;130;120" dur="3s" begin="2s" repeatCount="indefinite" />
+  </defs>
+  
+  <!-- Pulse rings -->
+  <circle id="outerPulse" cx="250" cy="250" r="180" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.2" />
+  <circle id="middlePulse" cx="250" cy="250" r="150" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.3" />
+  <circle id="innerPulse" cx="250" cy="250" r="125" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.4" />
+  
+  <!-- Glow effect -->
+  <circle cx="250" cy="250" r="160" fill="url(#glowGradient)" />
+  
+  <!-- Globe base -->
+  <circle cx="250" cy="250" r="120" fill="none" stroke="#EF400A" stroke-width="1.5" stroke-opacity="0.8" />
+  
+  <!-- Globe grid lines - meridians -->
+  <path d="M250,130 Q370,250 250,370 Q130,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <path d="M250,130 Q190,250 250,370 Q310,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <path d="M250,130 Q330,250 250,370 Q170,250 250,130" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  
+  <!-- Globe grid lines - parallels -->
+  <ellipse cx="250" cy="250" rx="120" ry="30" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <ellipse cx="250" cy="250" rx="90" ry="22.5" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  <ellipse cx="250" cy="250" rx="60" ry="15" fill="none" stroke="#EF400A" stroke-width="1" stroke-opacity="0.5" />
+  
+  <!-- Connection points and network lines -->
+  <circle cx="210" cy="200" r="4" fill="#EF400A" />
+  <circle cx="300" cy="220" r="3" fill="#EF400A" />
+  <circle cx="270" cy="300" r="4" fill="#EF400A" />
+  <circle cx="180" cy="260" r="3" fill="#EF400A" />
+  <circle cx="330" cy="280" r="3.5" fill="#EF400A" />
+  
+  <line x1="210" y1="200" x2="300" y2="220" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="300" y1="220" x2="270" y2="300" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="270" y1="300" x2="180" y2="260" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="180" y1="260" x2="330" y2="280" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="330" y1="280" x2="210" y2="200" stroke="#EF400A" stroke-width="1" stroke-opacity="0.7" />
+  
+  <!-- Animation for rotation effect -->
+  <animateTransform 
+    attributeName="transform"
+    attributeType="XML"
+    type="rotate"
+    from="0 250 250"
+    to="360 250 250"
+    dur="60s"
+    repeatCount="indefinite" />
+</svg>
