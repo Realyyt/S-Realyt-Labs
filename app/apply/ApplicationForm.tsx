@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import ErrorMessage from './error';
 
 type ProgramType = 'residency' | 'ignite' | 'vc';
 
@@ -21,6 +22,8 @@ interface FormData {
 }
 
 export default function ApplicationForm() {
+  const [isError, setIsError] = useState(false);
+
   const searchParams = useSearchParams();
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
@@ -72,42 +75,30 @@ export default function ApplicationForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     try {
-      console.log('Submitting form data:', formData);
-      
       const response = await fetch('/api/apply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
-      console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
-
-      let data;
-      try {
-        data = responseText ? JSON.parse(responseText) : {};
-      } catch (parseError) {
-        console.error('Parse error:', parseError);
-        throw new Error('Invalid server response');
-      }
-
+  
       if (!response.ok) {
+        const responseText = await response.text();
+        const data = responseText ? JSON.parse(responseText) : {};
         throw new Error(data.error || 'Failed to submit application');
       }
-
+  
       router.push(`/thank-you?program=${formData.programType}`);
-    } catch (error: any) {
+    } catch (error) {
       console.error('Submission error:', error);
-      alert(`Failed to submit application: ${error.message}`);
+      setIsError(true); // Set error state
     }
   };
-
+  
   return (
     <section className="relative py-20">
       <div className="absolute inset-0">
@@ -143,7 +134,9 @@ export default function ApplicationForm() {
             </ul>
           </div>
 
-          {/* Application Form */}
+          {isError ? (
+      <ErrorMessage />
+    ) : (
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Program Selection */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -259,7 +252,7 @@ export default function ApplicationForm() {
             >
               Submit Application
             </button>
-          </form>
+          </form> )}
         </div>
       </div>
     </section>
