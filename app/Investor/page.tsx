@@ -312,14 +312,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="mt-16 text-center">
-            <Link href="/portfolio" className="inline-flex items-center bg-transparent border border-[#EF400A] text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-[#EF400A]/10 transition-colors">
-              View All Portfolio Companies
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-          </div>
+         
         </div>
       </section>
 
@@ -771,7 +764,7 @@ export default function Home() {
                 {
                   name: "Emmanuel Isaac",
                   role: "CEO & Pioneer",
-                  bio: "Co-founder, innovation strategist, engineer, startup growth expert, 4x founder, investor with deep expertise in scaling technology ventures.",
+                  bio: "Co-founder, innovation strategist, engineer, startup growth expert, 5x founder, investor with deep expertise in scaling technology ventures.",
                   image: "/GM.jpg",
                   social: {
                     twitter: "https://x.com/Next12Realyt",
@@ -781,7 +774,7 @@ export default function Home() {
                 {
                   name: "Salem Andero",
                   role: "President & Pioneer",
-                  bio: "Co-founder, serial entrepreneur, global connector with extensive experience building international networks across tech ecosystems. 3x founder, advisor.",
+                  bio: "Co-founder, serial entrepreneur, global connector with extensive experience building international networks across tech ecosystems. 4x founder, advisor.",
                   image: "/GM2.jpg",
                   social: {
                     twitter: "https://x.com/SalemAndero",
