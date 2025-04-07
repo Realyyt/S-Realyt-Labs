@@ -239,28 +239,28 @@ export default function Home() {
                 description: "AI-powered quantum computing platform for enterprise applications",
                 logo: "/company1.svg",
                 category: "Artificial Intelligence",
-                raised: "$12M Series A"
+                raised: "$2M Series A"
               },
               {
                 name: "GreenTech",
                 description: "Carbon capture technology for industrial applications",
                 logo: "/company2.svg",
                 category: "Climate Tech",
-                raised: "$8M Seed"
+                raised: "$4M Seed"
               },
               {
                 name: "HealthSync",
                 description: "Remote patient monitoring platform for chronic conditions",
                 logo: "/company3.svg",
                 category: "Digital Health",
-                raised: "$5M Seed"
+                raised: "$2M Seed"
               },
               {
                 name: "FinFlow",
                 description: "Next-generation payment infrastructure for emerging markets",
                 logo: "/company4.svg",
                 category: "Fintech",
-                raised: "$15M Series A"
+                raised: "$2M Series A"
               },
               {
                 name: "WorkOS",
@@ -274,7 +274,7 @@ export default function Home() {
                 description: "Privacy-preserving data collaboration platform",
                 logo: "/company6.svg",
                 category: "Data Infrastructure",
-                raised: "$10M Series A"
+                raised: "$100k Pre-seed"
               }
             ].map((company, index) => (
               <motion.div 
@@ -764,7 +764,7 @@ export default function Home() {
                 {
                   name: "Emmanuel Isaac",
                   role: "CEO & Pioneer",
-                  bio: "Co-founder, innovation strategist, engineer, startup growth expert, 5x founder, investor with deep expertise in scaling technology ventures.",
+                  bio: "Co-founder, innovation strategist, engineer, startup growth expert, 6x founder, investor with deep expertise in scaling technology ventures.",
                   image: "/GM.jpg",
                   social: {
                     twitter: "https://x.com/Next12Realyt",
