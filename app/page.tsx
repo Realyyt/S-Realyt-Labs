@@ -33,7 +33,7 @@ export default function Residency() {
         <div className="absolute inset-0 bg-[url('/residency-bg.jpg')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 z-5">
           <Image
-            src="/b.svg"
+            src="/a.svg"
             alt="Background animation"
             fill
             className="object-cover"
@@ -44,8 +44,8 @@ export default function Residency() {
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6">
             <span className="text-[#EF400A]">NEXT12</span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-[#0a0a2f] max-w-3xl mx-auto">
-            Restructing global innovation and growth
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white  max-w-3xl mx-auto">
+            Restructuring Global Innovation and Growth
           </p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <Link 
