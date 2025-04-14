@@ -298,13 +298,8 @@ export default function Next12Page() {
           
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-6">IgniteX Thailand</h3>
-            <p className="text-[#898989] mb-8 text-xl">Proposed Date: April 18th, 2025</p>
-            <div className="inline-block">
-              <div 
-            id="booking-button-container" className="bg-[#EF400A] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#EF400A]/90 transition-colors">
-                
-              </div>
-            </div>
+            <p className="text-[#898989] mb-8 text-xl">Proposed Date: May 30th, 2025</p>
+       
           </div>
         </div>
       </section>
@@ -430,7 +425,7 @@ export default function Next12Page() {
           
           <div className="text-center mt-16">
             <p className="text-[#898989] mb-8 text-xl">Next12 Ignite Thailand: Proposed Date: August 2025</p>
-            <a href="#" className="bg-[#EF400A] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#EF400A]/90 transition-colors inline-block">
+            <a href="/Ignite" className="bg-[#EF400A] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#EF400A]/90 transition-colors inline-block">
               Express Interest
             </a>
           </div>
