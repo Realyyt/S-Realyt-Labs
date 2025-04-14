@@ -41,7 +41,7 @@ export default function Next12Page() {
       <section className="bg-[#040423] text-white pt-32 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            next<span className="text-[#EF400A]">12</span> Thailand
+            Next<span className="text-[#EF400A]">12</span> Thailand
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10">
             A world-class innovation and investment lab designed to accelerate
