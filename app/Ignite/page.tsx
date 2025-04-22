@@ -289,7 +289,7 @@ export default function Ignite() {
                 date: 'August 2025', 
                 focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
                 status: 'Coming Soon',
-                link: '/Ignite/Thailand'
+                link: '/Ignite/thailand'
               },
               { 
                 location: 'Dubai, UAE', 
