@@ -289,28 +289,28 @@ export default function Ignite() {
                 date: 'August 2025', 
                 focus: 'Scaling Startup Global, Peak Productivity & Founder Wellness',
                 status: 'Coming Soon',
-                link: '/ignite/thailand'
+                link: '/Ignite/Thailand'
               },
               { 
                 location: 'Dubai, UAE', 
                 date: 'Q4, 2025', 
                 focus: 'Web3 & Fintech',
                 status: 'Coming Soon',
-                link: '/ignite/dubai'
+                link: '/Ignite/dubai'
               },
               { 
                 location: 'Gujarat, India', 
                 date: 'Q3, 2025', 
                 focus: 'Web3 & Fintech',
                 status: 'Coming Soon',
-                link: '/ignite/india'
+                link: '/Ignite/india'
               },
               { 
                 location: 'Lagos, Nigeria', 
                 date: 'Q4, 2025', 
                 focus: 'AI & DeFi',
                 status: 'Coming Soon',
-                link: '/ignite/lagos'
+                link: '/Ignite/lagos'
               },
             ].map((program, idx) => (
               <Link 

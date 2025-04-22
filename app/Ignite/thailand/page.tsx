@@ -1,259 +1,525 @@
-'use client';
+// app/page.tsx
+"use client";
+import { useEffect } from "react";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
 
-import Link from 'next/link';
-import Navbar from '@/components/navbar';
+export default function Next12Page() {
+  useEffect(() => {
+    // Load TrekkSoft booking script
+    const script = document.createElement("script");
+    script.src = "https://bw.trekksoft.com/loader.js";
+    script.async = true;
+    script.setAttribute("data-owner", "trekksoft");
+    script.setAttribute("data-type", "activity-booking");
+    script.setAttribute("data-id", "336353");
+    script.setAttribute("data-client-id", "BOOKIE-a0c86de444c5d0b98c160bb97");
+    script.setAttribute(
+      "data-token",
+      "2f02f0c7af1427fbf7e52043d780dd563bc978d4252a0c3d"
+    );
 
-export default function ThailandPage() {
+    const container = document.getElementById("booking-button-container");
+    if (container) {
+      container.appendChild(script);
+    }
+
+    return () => {
+      // Clean up script on unmount
+      if (container && script) {
+        container.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
-    <main className="min-h-screen p-8 md:p-24 relative overflow-x-hidden bg-slate-900">
-      {/* Traditional Thai Background Elements */}
-      <div className="fixed inset-0 z-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/thai-silk-pattern.svg')] bg-repeat opacity-20 mix-blend-soft-light"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-900/20 via-transparent to-slate-900/80"></div>
-      </div>
+    <main className="min-h-screen bg-white text-[#040423]">
+      {/* Header */}
+      <Navbar />
 
-      {/* Floral Corner Decorations */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-[url('/thai-floral-corner.png')] bg-contain opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-[url('/thai-floral-corner.png')] bg-contain opacity-20 rotate-180"></div>
-
-      {/* Main Content Container */}
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center relative mb-16 md:mb-24 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/thailand.jpg')] bg-cover bg-center opacity-90">
-            <div className="absolute inset-0 bg-black/50"></div>
+      {/* Hero Section */}
+      <section className="bg-[#040423] text-white pt-32 pb-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Next<span className="text-[#EF400A]">12</span> Thailand
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10">
+            A world-class innovation and investment lab designed to accelerate
+            the success of exceptional founders and investors by connecting them
+            in powerful, high-impact environments.
+          </p>
+          {/* Booking Button */}
+          <div
+            id="booking-button-container"
+            className="bg-[#EF400A] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#EF400A]/90 transition-colors cursor-pointer inline-block"
+          >
+            
           </div>
-          <div className="relative max-w-7xl mx-auto px-4">
-            <h1 className="text-4xl md:text-7xl font-bold mb-8 gradient-text">
-              NEXT12 IGNITE THAILAND
-            </h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--accent)' }}>
-              12-Day Founder Acceleration Program · August 1-12, 2025
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Introduction to Next12</h2>
+            <div className="w-24 h-1 bg-[#EF400A] mx-auto"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+              <p className="text-[#898989] mb-6">
+                Next12 is a world-class innovation and investment lab designed
+                to accelerate the success of exceptional founders and investors
+                by connecting them in powerful, high-impact environments.
+              </p>
+              <p className="text-[#898989] mb-6">
+                Our program focuses on bridging innovation and investment by
+                bringing together visionary founders, top-tier investors, and
+                global business leaders. With curated experiences in different
+                locations, Next12 is designed to unlock game-changing
+                opportunities.
+              </p>
+              <p className="text-[#898989]">
+                Next12 is coming to Thailand, and we are hosting two powerful
+                programs:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="bg-[#040423] text-white p-8 rounded-lg">
+                <h4 className="text-xl font-bold mb-2">Next12 IgniteX</h4>
+                <p>
+                  A high-level investor-focused retreat designed to match top
+                  investors with cutting-edge founders.
+                </p>
+              </div>
+              <div className="bg-[#EF400A] text-white p-8 rounded-lg">
+                <h4 className="text-xl font-bold mb-2">Next12 Ignite</h4>
+                <p>
+                  An immersive 12-day builder&apos;s lab for founders to ideate,
+                  scale, connect, and raise capital.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* IgniteX Section */}
+      <section id="ignitex" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Next12 IgniteX</h2>
+            <p className="text-xl text-[#898989] max-w-3xl mx-auto">Exclusive Next12 Experience</p>
+            <div className="w-24 h-1 bg-[#EF400A] mx-auto mt-4"></div>
+          </div>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">What is IgniteX?</h3>
+            <p className="text-[#898989] mb-6">
+              Next12 IgniteX is an exclusive, high-impact event that encapsulates the essence of Next12 into a single day. Designed for investors and founders, IgniteX serves as a platform for:
+            </p>
+            <ul className="list-disc pl-6 text-[#898989] mb-6 space-y-2">
+              <li>Networking among local and international founders and investors</li>
+              <li>Brainstorming innovative ideas and investment strategies</li>
+              <li>Demonstrating cutting-edge solutions and business models</li>
+              <li>A structured, result-oriented format that leads to real deal-making</li>
+            </ul>
+            <p className="text-[#898989]">
+              This retreat facilitates meaningful connections and collaborations, setting the stage for future engagements.
             </p>
           </div>
-        </section>
-
-        {/* Program Schedule */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
-          <div className="absolute -top-20 left-0 w-32 h-32 bg-[url('/thai-motif.png')] bg-contain opacity-20"></div>
-          <h2 className="text-3xl font-bold mb-12 text-center relative">
-            Program Journey
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { day: 'Day 1', title: 'Founder Onboarding', desc: 'Mindset Workshop & Cohort Matching' },
-              { day: 'Day 2-4', title: 'Validation Sprint', desc: 'Market Fit & Unit Economics Deep Dive' },
-              { day: 'Day 5-7', title: 'Scale Architecture', desc: 'Growth Engine Design & Tech Stack Optimization' },
-              { day: 'Day 8-10', title: 'Leadership Forge', desc: 'Stress Management & Decision Simulations' },
-              { day: 'Day 11', title: 'Pitch Perfect', desc: 'Investor Storytelling & Financial Modeling' },
-              { day: 'Day 12', title: 'Ignition Day', desc: 'Demo Day & Investor Summit' },
-            ].map((item, idx) => (
-              <div 
-                key={idx}
-                className="p-6 rounded-lg border relative group transition-all hover:-translate-y-1 hover:shadow-xl"
-                style={{ 
-                  borderColor: 'var(--accent)', 
-                  background: 'linear-gradient(145deg, rgba(113,71,23,0.2) 0%, rgba(15,23,42,0.8) 100%)' 
-                }}
-              >
-                <div className="absolute inset-0 [mask-image:url('/thai-pattern-light.svg')] bg-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-sm opacity-90">{item.desc}</p>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">Who is it for?</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#040423] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Investors</h4>
+                <p className="text-[#898989]">
+                  Seeking direct investment opportunities and partnership with high-potential startups in Thailand and Southeast Asia.
+                </p>
               </div>
-            ))}
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Founders</h4>
+                <p className="text-[#898989]">
+                  Looking to showcase their ventures and connect with potential backers who can fuel their growth and expansion.
+                </p>
+              </div>
+            </div>
           </div>
-        </section>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">The IgniteX Experience</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#040423] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Exclusive Networking Sessions</h4>
+                <p className="text-[#898989]">
+                  Engage in high-quality interactions with industry leaders and decision-makers in an intimate setting.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Fireside Chats</h4>
+                <p className="text-[#898989]">
+                  Gain invaluable insights from seasoned investors and successful entrepreneurs.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#040423] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Roundtable Discussions</h4>
+                <p className="text-[#898989]">
+                  Collaborate on investment strategies and market trends with diverse perspectives.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Cultural Experiences</h4>
+                <p className="text-[#898989]">
+                  Experience Thailand&apos;s rich heritage while forging strong business relationships.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">Benefits for Investors & Partners</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Access to Curated Deal Flow</h4>
+                      <p className="text-[#898989]">Engage with investment-ready startups that have been carefully selected.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Networking Opportunities</h4>
+                      <p className="text-[#898989]">Connect with top-tier investors and industry experts.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Market Insight</h4>
+                      <p className="text-[#898989]">Explore high-growth industries and emerging markets with expert guidance.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Premium Experience</h4>
+                      <p className="text-[#898989]">Enjoy a well-structured, high-touch event designed for optimal engagement.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">Why Thailand?</h3>
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <p className="text-[#898989] mb-6">
+                Thailand is rapidly emerging as a vibrant startup hub, offering a fertile ground for innovation and investment.
+              </p>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 className="text-xl font-bold mb-3">Booming Digital Economy</h4>
+                  <p className="text-[#898989] mb-4">
+                    Projected to reach $33 billion by 2025, driven by advancements in fintech, e-commerce, and artificial intelligence.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold mb-3">Government Support</h4>
+                  <p className="text-[#898989] mb-4">
+                    Initiatives like the SMART Visa program attract highly skilled professionals and investors, fostering a conducive environment for startups.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold mb-3">Strategic Location</h4>
+                  <p className="text-[#898989] mb-4">
+                    Serving as a gateway to Southeast Asia, Thailand offers access to a market of over 600 million people.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-6">IgniteX Thailand</h3>
+            <p className="text-[#898989] mb-8 text-xl">Proposed Date: May 30th, 2025</p>
+       
+          </div>
+        </div>
+      </section>
 
-            {/* Focus Tracks */}
-            <section className="p-8 rounded-lg relative overflow-hidden group transition-transform hover:scale-[1.02] mb-20 mx-4"
-          style={{ 
-            background: 'linear-gradient(160deg, rgb(15 23 42) 0%, rgb(30 27 24) 100%)',
-            border: '1px solid rgba(245,158,11,0.3)',
-            boxShadow: '0 4px 30px rgba(245,158,11,0.05)'
-          }}
-        >
-          <div className="absolute top-2 right-2 w-12 h-12 bg-[url('/gold-flower.png')] bg-contain opacity-10 group-hover:opacity-20 transition-opacity"></div>
-          <h2 className="text-3xl font-bold mb-12 text-center text-amber-100">Core Tracks</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { 
-                title: 'Peak Productivity', 
-                content: 'Time-blocking strategies · Deep work protocols · Energy management systems',
-                partners: ['Chivitr', 'Next12']
-              },
-              { 
-                title: 'Founder Wellness', 
-                content: 'Stress resilience training · Sleep optimization · Nutritional programming',
-                partners: ['Chivitr']
-              },
-              { 
-                title: 'Global Scaling', 
-                content: 'Cross-cultural expansion · Compliance architecture · Localization playbooks',
-                partners: ['Next12', 'Realyt', 's8', "karnot"]
-              },
-              { 
-                title: 'Tech Stack Mastery', 
-                content: 'AI integration · Infrastructure automation · Security hardening · app chains',
-                partners: ['karnot', 'Starknet', ]
-              }
-            ].map((track, idx) => (
-              <div 
-                key={idx}
-                className="p-8 rounded-lg relative overflow-hidden group transition-all hover:scale-[1.02] hover:shadow-lg" 
-                style={{ 
-                  background: 'rgb(30 41 59)',
-                  border: '1px solid rgba(245,158,11,0.2)',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
-                }}
-              >
-                <h3 className="text-2xl font-bold mb-4 text-amber-50">{track.title}</h3>
-                <p className="text-lg mb-4 text-amber-200">{track.content}</p>
-                <div className="pt-4 border-t relative border-amber-800/50">
-                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
-                  <p className="text-sm font-bold mb-2 text-amber-100">Featured Partners:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {track.partners.map((partner, pIdx) => (
-                      <span 
-                        key={pIdx}
-                        className="px-3 py-1 text-sm rounded-full bg-amber-900/30 backdrop-blur-sm hover:bg-amber-900/50 transition-colors" 
-                        style={{ 
-                          color: 'var(--accent)'
-                        }}
-                      >
-                        {partner}
-                      </span>
-                    ))}
+      {/* Ignite Section */}
+      <section id="ignite" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Next12 Ignite</h2>
+            <p className="text-xl text-[#898989] max-w-3xl mx-auto">The Builders Lab</p>
+            <div className="w-24 h-1 bg-[#EF400A] mx-auto mt-4"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-16 mb-16">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">What is Ignite?</h3>
+              <p className="text-[#898989] mb-6">
+                Next12 Ignite is a 12-day immersive lab designed for:
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
+                  <p className="text-[#898989]">Founders & Startup Teams seeking to accelerate their ventures.</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-[#898989]">Tech & Product Builders aiming to innovate and scale solutions.</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-[#898989]">Innovators & Creators looking to make a significant impact.</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-[#EF400A] text-white p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-[#898989]">Business/Startup Leaders and Executives interested in staying ahead of industry trends.</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Who is it for?</h3>
+              <div className="space-y-6">
+                <div className="bg-[#040423] text-white p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-2">Early-stage Startups</h4>
+                  <p>Ready to scale and take their business to the next level.</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Featured Speakers */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
-          <h2 className="text-3xl font-bold mb-12 text-center relative">
-            Featured Mentors
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { 
-                name: 'Tiago Fote', 
-                role: 'Productivity Architect', 
-                org: 'Forte Labs', 
-                img: '/speakers/tiago.jpg' 
-              },
-              { 
-                name: 'Dr. Andrew Huberman', 
-                role: 'Neuroscience Expert', 
-                org: 'Stanford University', 
-                img: '/speakers/huberman.jpg' 
-              },
-              { 
-                name: 'Claire Hughes Johnson', 
-                role: 'Scaling Expert', 
-                org: 'Stripe Alumni', 
-                img: '/speakers/claire.jpg' 
-              },
-              { 
-                name: 'Nat Friedman', 
-                role: 'AI Strategist', 
-                org: 'GitHub CEO Emeritus', 
-                img: '/speakers/nat.jpg' 
-              },
-            ].map((speaker, idx) => (
-              <div key={idx} className="text-center">
-                <div 
-                  className="w-full h-48 bg-gray-800 rounded-lg mb-4 bg-cover bg-center border-2 border-amber-500/30 hover:border-amber-500/60 transition-all"
-                  style={{ 
-                    backgroundImage: `url(${speaker.img})`,
-                    clipPath: 'polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%)'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
+                <div className="bg-[#EF400A] text-white p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-2">Established Companies</h4>
+                  <p>Seeking innovation and fresh perspectives.</p>
                 </div>
-                <h3 className="text-xl font-bold">{speaker.name}</h3>
-                <p className="text-sm opacity-90">{speaker.role}</p>
-                <p className="text-xs opacity-75">{speaker.org}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Registration CTA */}
-        <section className="max-w-2xl mx-auto mb-20 relative px-4">
-          <div 
-            className="p-8 rounded-lg relative overflow-hidden"
-            style={{ 
-              background: 'linear-gradient(135deg, #b45309 0%, #f59e0b 100%)',
-              boxShadow: '0 8px 32px rgba(245,158,11,0.3)'
-            }}
-          >
-            <div className="absolute inset-0 bg-[url('/silk-texture.png')] opacity-20 mix-blend-soft-light"></div>
-            <h2 className="text-3xl font-bold mb-8 text-center">Secure Your Spot</h2>
-            <div 
-              className="p-6 rounded-lg"
-              style={{ 
-                background: 'var(--accent)', 
-                color: 'var(--foreground)' 
-              }}
-            >
-              <p className="text-xl mb-4 text-center">Early Founder Cohort: $999</p>
-              <p className="text-sm mb-6 text-center">Includes full program access, mentor sessions, and dedicated wellness programs</p>
-              <div className="text-center">
-              <Link
-                  href="/ignite/thailand/registration"
-                  className="inline-block px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform transform-gpu"
-                  style={{ 
-                    background: 'var(--foreground)', 
-                    color: 'var(--accent)',
-                    position: 'relative',
-                    zIndex: 10
-                  }}
-                >
-                  Apply Now
-                </Link>
+                <div className="bg-[#898989] text-white p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-2">Entrepreneurs</h4>
+                  <p>With a vision for change and impact.</p>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Host Partners Section */}
-        <section className="max-w-7xl mx-auto mb-20 relative px-4 text-stone-200">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-[url('/thai-motif-pattern.svg')] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <h2 className="text-3xl font-bold mb-12 text-center relative">
-              Host Partners
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500/80"></div>
-            </h2>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center p-8 rounded-xl border border-amber-500/30 relative overflow-hidden">
-              <div className="absolute inset-0 [mask-image:url('/thai-border-motif.svg')] bg-amber-500/10 opacity-20"></div>
-              {['AWS', 'HubSpot', 'Notion', 'BangkokBank', 'TrueDigital'].map((logo, idx) => (
-                <div 
-                  key={idx}
-                  className="h-16 bg-contain bg-center bg-no-repeat opacity-80 hover:opacity-100 transition-opacity hover:scale-110"
-                  style={{ 
-                    backgroundImage: `url(/logos/${logo.toLowerCase()}.svg)`,
-                    filter: 'grayscale(1) brightness(2)',
-                    WebkitMaskImage: 'url(/thai-circle-motif.svg)',
-                    maskImage: 'url(/thai-circle-motif.svg)',
-                    maskSize: 'contain'
-                  }}
-                ></div>
-              ))}
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-6 text-center">The Ignite Experience</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#040423] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Hands-on Workshops</h4>
+                <p className="text-[#898989]">
+                  Focused on product development, business strategy, and growth hacking.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Mentorship Sessions</h4>
+                <p className="text-[#898989]">
+                  One-on-one guidance from industry experts and successful entrepreneurs.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#040423] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Investor Panels</h4>
+                <p className="text-[#898989]">
+                  Direct access to potential funding opportunities and investment insights.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2">Demo Day</h4>
+                <p className="text-[#898989]">
+                  Showcase your progress to a curated audience of investors and partners.
+                </p>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
+          
+          <div className="text-center mt-16">
+            <p className="text-[#898989] mb-8 text-xl">Next12 Ignite Thailand: Proposed Date: August 2025</p>
+            <a href="/Ignite" className="bg-[#EF400A] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#EF400A]/90 transition-colors inline-block">
+              Express Interest
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Floating Thai Ornaments */}
-      <div className="fixed top-1/4 right-4 w-16 h-16 bg-[url('/m1.png')] bg-contain  animate-float"></div>
-      <div className="fixed bottom-1/4 left-4 w-16 h-16 bg-[url('/m1.png')] bg-contain  animate-float-delayed"></div>
-
-      {/* Traditional Border Pattern */}
-      <div className="fixed inset-0 pointer-events-none border-[16px] border-transparent [border-image:url('/thai-border-pattern.png')_30_repeat] opacity-15"></div>
+      {/* Global Vision Section */}
+      <section id="global" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Global Vision & Expansion</h2>
+            <div className="w-24 h-1 bg-[#EF400A] mx-auto"></div>
+          </div>
+          
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-[#898989] text-lg mb-8">
+              We aim to launch Next12 Ignite in at least 150 countries over the next decade, impacting thousands of startups worldwide.
+            </p>
+            
+            <h3 className="text-2xl font-bold mb-6">2025 Expansion Targets</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-lg shadow-sm">Singapore</div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">Indonesia</div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">Lithuania</div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">India</div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">Nigeria</div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">Malaysia</div>
+            </div>
+            
+            <p className="text-[#898989] mt-8">
+              Beyond 2025: We will expand Next12 Ignite to every continent, one city at a time.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section id="contact" className="py-20 bg-[#040423] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">How to Get Involved</h2>
+          <p className="text-xl max-w-3xl mx-auto mb-12">
+            Want to be a part of the movement? Here are some opportunities:
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Investor Partnerships</h3>
+              <p>Invest in high-growth startups through Next12 Ignite.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Co-Hosting in Your City</h3>
+              <p>Bring Next12 Ignite to your startup ecosystem.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Startup Referrals</h3>
+              <p>Introduce high-potential founders to join our program.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Speaking Invitations</h3>
+              <p>Invite us to your events to share insights on startup building.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Corporate Sponsorship</h3>
+              <p>Position your brand at the forefront of global innovation.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#EF400A]">Mentorship & Advisory</h3>
+              <p>Guide the next generation of world-changing founders.</p>
+            </div>
+          </div>
+          
+          <div className="mt-12">
+            <p className="text-lg mb-8">Let&apos;s build the future, together!</p>
+            <div className="max-w-md mx-auto bg-white/10 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold mb-6 text-[#EF400A]">Contact Us</h3>
+              <p className="mb-4">Email: labs@next12.org</p>
+              <p className="mb-4">Website: www.next12.org</p>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div>
+                  <p className="font-bold">Salem Andero</p>
+                  <p className="text-sm">Co-pioneer, Next12</p>
+                </div>
+                <div>
+                  <p className="font-bold">Emmanuel Isaac</p>
+                  <p className="text-sm">Co-pioneer, Next12</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <Footer/>
     </main>
   );
 }
