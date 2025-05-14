@@ -88,6 +88,7 @@ const Footer = () => {
                 { name: 'Residency', href: '/residency' },
                 { name: 'Hubs', href: '/Hubs' },
                 { name: 'Investor', href: '/Investor' },
+                { name: 'Careers', href: '/careers' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-gray-400 hover:text-[#EF400A] transition-colors">
