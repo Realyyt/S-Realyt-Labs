@@ -17,7 +17,7 @@ export default function Impact50Event() {
             className="space-y-8"
           >
             <h1 className="text-7xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-gold to-purple-400 bg-clip-text text-transparent">
-              50IMPACT
+              The 50
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
               The Elite Gathering of Asia&apos;s Most Influential Minds
@@ -130,7 +130,7 @@ export default function Impact50Event() {
             Be part of this exclusive gathering of visionaries and leaders shaping the future of Asia.
           </p>
           <Link 
-            href="/50impact/interest"
+            href="/the50/interest"
             className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300 text-white px-12 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/20"
           >
             Express Your Interest
