@@ -64,7 +64,7 @@ export default function Careers() {
             Join Our <span className="text-[#EF400A]">Team</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-            Build the future of technology with us. We're looking for passionate individuals who want to make a difference.
+            Build the future of technology with us. We&apos;re looking for passionate individuals who want to make a difference.
           </p>
         </div>
       </section>
@@ -89,7 +89,7 @@ export default function Careers() {
               },
               {
                 title: 'Impact',
-                description: 'We\'re driven by the desire to make a meaningful impact.'
+                description: 'We&apos;re driven by the desire to make a meaningful impact.'
               },
               {
                 title: 'Growth',
@@ -128,9 +128,9 @@ export default function Careers() {
       {/* CTA Section */}
       <section className="py-20 bg-[#040423]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">We're Currently Not Hiring</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">We&apos;re Currently Not Hiring</h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            We're always looking for talented individuals. If you're interested in joining our team, please send your resume to <a href="mailto:labs@next12.org" className="text-[#EF400A]">labs@next12.org</a> and we'll keep you in mind for future opportunities.
+            We&apos;re always looking for talented individuals. If you&apos;re interested in joining our team, please send your resume to <a href="mailto:labs@next12.org" className="text-[#EF400A]">labs@next12.org</a> and we&apos;ll keep you in mind for future opportunities.
           </p>
         </div>
       </section>
