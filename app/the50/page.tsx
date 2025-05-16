@@ -78,7 +78,9 @@ export default function Impact50Event() {
             transition={{ duration: 0.8 }}
             className="relative h-[500px] bg-gradient-to-br from-purple-900/20 to-black rounded-2xl border border-purple-500/20 backdrop-blur-sm"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent">
+              <img src="/50.jpg" alt="Image description" className="w-full h-full object-cover" />
+            </div>
           </motion.div>
         </div>
       </section>
