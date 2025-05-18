@@ -765,7 +765,7 @@ export default function Home() {
                   name: "Emmanuel Isaac",
                   role: "CEO & Pioneer",
                   bio: "Co-founder, innovation strategist, engineer, startup growth expert, 6x founder, investor with deep expertise in scaling technology ventures.",
-                  image: "/GM.jpg",
+                  image: "/me.jpg",
                   social: {
                     twitter: "https://x.com/Next12Realyt",
                     linkedin: "https://www.linkedin.com/in/realyt/",
