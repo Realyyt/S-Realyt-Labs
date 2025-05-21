@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Impact50Event() {
   return (
@@ -28,7 +29,7 @@ export default function Impact50Event() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <Link 
-                href="/50impact/interest"
+                href="/the50/interest"
                 className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300 text-white px-12 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/20"
               >
                 Express Interest
@@ -47,7 +48,9 @@ export default function Impact50Event() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">An Exclusive Summit</h2>
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">
+              An Exclusive Summit
+            </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               Join the 50 most impactful leaders in Thailand for an unprecedented gathering in Phuket. 
               This exclusive event brings together visionaries, entrepreneurs, and thought leaders to 
@@ -79,7 +82,13 @@ export default function Impact50Event() {
             className="relative h-[500px] bg-gradient-to-br from-purple-900/20 to-black rounded-2xl border border-purple-500/20 backdrop-blur-sm"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent">
-              <img src="/50.jpg" alt="Image description" className="w-full h-full object-cover" />
+              <Image 
+                src="/50.jpg" 
+                alt="The 50 Event" 
+                fill
+                className="object-cover rounded-2xl"
+                priority
+              />
             </div>
           </motion.div>
         </div>
@@ -88,20 +97,22 @@ export default function Impact50Event() {
       {/* Features Section */}
       <section className="py-32 bg-gradient-to-b from-black via-purple-900/10 to-black">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <h2 className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">Why Attend 50IMPACT</h2>
+          <h2 className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">
+            Why Attend The 50
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Elite Networking",
-                description: "Connect with Thailand&apos;s most influential leaders and decision-makers in an intimate setting."
+                description: "Connect with Thailands most influential leaders and decision-makers in an intimate setting."
               },
               {
                 title: "Strategic Insights",
-                description: "Gain exclusive access to forward-thinking discussions about Asia&apos;s economic future."
+                description: "Gain exclusive access to forward-thinking discussions about Asias economic future."
               },
               {
                 title: "Luxury Experience",
-                description: "Enjoy world-class hospitality and curated experiences in Phuket&apos;s finest venues."
+                description: "Enjoy world-class hospitality and curated experiences in Phukets finest venues."
               }
             ].map((feature, index) => (
               <motion.div
@@ -111,7 +122,9 @@ export default function Impact50Event() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-br from-purple-900/20 to-black p-8 rounded-2xl border border-purple-500/20 backdrop-blur-sm"
               >
-                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">{feature.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
@@ -127,7 +140,9 @@ export default function Impact50Event() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">Join the Elite Circle</h2>
+          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent">
+            Join the Elite Circle
+          </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Be part of this exclusive gathering of visionaries and leaders shaping the future of Asia.
           </p>
