@@ -154,6 +154,52 @@ export default function Impact50Event() {
           </Link>
         </motion.div>
       </section>
+
+      {/* Host Section */}
+      <section className="py-20 px-4 md:px-8 border-t border-purple-500/10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <p className="text-xl font-light tracking-wider bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent font-serif italic mb-8">
+            Presented by
+          </p>
+          <div className="flex items-center justify-center gap-8 mb-12">
+            <div className="flex flex-col items-center">
+              <div className="relative w-48 h-16 mb-4">
+                <Image
+                  src="/c.png"
+                  alt="Chivitr"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-2xl font-light tracking-wider bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent font-serif italic">
+                Chivitr
+              </p>
+            </div>
+            <div className="text-3xl font-light text-gray-400">×</div>
+            <div className="flex flex-col items-center">
+              <div className="relative w-48 h-16 mb-4">
+                <Image
+                  src="/ico.png"
+                  alt="Next12"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-2xl font-light tracking-wider bg-gradient-to-r from-purple-400 to-gold bg-clip-text text-transparent font-serif italic">
+                Next12
+              </p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} The 50. All rights reserved.
+          </p>
+        </motion.div>
+      </section>
     </div>
   );
 } 
