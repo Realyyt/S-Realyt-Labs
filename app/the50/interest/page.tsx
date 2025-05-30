@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function InterestForm() {
   const [formData, setFormData] = useState({
@@ -13,10 +14,43 @@ export default function InterestForm() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const router = useRouter();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/the50-interest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const responseText = await response.text();
+        const data = responseText ? JSON.parse(responseText) : {};
+        throw new Error(data.error || 'Failed to submit interest');
+      }
+
+      setIsSubmitted(true);
+      // Optional: redirect to thank you page after a delay
+      setTimeout(() => {
+        router.push('/thank-you?program=the50');
+      }, 2000);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit interest');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,6 +60,37 @@ export default function InterestForm() {
       [name]: value
     }));
   };
+
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-md mx-auto px-4"
+        >
+          <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-gold to-purple-400 bg-clip-text text-transparent">
+            Thank You!
+          </h2>
+          <p className="text-gray-300 mb-6">
+            Your interest in The50 has been submitted successfully. We&apos;ll be in touch soon!
+          </p>
+          <Link 
+            href="/the50"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            ← Back to Event
+          </Link>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white">
@@ -49,6 +114,16 @@ export default function InterestForm() {
             Join the exclusive gathering of Asia&apos;s most influential minds
           </p>
         </motion.div>
+
+        {submitError && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mb-6 p-4 bg-red-900/20 border border-red-500/20 rounded-lg max-w-2xl mx-auto"
+          >
+            <p className="text-red-400">{submitError}</p>
+          </motion.div>
+        )}
 
         <motion.form
           initial={{ opacity: 0, y: 20 }}
@@ -142,9 +217,10 @@ export default function InterestForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300 text-white px-12 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/20"
+              disabled={isSubmitting}
+              className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300 text-white px-12 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Interest
+              {isSubmitting ? 'Submitting...' : 'Submit Interest'}
             </button>
           </div>
         </motion.form>

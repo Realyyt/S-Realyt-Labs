@@ -1,11 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { countries } from '../utils/countries';
 
-export default function CountrySelect({ name }: { name: string }) {
+interface CountrySelectProps {
+  name: string;
+  value?: string;
+  onChange?: (value: string) => void;
+}
+
+export default function CountrySelect({ name, value, onChange }: CountrySelectProps) {
   const [selectedCountry, setSelectedCountry] = useState<typeof countries[number]>(countries[0]);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Update selected country when value prop changes
+  useEffect(() => {
+    if (value) {
+      const country = countries.find(c => c.code === value);
+      if (country) {
+        setSelectedCountry(country);
+      }
+    }
+  }, [value]);
+
+  const handleSelect = (country: typeof countries[number]) => {
+    setSelectedCountry(country);
+    setIsOpen(false);
+    if (onChange) {
+      onChange(country.code);
+    }
+  };
+
   return (
     <div className="relative">
       <button
@@ -34,10 +59,7 @@ export default function CountrySelect({ name }: { name: string }) {
                 key={country.code}
                 type="button"
                 className="flex items-center gap-3 px-4 py-2 hover:bg-amber-800/20"
-                onClick={() => {
-                  setSelectedCountry(country);
-                  setIsOpen(false);
-                }}
+                onClick={() => handleSelect(country)}
               >
                 <span className="text-xl">{country.flag}</span>
                 <span className="flex-1 text-left">{country.name}</span>
