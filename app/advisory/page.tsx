@@ -86,26 +86,39 @@ export default function AdvisoryPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#040423] via-transparent to-[#040423] z-10" />
         <div className="absolute inset-0 bg-[url('/advisory-bg.jpg')] bg-cover bg-center opacity-20" />
         <div className="container mx-auto relative z-20 text-center">
+          <div className="mb-4">
+            <span className="inline-block px-4 py-2 bg-[#EF400A] text-white text-sm font-semibold rounded-full mb-4">
+              The World&apos;s Premier Data-Enhanced Startup Advisory Platform
+            </span>
+          </div>
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6">
-            <span className="text-white">The Founder&apos;s</span>
+            <span className="text-white">Where Unicorn Founders</span>
             <br />
-            <span className="text-[#EF400A]">Advantage</span>
+            <span className="text-[#EF400A]">Are Made</span>
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-4xl mx-auto">
-            Unlock Your Growth Potential with Expert Guidance, Powerful Collateral, and an Unrivaled Network
-          </p>
+          <div className="max-w-5xl mx-auto mb-8">
+            <p className="text-lg md:text-xl mb-4 text-gray-300 leading-relaxed">
+              <span className="text-red-400 font-semibold">Most founders waste 2-3 years learning what could be taught in 90 days.</span>
+            </p>
+            <p className="text-lg md:text-xl mb-4 text-gray-300 leading-relaxed">
+              <span className="text-red-400 font-semibold">97% of startups fail because they lack proper guidance and network access.</span>
+            </p>
+            <p className="text-lg md:text-xl text-white font-semibold">
+              Join the 3% who succeed with data-enhanced guidance, guaranteed VC access, and billion-dollar founder mentorship.
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
             <button 
               onClick={() => setShowForm(true)}
               className="px-6 py-3 md:px-8 md:py-4 bg-[#EF400A] text-white rounded-full text-sm md:text-lg font-semibold hover:bg-[#ff5a2b] transition-colors shadow-lg"
             >
-              Express Interest
+              Get Your Unicorn Strategy
             </button>
             <Link
               href="#details"
               className="px-6 py-3 md:px-8 md:py-4 border border-[#EF400A] text-[#EF400A] rounded-full text-sm md:text-lg font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
             >
-              Learn More
+              See Success Stories
             </Link>
           </div>
         </div>
@@ -115,10 +128,44 @@ export default function AdvisoryPage() {
       <section id="details" className="py-20 bg-[#0a0a2f]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Are you ready to take your startup to the next level? Our Next 12 Advisory Package is designed to give you the 
-              <span className="text-[#EF400A] font-semibold"> clarity, confidence, and connections</span> you need to accelerate your journey—all at a founder-friendly price.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              <span className="text-white">Why Next12 Outperforms</span>
+              <span className="text-[#EF400A]"> Every Competitor</span>
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+            <div className="bg-[#080830] rounded-xl p-8 border border-[#EF400A]">
+              <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">vs. Y Combinator</h3>
+              <p className="text-gray-300 mb-4">While YC uses a mass acceleration model for hundreds of startups:</p>
+              <ul className="text-white space-y-2">
+                <li>✓ We provide <strong>individualized data-powered guidance</strong></li>
+                <li>✓ Direct access to <strong>tier-1 VC partners</strong></li>
+                <li>✓ <strong>Guaranteed investor meetings</strong></li>
+                <li>✓ <strong>90-day success guarantee</strong></li>
+              </ul>
+            </div>
+            
+            <div className="bg-[#080830] rounded-xl p-8 border border-[#EF400A]">
+              <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">vs. Traditional Consultants</h3>
+              <p className="text-gray-300 mb-4">While consultants offer generic business advice:</p>
+              <ul className="text-white space-y-2">
+                <li>✓ We connect you with <strong>billion-dollar exit founders</strong></li>
+                <li>✓ <strong>Real-time market intelligence</strong> guides every decision</li>
+                <li>✓ <strong>Proprietary data models</strong> predict success probability</li>
+                <li>✓ <strong>International expansion</strong> with local expertise</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <div className="inline-block bg-[#EF400A] rounded-xl p-6 max-w-4xl">
+              <h3 className="text-2xl font-bold text-white mb-4">The Next12 Advantage</h3>
+              <p className="text-lg text-white leading-relaxed">
+                We&apos;re the only platform that combines <strong>AI-powered insights</strong>, <strong>guaranteed VC access</strong>, 
+                and <strong>mentorship from unicorn founders</strong> to create a 90%+ Series A success rate for our clients.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -128,124 +175,126 @@ export default function AdvisoryPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-white">What&apos;s</span>
-              <span className="text-[#EF400A]"> Included?</span>
+              <span className="text-white">Four Unstoppable</span>
+              <span className="text-[#EF400A]"> Competitive Advantages</span>
             </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              Why ambitious founders choose Next12 over every alternative
+            </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Professional Collateral Deck */}
-            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Professional Collateral Deck</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Investor-Ready Materials:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• A visually stunning, data-driven pitch deck tailored to your business</li>
-                    <li>• Easy-to-understand collateral for clients, partners, and investors</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Brand Consistency:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Aligned with your brand identity, ensuring you always make a powerful impression</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Strategic Advisory */}
-            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Strategic Advisory & Mentorship</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Regular Strategy Sessions:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Weekly check-ins to review progress, set goals, and tackle challenges</li>
-                    <li>• Actionable advice from seasoned professionals with startup and scale-up expertise</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">On-Demand Support:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Quick access to your advisor for urgent questions, feedback, or introductions</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Investor & Partner Introductions */}
-            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Investor & Partner Introductions</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Access to a Curated Network:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Introductions to active investors and strategic partners</li>
-                    <li>• Warm introductions—not just cold emails—to help you build meaningful relationships</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Pitch Refinement */}
-            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-10 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M8 10h8m-8 4h3" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Pitch Refinement & Practice</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Pitch Coaching:</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Personalized feedback to help you refine your pitch and delivery</li>
-                    <li>• Practice sessions to boost your confidence and effectiveness</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Growth Roadmap */}
-            <div className="bg-[#080830] rounded-xl p-8 lg:col-span-2 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl">
+            {/* Data-Enhanced Personalization */}
+            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-[#EF400A]/30">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Growth Roadmap</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Data-Enhanced Personalization</h3>
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-lg mb-2">Customized Plan:</h4>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Proprietary Intelligence Engine:</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• A tailored 120-day roadmap to guide your business growth</li>
-                    <li>• Clear milestones and KPIs to keep you on track</li>
+                    <li>• Real-time market intelligence that adapts to your industry</li>
+                    <li>• Predictive models that forecast your startup&apos;s success probability</li>
+                    <li>• Personalized strategy recommendations based on comparable exits</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Unlike Generic Programs:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• No one-size-fits-all approaches</li>
+                    <li>• Every decision backed by data from 10,000+ startups</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Guaranteed VC Access */}
+            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-[#EF400A]/30">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Guaranteed VC Access</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Tier-1 Investor Network:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Direct intros to partners</li>
+                    <li>• Guaranteed meetings with 3+ tier-1 VCs per package</li>
+                    <li>• Warm introductions, not cold emails</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Results Guarantee:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• 90%+ Series A success rate for our clients</li>
+                    <li>• Full refund if no VC meetings within 90 days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Founder-to-Founder Mentorship */}
+            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-[#EF400A]/30">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Billion-Dollar Founder Mentorship</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Elite Mentor Network:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Direct access to founders with Billion dollar exits</li>
+                    <li>• Monthly 1-on-1s with public company CEOs</li>
+                    <li>• Learn from those who&apos;ve built generational wealth</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Not Corporate Consultants:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Real operators who&apos;ve been in your exact position</li>
+                    <li>• Strategies that created unicorns, not theories</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Global Network Effects */}
+            <div className="bg-[#080830] rounded-xl p-8 transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-[#EF400A]/30">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-[#EF400A] rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Global Network Effects</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">International Expansion:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Local expertise in 15+ countries</li>
+                    <li>• Regulatory guidance for global markets</li>
+                    <li>• Cross-border partnership opportunities</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2 text-white">Network Multiplier Effect:</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Alumni referrals create viral growth</li>
+                    <li>• Cross-portfolio collaboration opportunities</li>
                   </ul>
                 </div>
               </div>
@@ -313,182 +362,296 @@ export default function AdvisoryPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-[#EF400A]">Investment Packages</span>
+              <span className="text-[#EF400A]">Choose Your Unicorn Path</span>
             </h2>
-            <p className="text-xl text-gray-300">Choose the support package that fits your needs</p>
+            <p className="text-xl text-gray-300 mb-4">
+              Each package provides 5-15x more value than you&apos;ll pay
+            </p>
+            <div className="inline-block bg-red-900/20 border border-red-500/20 rounded-lg p-4 max-w-2xl">
+              <p className="text-red-400 font-semibold">
+                ⚠️ Limited Availability: We only accept 10 new clients per month to maintain quality
+              </p>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* 30 Days Package */}
-            <div className="bg-[#080830] rounded-2xl p-6 md:p-8 border border-gray-600 hover:border-[#EF400A] transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* Catalyst Package */}
+            <div className="bg-[#080830] rounded-2xl p-6 border border-gray-600 hover:border-[#EF400A] transition-colors relative">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-4 text-white">Starter Package</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Catalyst Package</h3>
                 <div className="mb-4">
-                  <span className="text-3xl md:text-4xl font-bold text-[#EF400A]">$1,450</span>
-                  <span className="text-lg text-gray-300 ml-2">(net)</span>
+                  <span className="text-3xl font-bold text-[#EF400A]">$2,995</span>
                 </div>
-                <p className="text-lg text-gray-300 mb-6">30 days of focused support</p>
+                <p className="text-sm text-gray-300 mb-4">45 days • Data-Enhanced Launch</p>
+                <div className="bg-green-900/20 border border-green-500/20 rounded p-2">
+                  <p className="text-green-400 text-xs font-semibold">🎯 $15,000+ Value</p>
+                </div>
               </div>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6 text-sm">
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Basic collateral deck
+                  8 intensive strategy sessions (2hrs each)
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  4 advisory sessions
+                  Data-powered pitch deck development
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Email support
+                  Y Combinator alumni access
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  30-day growth plan
+                  24/7 Slack workspace support
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Custom competitive analysis
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  90-day success guarantee
                 </li>
               </ul>
               
               <button 
                 onClick={() => setShowForm(true)}
-                className="w-full px-6 py-3 border border-[#EF400A] text-[#EF400A] rounded-full font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
+                className="w-full px-4 py-3 border border-[#EF400A] text-[#EF400A] rounded-full font-semibold hover:bg-[#EF400A] hover:text-white transition-colors text-sm"
               >
-                Get Started
+                Start Building
               </button>
             </div>
 
-            {/* 60 Days Package */}
-            <div className="bg-[#080830] rounded-2xl p-6 md:p-8 border border-gray-600 hover:border-[#EF400A] transition-colors">
+            {/* Accelerator Package */}
+            <div className="bg-[#080830] rounded-2xl p-6 border border-gray-600 hover:border-[#EF400A] transition-colors relative">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-4 text-white">Growth Package</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Accelerator Package</h3>
                 <div className="mb-4">
-                  <span className="text-3xl md:text-4xl font-bold text-[#EF400A]">$2,900</span>
-                  <span className="text-lg text-gray-300 ml-2">(net)</span>
+                  <span className="text-3xl font-bold text-[#EF400A]">$7,500</span>
                 </div>
-                <p className="text-lg text-gray-300 mb-6">60 days of comprehensive support</p>
+                <p className="text-sm text-gray-300 mb-4">90 days • Tier-1 VC Connection</p>
+                <div className="bg-green-900/20 border border-green-500/20 rounded p-2">
+                  <p className="text-green-400 text-xs font-semibold">🚀 $75,000+ Value</p>
+                </div>
               </div>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6 text-sm">
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Professional collateral deck
+                  16 coaching sessions with C-suite advisors
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  8 advisory sessions
+                  <strong>GUARANTEED:</strong> 3 tier-1 VC meetings
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Priority support
+                  Legal templates worth $10,000
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Pitch refinement session
+                  Monthly founder mentorship sessions
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  60-day growth roadmap
+                  Product-market fit validation
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Full refund if no VC meetings
                 </li>
               </ul>
               
               <button 
                 onClick={() => setShowForm(true)}
-                className="w-full px-6 py-3 border border-[#EF400A] text-[#EF400A] rounded-full font-semibold hover:bg-[#EF400A] hover:text-white transition-colors"
+                className="w-full px-4 py-3 border border-[#EF400A] text-[#EF400A] rounded-full font-semibold hover:bg-[#EF400A] hover:text-white transition-colors text-sm"
               >
-                Choose Growth
+                Get VC Access
               </button>
             </div>
 
-            {/* 120 Days Package - Most Popular */}
-            <div className="bg-[#080830] rounded-2xl p-6 md:p-8 border-2 border-[#EF400A] relative overflow-hidden transform scale-105">
-              <div className="absolute top-0 right-0 bg-[#EF400A] text-white px-4 py-1 rounded-bl-lg font-semibold text-sm">
+            {/* Unicorn Package - Most Popular */}
+            <div className="bg-[#080830] rounded-2xl p-6 border-2 border-[#EF400A] relative overflow-hidden transform scale-105">
+              <div className="absolute top-0 right-0 bg-[#EF400A] text-white px-3 py-1 rounded-bl-lg font-semibold text-xs">
                 Most Popular
               </div>
               
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-4 text-[#EF400A]">Complete Package</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#EF400A]">Unicorn Package</h3>
                 <div className="mb-4">
-                  <span className="text-4xl md:text-5xl font-bold text-white">$5,800</span>
-                  <span className="text-lg text-gray-300 ml-2">(net)</span>
+                  <span className="text-3xl font-bold text-white">$18,500</span>
                 </div>
-                <p className="text-lg text-gray-300 mb-6">120 days of complete support</p>
+                <p className="text-sm text-gray-300 mb-4">180 days • IPO Preparation</p>
+                <div className="bg-green-900/20 border border-green-500/20 rounded p-2">
+                  <p className="text-green-400 text-xs font-semibold">💎 $275,000+ Value</p>
+                </div>
               </div>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6 text-sm">
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Premium collateral deck
+                  32 sessions with public company CEOs
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  17 advisory sessions
+                  <strong>GUARANTEED:</strong> Series A preparation
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  24/7 priority support
+                  Family office connections
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Investor introductions
+                  Board advisory positioning
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Multiple pitch coaching sessions
+                  International expansion (5 markets)
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 text-[#EF400A] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#EF400A] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Complete 120-day growth roadmap
+                  Technical due diligence prep
                 </li>
               </ul>
               
               <button 
                 onClick={() => setShowForm(true)}
-                className="w-full px-6 py-3 bg-[#EF400A] text-white rounded-full font-semibold hover:bg-[#ff5a2b] transition-colors shadow-lg"
+                className="w-full px-4 py-3 bg-[#EF400A] text-white rounded-full font-semibold hover:bg-[#ff5a2b] transition-colors shadow-lg text-sm"
               >
-                Get Complete Package
+                Build Your Unicorn
+              </button>
+            </div>
+
+            {/* Legends Package */}
+            <div className="bg-gradient-to-b from-[#080830] to-[#0a0a2f] rounded-2xl p-6 border-2 border-amber-500 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-3 py-1 rounded-bl-lg font-bold text-xs">
+                ELITE
+              </div>
+              
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold mb-4 text-amber-400">Legends Package</h3>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-white">$50,000</span>
+                  <p className="text-xs text-amber-400 mt-1">+ 0.5-1% equity</p>
+                </div>
+                <p className="text-sm text-gray-300 mb-4">365 days • Generational Wealth</p>
+                <div className="bg-amber-900/20 border border-amber-500/20 rounded p-2">
+                  <p className="text-amber-400 text-xs font-semibold">👑 Unlimited Value</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-2 mb-6 text-sm">
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Access to Tier-0 investors 
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Weekly sessions with $10B+ exit founders
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  McKinsey-level market research
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Personal board of 5 public company execs
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Legacy & generational wealth planning
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <svg className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  True partnership model (equity aligned)
+                </li>
+              </ul>
+              
+              <button 
+                onClick={() => setShowForm(true)}
+                className="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-black rounded-full font-bold hover:from-amber-600 hover:to-yellow-600 transition-colors shadow-lg text-sm"
+              >
+                Join the Legends
               </button>
             </div>
           </div>
 
-          {/* Equity Option */}
+          {/* Trust Signals */}
+          <div className="max-w-6xl mx-auto mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-[#0a0a2f] rounded-xl p-6">
+                <h4 className="text-2xl font-bold text-[#EF400A] mb-2">90%+</h4>
+                <p className="text-gray-300">Series A Success Rate</p>
+              </div>
+              <div className="bg-[#0a0a2f] rounded-xl p-6">
+                <h4 className="text-2xl font-bold text-[#EF400A] mb-2">$25M+</h4>
+                <p className="text-gray-300">Average Client Valuation</p>
+              </div>
+              <div className="bg-[#0a0a2f] rounded-xl p-6">
+                <h4 className="text-2xl font-bold text-[#EF400A] mb-2">75+</h4>
+                <p className="text-gray-300">Tier-1 VC Partners</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Money-Back Guarantee */}
           <div className="max-w-4xl mx-auto mt-12">
-            <div className="bg-[#0a0a2f] rounded-xl p-6 text-center">
-              <h4 className="text-xl font-bold mb-4 text-[#EF400A]">Bonus: Equity Option</h4>
-              <p className="text-gray-300 mb-4">
-                For founders who want to further align our interests, we offer an optional equity component:
+            <div className="bg-[#0a0a2f] rounded-xl p-8 text-center border border-[#EF400A]">
+              <h4 className="text-2xl font-bold mb-4 text-[#EF400A]">🛡️ Iron-Clad Guarantee</h4>
+              <p className="text-gray-300 mb-4 text-lg">
+                We&apos;re so confident in our results that we offer a <strong className="text-white">90-day money-back guarantee</strong>.
               </p>
               <p className="text-white font-semibold">
-                0.25–1.5% equity vesting over 1–2 years (subject to agreement)
+                If you don&apos;t see measurable progress toward your funding goals within 90 days, we&apos;ll refund every penny.
               </p>
             </div>
           </div>
@@ -593,9 +756,10 @@ export default function AdvisoryPage() {
                     className="w-full px-4 py-3 bg-[#0a0a2f] border border-gray-600 rounded-lg text-white focus:outline-none focus:border-[#EF400A]"
                   >
                     <option value="">Select Package</option>
-                    <option value="30-days">Starter Package (30 days) - $1,450</option>
-                    <option value="60-days">Growth Package (60 days) - $2,900</option>
-                    <option value="120-days">Complete Package (120 days) - $5,800</option>
+                    <option value="catalyst">Catalyst Package (45 days) - $2,995</option>
+                    <option value="accelerator">Accelerator Package (90 days) - $7,500</option>
+                    <option value="unicorn">Unicorn Package (180 days) - $18,500</option>
+                    <option value="legends">Legends Package (365 days) - $50,000 + equity</option>
                   </select>
                 </div>
                 
